@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Fontaine — Teyvat Tours</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body
+    class="region-page"
+    style="
+    --region-bg:#73cadd;
+    --hero-bg:url('assets/images/fontaine(1).png');
+    --signature-bg:url('assets/images/fontaine_heropage.jpg');
+    --hero-tint:rgba(42,161,203,.45);
+    --sig-tint:rgba(35,155,189,.48);
+    --name-color:#0a3150;
+    --featured-bg:#6fc7da;
+    --price-color:#21439b;
+    --underline:#2aa5c1;"
+>
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">✦</span>
+            <span>TEYVAT TOURS</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a class="" href="mondstadt.html">Mondstadt</a>
+            <a class="" href="liyue.html">Liyue</a>
+            <a class="" href="inazuma.html">Inazuma</a>
+            <a class="" href="sumeru.html">Sumeru</a>
+            <a class="active" href="fontaine.html">Fontaine</a>
+            <a class="" href="natlan.html">Natlan</a>
+            <a class="" href="snezhnaya.html">Snezhnaya</a>
+        </nav>
+
+        <button
+            class="menu-btn"
+            id="menuBtn"
+            aria-label="Open navigation"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div
+        class="drawer-backdrop"
+        id="drawerBackdrop"
+    ></div>
+
+    <aside class="drawer" id="drawer">
+        <button
+            class="drawer-close"
+            id="drawerClose"
+            aria-label="Close navigation"
+        >
+            ×
+        </button>
+
+        <nav>
+            <a class="big-link" href="index.html">HOME</a>
+
+            <span class="big-link">EXPLORE</span>
+
+            <div class="nation-list">
+                <a href="mondstadt.html">
+                    <img src="assets/images/mondstadt_icon.webp" alt="">
+                    Mondstadt
+                </a>
+
+                <a href="liyue.html">
+                    <img src="assets/images/liyue_icon.webp" alt="">
+                    Liyue
+                </a>
+
+                <a href="inazuma.html">
+                    <img src="assets/images/inazuma_icon.webp" alt="">
+                    Inazuma
+                </a>
+
+                <a href="sumeru.html">
+                    <img src="assets/images/sumeru_icon.webp" alt="">
+                    Sumeru
+                </a>
+
+                <a href="fontaine.html">
+                    <img src="assets/images/fontaine_icon.webp" alt="">
+                    Fontaine
+                </a>
+
+                <a href="natlan.html">
+                    <img src="assets/images/natlan_icon.webp" alt="">
+                    Natlan
+                </a>
+
+                <a href="snezhnaya.html">
+                    <img src="assets/images/snezhnaya_icon.webp" alt="">
+                    Snezhnaya
+                </a>
+            </div>
+
+            <a class="big-link" href="#inquire" data-book="">INQUIRE</a>
+            <a class="big-link" href="#about">ABOUT US</a>
+        </nav>
+
+        <div class="drawer-settings">
+            <img src="assets/images/settings_icon.webp" alt="">
+            Settings
+        </div>
+    </aside>
+
+    <main>
+
+        <section class="region-hero">
+
+            <a
+                class="back-link"
+                href="index.html"
+                aria-label="Back to all nations"
+            >
+                ←
+            </a>
+
+            <div class="region-copy">
+
+                <div class="catalog-label">
+                    TEYVAT REGION CATALOG
+                </div>
+
+                <h1 class="region-name">Fontaine</h1>
+
+                <div class="region-subtitle">
+                    The Capital of Justice, Steam, and Aquatics
+                </div>
+
+                <div class="hero-meta">
+
+                    <div>
+                        <div class="meta-label">FROM</div>
+                        <div class="meta-value">₱20,000</div>
+                        <div class="meta-note">per person</div>
+                    </div>
+
+                    <div>
+                        <div class="meta-label">DURATION</div>
+                        <div class="meta-value">5 Days / 4 Nights</div>
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    data-scroll-featured
+                >
+                    Explore Featured Stops <span>→</span>
+                </button>
+
+            </div>
+
+            <div class="region-hero-image">
+                <img
+                    src="assets/images/fontaine(1).png"
+                    alt="Fontaine landscape"
+                >
+            </div>
+
+        </section>
+
+
+        <section class="signature">
+
+            <div class="catalog-label">
+                THE SIGNATURE PACKAGE
+            </div>
+
+            <p class="signature-lead">
+                Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine water.
+            </p>
+
+            <div class="signature-card">
+
+                <img
+                    src="assets/images/fontaine_heropage.jpg"
+                    alt="Fontaine signature destination"
+                >
+
+                <div class="signature-price">
+                    <small>5 Days / 4 Nights</small>
+                    <strong>₱20,000</strong>
+                    <span>per person</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="featured" id="featured">
+
+            <div class="featured-head">
+
+                <div class="catalog-label">
+                    THREE PLACES, ONE JOURNEY
+                </div>
+
+                <h2>Featured Stops</h2>
+
+            </div>
+
+            <div class="stop-grid">
+
+                <article class="stop-card">
+                    <img
+                        src="assets/images/court_of_fontaine.png"
+                        alt="Court of Fontaine"
+                    >
+                    <h3>Court of Fontaine</h3>
+                </article>
+
+                <article class="stop-card">
+                    <img
+                        src="assets/images/opera_epiclese.png"
+                        alt="Opera Epiclese"
+                    >
+                    <h3>Opera Epiclese</h3>
+                </article>
+
+                <article class="stop-card">
+                    <img
+                        src="assets/images/lucine_fountaine.png"
+                        alt="Lucine Fountain"
+                    >
+                    <h3>Lucine Fountain</h3>
+                </article>
+
+            </div>
+
+            <div class="region-actions">
+
+                <button
+                    class="btn btn-primary"
+                    data-book="Fontaine"
+                >
+                    BEGIN YOUR JOURNEY
+                </button>
+
+                <a
+                    class="btn btn-outline"
+                    href="index.html#packages"
+                >
+                    EXPLORE OTHER NATION
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer" id="about">
+
+        <p class="footer-tagline">
+            Seven nations. Endless journey. One unforgettable adventure.
+        </p>
+
+        <div class="footer-bottom">
+
+            <div class="legal">
+                <span>©2026 TeyvatTours</span>
+                <a href="#">Privacy</a>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div
+                class="socials"
+                aria-label="Social media"
+            >
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="TikTok">♪</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <div
+        class="modal"
+        id="bookingModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="bookingTitle"
+    >
+
+        <div class="modal-card">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+            >
+                ×
+            </button>
+
+            <h2 id="bookingTitle">
+                Begin Your Journey
+            </h2>
+
+            <p>
+                Send your preferred travel details. This prototype keeps the interaction front-end only.
+            </p>
+
+            <form
+                id="bookingForm"
+                class="form-grid"
+            >
+
+                <input
+                    required
+                    placeholder="Full name"
+                >
+
+                <input
+                    required
+                    type="email"
+                    placeholder="Email"
+                >
+
+                <select id="regionSelect">
+                    <option value="Mondstadt" >Mondstadt</option>
+                    <option value="Liyue" >Liyue</option>
+                    <option value="Inazuma" >Inazuma</option>
+                    <option value="Sumeru" >Sumeru</option>
+                    <option value="Fontaine" selected>Fontaine</option>
+                    <option value="Natlan" >Natlan</option>
+                    <option value="Snezhnaya" >Snezhnaya</option>
+                </select>
+
+                <input type="date">
+
+                <input
+                    type="number"
+                    min="1"
+                    value="2"
+                    placeholder="Travelers"
+                >
+
+                <input placeholder="Phone number">
+
+                <textarea
+                    class="full"
+                    placeholder="Questions or special requests"
+                ></textarea>
+
+                <button
+                    class="btn btn-primary full"
+                    type="submit"
+                >
+                    SUBMIT INQUIRY
+                </button>
+
+            </form>
+
+            <div
+                class="success-note"
+                id="successNote"
+            ></div>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
