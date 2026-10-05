@@ -1,0 +1,117 @@
+
+/* Featured stop container */
+.package-circles {
+    position: absolute;
+    right: 145px;
+    top: 55px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    height: 320px;
+}
+
+/* Individual featured stop */
+.circle-stop {
+    position: relative;
+    width: 120px;
+    height: 310px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    isolation: isolate;
+}
+
+/* Soft vertical glow behind every featured stop */
+.circle-stop::before {
+    content: "";
+    position: absolute;
+    top: 75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 88px;
+    height: 235px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--chip) 20%,
+        var(--chip) 55%,
+        #ffd94a 80%,
+        transparent 100%
+    );
+
+    filter: blur(11px);
+    opacity: 0.95;
+    z-index: -2;
+    border-radius: 45px;
+}
+
+/* Stronger center glow */
+.circle-stop::after {
+    content: "";
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 65px;
+    height: 215px;
+
+    background: linear-gradient(
+        to bottom,
+        var(--chip),
+        var(--chip) 55%,
+        #ffd94a 80%,
+        transparent
+    );
+
+    opacity: 0.65;
+    filter: blur(4px);
+    z-index: -1;
+    border-radius: 30px;
+}
+
+/* Circular featured stop image */
+.circle-stop img {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    z-index: 3;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.28),
+        0 0 0 1px rgba(255, 255, 255, 0.12);
+}
+
+/* Featured stop label */
+.circle-stop span {
+    position: relative;
+    width: 90px;
+    margin-top: 16px;
+
+    color: #fff;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1.05;
+    text-align: center;
+    text-transform: uppercase;
+
+    z-index: 4;
+
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+/* Stagger the three featured stops */
+.circle-stop:nth-child(1) {
+    margin-top: 0;
+}
+
+.circle-stop:nth-child(2) {
+    margin-top: 120px;
+}
+
+.circle-stop:nth-child(3) {
+    margin-top: 70px;
+}
