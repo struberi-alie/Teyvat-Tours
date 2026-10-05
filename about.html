@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>About Us — Teyvat Tours</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        body.about-page {
+            margin: 0;
+            background: #0d1930;
+            color: #071b3d;
+        }
+
+        .about-hero {
+            position: relative;
+            min-height: 420px;
+            background:
+                linear-gradient(rgba(255,255,255,.06), rgba(255,255,255,.06)),
+                url("assets/images/about-us.jpg") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            padding: 70px 5%;
+            overflow: hidden;
+        }
+
+        .about-hero-inner {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .about-icon-wrap {
+            width: 125px;
+            height: 125px;
+            border: 4px solid #0b2a5d;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.08);
+            flex: 0 0 auto;
+        }
+
+        .about-icon-wrap img {
+            width: 78px;
+            height: 78px;
+            object-fit: contain;
+        }
+
+        .about-hero-copy .eyebrow {
+            margin: 0 0 5px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .about-hero-copy h1 {
+            margin: 0;
+            color: #0b1c3e;
+            font-size: clamp(52px, 7vw, 92px);
+            line-height: .95;
+            font-family: "Birthstone Bounce", "Brush Script MT", cursive;
+            font-weight: 500;
+            text-shadow: 0 1px 0 rgba(255,255,255,.15);
+        }
+
+        .about-content {
+            position: relative;
+            padding: 55px 3% 70px;
+            background:
+                linear-gradient(rgba(18,56,150,.76), rgba(24,134,220,.56)),
+                url("assets/images/about-us.jpg") center 58%/cover fixed no-repeat;
+        }
+
+        .about-grid {
+            max-width: 1250px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.08fr .92fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .about-section-title {
+            margin: 0 0 14px;
+            color: #fff;
+            font-family: Georgia, serif;
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: .02em;
+        }
+
+        .profile-card,
+        .director-card,
+        .mini-card {
+            background: #fff;
+            border-radius: 18px;
+        }
+
+        .profile-card {
+            padding: 30px 24px 28px;
+        }
+
+        .company-heading {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .company-mark {
+            width: 58px;
+            height: 58px;
+            border: 3px solid #e8ab2e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 auto;
+        }
+
+        .company-mark img {
+            width: 38px;
+            height: 38px;
+            object-fit: contain;
+        }
+
+        .company-heading h2 {
+            margin: 0;
+            font-family: Georgia, serif;
+            font-size: 26px;
+            letter-spacing: .05em;
+        }
+
+        .company-heading span {
+            display: block;
+            margin-top: 2px;
+            font-size: 12px;
+        }
+
+        .profile-card p,
+        .director-card p {
+            margin: 0;
+            font-size: 21px;
+            line-height: 1.25;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 6px;
+        }
+
+        .mini-block h3 {
+            margin: 12px 0 10px 4px;
+            color: #fff;
+            font-family: Georgia, serif;
+            font-size: 26px;
+        }
+
+        .mini-card {
+            min-height: 265px;
+            padding: 20px 22px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mini-card p {
+            margin: 0;
+            font-size: 18px;
+            line-height: 1.55;
+        }
+
+        .director-card {
+            padding: 28px 26px 34px;
+        }
+
+        .director-photo {
+            width: 205px;
+            height: 205px;
+            object-fit: cover;
+            border-radius: 16px;
+            display: block;
+            margin-bottom: 34px;
+        }
+
+        .site-footer.about-footer {
+            background: #111927;
+        }
+
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .about-hero-inner {
+                align-items: flex-start;
+            }
+
+            .about-icon-wrap {
+                width: 90px;
+                height: 90px;
+            }
+
+            .about-icon-wrap img {
+                width: 58px;
+                height: 58px;
+            }
+
+            .profile-card p,
+            .director-card p {
+                font-size: 17px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-hero {
+                min-height: 330px;
+                padding: 45px 20px;
+            }
+
+            .about-hero-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .about-content {
+                padding-left: 18px;
+                padding-right: 18px;
+            }
+
+            .director-photo {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+
+<body class="about-page">
+
+    <header class="site-header">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">✦</span>
+            <span>TEYVAT TOURS</span>
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="mondstadt.html">Mondstadt</a>
+            <a href="liyue.html">Liyue</a>
+            <a href="inazuma.html">Inazuma</a>
+            <a href="sumeru.html">Sumeru</a>
+            <a href="fontaine.html">Fontaine</a>
+            <a href="natlan.html">Natlan</a>
+            <a href="snezhnaya.html">Snezhnaya</a>
+            <a class="active" href="about.html">About Us</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <div class="drawer-backdrop" id="drawerBackdrop"></div>
+
+    <aside class="drawer" id="drawer">
+        <button class="drawer-close" id="drawerClose" aria-label="Close navigation">×</button>
+
+        <nav>
+            <a class="big-link" href="index.html">HOME</a>
+            <span class="big-link">EXPLORE</span>
+
+            <div class="nation-list">
+                <a href="mondstadt.html"><img src="assets/images/mondstadt_icon.webp" alt="">Mondstadt</a>
+                <a href="liyue.html"><img src="assets/images/liyue_icon.webp" alt="">Liyue</a>
+                <a href="inazuma.html"><img src="assets/images/inazuma_icon.webp" alt="">Inazuma</a>
+                <a href="sumeru.html"><img src="assets/images/sumeru_icon.webp" alt="">Sumeru</a>
+                <a href="fontaine.html"><img src="assets/images/fontaine_icon.webp" alt="">Fontaine</a>
+                <a href="natlan.html"><img src="assets/images/natlan_icon.webp" alt="">Natlan</a>
+                <a href="snezhnaya.html"><img src="assets/images/snezhnaya_icon.webp" alt="">Snezhnaya</a>
+            </div>
+
+            <a class="big-link" href="index.html#inquire" data-book="">INQUIRE</a>
+            <a class="big-link" href="about.html">ABOUT US</a>
+        </nav>
+
+        <div class="drawer-settings">
+            <img src="assets/images/settings_icon.webp" alt="">
+            Settings
+        </div>
+    </aside>
+
+    <main>
+
+        <section class="about-hero">
+            <div class="about-hero-inner">
+
+                <div class="about-icon-wrap">
+                    <img src="assets/images/teyvaticon.png" alt="Teyvat Tours icon">
+                </div>
+
+                <div class="about-hero-copy">
+                    <p class="eyebrow">ABOUT US</p>
+                    <h1>Your Trusted Travel Partner</h1>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="about-grid">
+
+                <div class="about-left">
+                    <h2 class="about-section-title">COMPANY PROFILE</h2>
+
+                    <article class="profile-card">
+                        <div class="company-heading">
+
+                            <div class="company-mark">
+                                <img src="assets/images/teyvaticon.png" alt="">
+                            </div>
+
+                            <div>
+                                <h2>TEYVAT TOURS</h2>
+                                <span>Travel Agency</span>
+                            </div>
+
+                        </div>
+
+                        <p>
+                            Founded by a legendary former traveler, Teyvat Tours is a premier,
+                            sole-proprietor travel agency dedicated to safe transit across the Seven Nations.
+                            We specialize in navigating high-risk terrain, bypassing localized storms,
+                            and providing elite diplomatic clearance through the Knights of Favonius,
+                            the Liyue Qixing, and the Yashiro Commission.
+                        </p>
+                    </article>
+
+                    <div class="mission-vision">
+
+                        <div class="mini-block">
+                            <h3>MISSION</h3>
+
+                            <article class="mini-card">
+                                <p>
+                                    To bridge the seven nations of Teyvat by providing safe, reliable,
+                                    and accessible travel experiences for all—demystifying regional
+                                    boundaries, ensuring absolute transit security, and transforming
+                                    complex continental journeys into seamless, unforgettable memories
+                                    for every traveler, family, and explorer.
+                                </p>
+                            </article>
+                        </div>
+
+                        <div class="mini-block">
+                            <h3>VISION</h3>
+
+                            <article class="mini-card">
+                                <p>
+                                    To be Teyvat’s most trusted and unified travel network, where
+                                    geographical hazards, political divides, and cultural barriers are
+                                    replaced by open doors, seamless logistics, and a shared wonder
+                                    for the world we all call home.
+                                </p>
+                            </article>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="about-right">
+                    <h2 class="about-section-title">DIRECTOR</h2>
+
+                    <article class="director-card">
+
+                        <img
+                            class="director-photo"
+                            src="assets/images/lumine.jpg"
+                            alt="Director Lumine"
+                        >
+
+                        <p>
+                            Director Lumine is an outlander and legendary pioneer who personally
+                            charted the safe routes utilized by this agency. Having successfully
+                            walked the paths of Mondstadt, Liyue, Inazuma, Sumeru, Fontaine,
+                            Natlan, and Snezhnaya, she retired from active wandering to establish
+                            Teyvat's first unified logistics network. Her unparalleled firsthand
+                            knowledge of regional Ley Lines and localized hazards guarantees a
+                            zero-casualty rate for all guided expeditions.
+                        </p>
+
+                    </article>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer about-footer" id="about">
+        <p class="footer-tagline">
+            Seven nations. Endless journey. One unforgettable adventure.
+        </p>
+
+        <div class="footer-bottom">
+            <div class="legal">
+                <span>©2026 TeyvatTours</span>
+                <a href="#">Privacy</a>
+                <a href="#">Terms and Conditions</a>
+            </div>
+
+            <div class="socials" aria-label="Social media">
+                <a href="#" aria-label="Facebook">f</a>
+                <a href="#" aria-label="Instagram">◎</a>
+                <a href="#" aria-label="TikTok">♪</a>
+                <a href="#" aria-label="YouTube">▶</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
