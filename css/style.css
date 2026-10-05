@@ -2159,6 +2159,14 @@ img {
 
 .region-actions .btn-outline {
     border-color: #062a57;
+    background: #f7f4ec;
+    color: #062a57;
+}
+
+.region-actions .btn-outline:hover,
+.region-actions .btn-outline:focus-visible {
+    background: #062a57;
+    color: #fff;
 }
 
 
