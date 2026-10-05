@@ -1728,7 +1728,7 @@ img {
     min-height: 465px;
 
     display: grid;
-    grid-template-columns: 43% 57%;
+    grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
     align-items: center;
     gap: 18px;
 
@@ -2239,6 +2239,11 @@ img {
 .modal-card {
 
     width: min(520px, 100%);
+
+    /* Keep the inquiry form reachable on short screens and at higher zoom. */
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
 
 
 
@@ -2840,5 +2845,72 @@ img {
 
     .form-grid .full {
         grid-column: auto;
+    }
+}
+
+/* ZOOM AND NARROW-SCREEN SUPPORT: Allow content to wrap without clipping. */
+.region-copy,
+.region-hero-image,
+.stop-card {
+    min-width: 0;
+}
+
+.region-name,
+.package-info h2 {
+    overflow-wrap: anywhere;
+}
+
+.hero-meta,
+.hero-actions,
+.region-actions {
+    flex-wrap: wrap;
+}
+
+/* Keep package previews below their descriptions when the layout narrows.
+   Normal flow lets each card grow with its text instead of overlapping it. */
+@media (max-width: 900px) {
+    .package-card {
+        min-height: 0;
+        padding-bottom: 18px;
+    }
+
+    .package-info {
+        max-width: calc(100% - 64px);
+    }
+
+    .package-circles {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin: 0 20px 20px;
+    }
+
+    .package-circles .circle-stop {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        flex: 0 0 auto;
+    }
+
+    .package-card .view-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .price-chip {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 }
