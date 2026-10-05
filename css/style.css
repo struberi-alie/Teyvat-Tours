@@ -122,7 +122,9 @@ img {
 
 
 
-/*HEADER*/
+/* =========================================================
+ SITE HEADER: Controls the sticky top navigation, logo, and desktop links.
+   ========================================================= */
 
 
 
@@ -340,7 +342,9 @@ img {
 
 
 
-/*DRAWE*/
+/* =========================================================
+   MOBILE DRAWER NAVIGATION: Styles the slide-out menu and its dark page backdrop.
+   ========================================================= */
 
 
 
@@ -602,7 +606,9 @@ img {
 
 
 
-/*BUTTONS*/
+/* =========================================================
+   SHARED BUTTONS:  Reusable primary, outline, and gold button styles.
+   ========================================================= */
 
 
 
@@ -712,7 +718,9 @@ img {
 
 
 
-/*HOME*/
+/* =========================================================
+   HOMEPAGE HERO :  Main landing banner, title, CTA buttons, and search.
+   ========================================================= */
 
 
 
@@ -1008,7 +1016,9 @@ img {
 
 
 
-/*HOME PACKAGES*/
+/* =========================================================
+   HOMEPAGE TOUR PACKAGES :  Layout and styling for the seven regional package cards.
+   ========================================================= */
 
 
 
@@ -1254,7 +1264,9 @@ img {
 
 
 
-/*PACKAGE CIRCLES*/
+/* =========================================================
+   PACKAGE FEATURED-STOP CIRCLES: Positions the circular attraction previews on package cards.
+   ========================================================= */
 
 
 
@@ -1478,7 +1490,9 @@ img {
 
 
 
-/*HOME FOOTER*/
+/* =========================================================
+   HOMEPAGE QUICK LINKS: Explore, travel services, and company links above the footer.
+   ========================================================= */
 
 
 
@@ -1584,7 +1598,9 @@ img {
 
 
 
-/*FOOTER*/
+/* =========================================================
+   GLOBAL FOOTER:  Shared tagline, legal links, and social media shortcuts.
+   ========================================================= */
 
 
 
@@ -1694,7 +1710,9 @@ img {
 
 
 
-/* REGION PAGE */
+/* =========================================================
+   REGION PAGES: Shared layout for all seven destination pages.
+   ========================================================= */
 
 .region-page {
     background: var(--region-bg, #63c3dd);
@@ -1702,7 +1720,7 @@ img {
 }
 
 
-/* HERO SECTION */
+/* REGION HERO: Displays the region title, trip details, CTA, background, and main image. */
 
 .region-hero {
     position: relative;
@@ -1710,7 +1728,7 @@ img {
     min-height: 465px;
 
     display: grid;
-    grid-template-columns: 43% 57%;
+    grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
     align-items: center;
     gap: 18px;
 
@@ -1725,7 +1743,7 @@ img {
 
 
 
-/* BACKGROUND IMAGE — TRUE 50% OPACITY */
+/* REGION HERO BACKGROUND: Reuses the region image as a 50%-opacity full-section background. */
 .region-hero::before {
     content: "";
     position: absolute;
@@ -1751,7 +1769,7 @@ img {
 }
 
 
-/* LEFT HERO CONTENT */
+/* REGION HERO TEXT: Controls the catalog label, region title, subtitle, price, and duration. */
 
 .region-copy {
     position: relative;
@@ -1803,7 +1821,7 @@ img {
     line-height: .96;
 }
 
-/* BACK BUTTON */
+/* BACK BUTTON: Circular arrow that returns the visitor to the homepage. */
 
 .back-link {
     position: absolute;
@@ -1826,7 +1844,7 @@ img {
 
     z-index: 3;
 }
-/* PRICE / DURATION */
+/* PRICE AND DURATION: Groups the starting price and trip length shown in the hero. */
 
 .hero-meta {
     display: flex;
@@ -1862,7 +1880,7 @@ img {
 }
 
 
-/* HERO BUTTON */
+/* HERO CTA BUTTON: Sends the visitor toward the Featured Stops section. */
 
 .region-copy .btn-primary {
     width: 78%;
@@ -1880,7 +1898,7 @@ img {
 }
 
 
-/* HERO IMAGE */
+/* HERO FOREGROUND IMAGE: Sharp destination image displayed above the faded background. */
 
 .region-hero-image {
     position: relative;
@@ -1895,7 +1913,7 @@ img {
 }
 
 
-/* FORCE EVERY REGION IMAGE TO FILL THE SAME FRAME */
+/* HERO IMAGE CROPPING: Keeps different source images inside a consistent frame. */
 
 .region-hero-image img {
     display: block;
@@ -1911,7 +1929,7 @@ img {
     box-shadow: 0 14px 30px rgba(0, 0, 0, .16);
 }
 
-/* SIGNATURE PACKAGE */
+/* SIGNATURE PACKAGE: Main itinerary image, description, duration, and price panel. */
 
 .signature {
     position: relative;
@@ -1928,7 +1946,7 @@ img {
     box-sizing: border-box;
 }
 
-/* SIGNATURE BACKGROUND IMAGE*/
+/* SIGNATURE BACKGROUND: Reuses the signature image as a 50%-opacity section background. */
 .signature::before {
     content: "";
 
@@ -1985,7 +2003,7 @@ img {
 }
 
 
-/* SIGNATURE IMAGE */
+/* SIGNATURE FOREGROUND IMAGE: Sharp signature-package image shown over the faded background. */
 
 .signature-card {
     height: 360px;
@@ -2008,7 +2026,7 @@ img {
     object-position: var(--signature-image-position, center center);
 }
 
-/* SIGNATURE PRICE */
+/* SIGNATURE PRICE PANEL: Duration and starting-price badge attached to the signature image. */
 
 .signature-price {
     position: absolute;
@@ -2054,7 +2072,7 @@ img {
 }
 
 
-/* FEATURED STOPS */
+/* FEATURED STOPS: Three attraction cards included in the selected region tour. */
 
 .featured {
     padding: 48px 12px 62px;
@@ -2134,7 +2152,7 @@ img {
 }
 
 
-/* REGION BUTTONS */
+/* REGION ACTION BUTTONS: Booking CTA and link back to the full package list. */
 
 .region-actions {
     display: flex;
@@ -2170,7 +2188,9 @@ img {
 }
 
 
-/*MODAL*/
+/* =========================================================
+   BOOKING / INQUIRY MODAL: Popup form used to collect traveler and trip information.
+   ========================================================= */
 
 
 
@@ -2219,6 +2239,11 @@ img {
 .modal-card {
 
     width: min(520px, 100%);
+
+    /* Keep the inquiry form reachable on short screens and at higher zoom. */
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
 
 
 
@@ -2408,7 +2433,9 @@ img {
 
 
 
-/* TABLET */
+/* =========================================================
+   TABLET RESPONSIVE RULES: Layout adjustments for screens 900px wide and below.
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -2544,7 +2571,10 @@ img {
 }
 
 
-/* MOBILE */
+/* =========================================================
+   MOBILE RESPONSIVE RULES
+   Compact layout adjustments for screens 620px wide and below.
+   ========================================================= */
 
 @media (max-width: 620px) {
 
@@ -2815,5 +2845,72 @@ img {
 
     .form-grid .full {
         grid-column: auto;
+    }
+}
+
+/* ZOOM AND NARROW-SCREEN SUPPORT: Allow content to wrap without clipping. */
+.region-copy,
+.region-hero-image,
+.stop-card {
+    min-width: 0;
+}
+
+.region-name,
+.package-info h2 {
+    overflow-wrap: anywhere;
+}
+
+.hero-meta,
+.hero-actions,
+.region-actions {
+    flex-wrap: wrap;
+}
+
+/* Keep package previews below their descriptions when the layout narrows.
+   Normal flow lets each card grow with its text instead of overlapping it. */
+@media (max-width: 900px) {
+    .package-card {
+        min-height: 0;
+        padding-bottom: 18px;
+    }
+
+    .package-info {
+        max-width: calc(100% - 64px);
+    }
+
+    .package-circles {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin: 0 20px 20px;
+    }
+
+    .package-circles .circle-stop {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        flex: 0 0 auto;
+    }
+
+    .package-card .view-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .price-chip {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 }

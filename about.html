@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="css/style.css">
 
     <style>
+        /* ABOUT PAGE BASE: Overall colors and default page styling */
         body.about-page {
             margin: 0;
             background: #0d1930;
             color: #071b3d;
         }
 
+        /* ABOUT HERO: Intro banner and background image */
         .about-hero {
             position: relative;
             min-height: 420px;
@@ -70,6 +72,7 @@
             text-shadow: 0 1px 0 rgba(255,255,255,.15);
         }
 
+        /* ABOUT CONTENT: Main profile, mission, vision, and director area */
         .about-content {
             position: relative;
             padding: 55px 3% 70px;
@@ -232,6 +235,7 @@
             background: #111927;
         }
 
+        /* TABLET RESPONSIVE: Stacks content and reduces large elements */
         @media (max-width: 900px) {
             .about-grid {
                 grid-template-columns: 1fr;
@@ -261,6 +265,7 @@
             }
         }
 
+        /* MOBILE RESPONSIVE: Compact layout for smaller screens */
         @media (max-width: 600px) {
             .about-hero {
                 min-height: 330px;
@@ -287,7 +292,8 @@
 
 <body class="about-page">
 
-    <header class="site-header">
+    <!-- SITE HEADER: Shared Teyvat Tours navigation -->
+<header class="site-header">
         <a class="brand" href="index.html">
             <span class="brand-mark">✦</span>
             <span>TEYVAT TOURS</span>
@@ -313,7 +319,8 @@
 
     <div class="drawer-backdrop" id="drawerBackdrop"></div>
 
-    <aside class="drawer" id="drawer">
+    <!-- MOBILE DRAWER: Region links for smaller screens -->
+<aside class="drawer" id="drawer">
         <button class="drawer-close" id="drawerClose" aria-label="Close navigation">×</button>
 
         <nav>
@@ -340,10 +347,12 @@
         </div>
     </aside>
 
-    <main>
+<!-- MAIN CONTENT: Company information and director profile -->
+<main>
 
-        <section class="about-hero">
-            <a class="back-link" href="index.html" aria-label="Back to homepage">←</a>
+    <!-- ABOUT HERO: Agency introduction and brand icon -->
+    <section class="about-hero">
+        <a class="back-link" href="index.html" aria-label="Back to homepage">←</a>
             <div class="about-hero-inner">
 
                 <div class="about-icon-wrap">
@@ -358,7 +367,8 @@
             </div>
         </section>
 
-        <section class="about-content">
+        <!-- ABOUT DETAILS: Company profile, mission, vision, and director -->
+<section class="about-content">
             <div class="about-grid">
 
                 <div class="about-left">
@@ -454,7 +464,8 @@
 
     </main>
 
-    <footer class="site-footer about-footer" id="about">
+    <!-- SITE FOOTER: Tagline, legal links, and social media links -->
+<footer class="site-footer about-footer" id="about">
         <p class="footer-tagline">
             Seven nations. Endless journey. One unforgettable adventure.
         </p>
@@ -475,7 +486,8 @@
         </div>
     </footer>
 
-    <script src="js/app.js"></script>
+    <!-- SHARED JAVASCRIPT: Controls navigation and shared site interactions -->
+<script src="js/app.js"></script>
 
 </body>
 </html>
