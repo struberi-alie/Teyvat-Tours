@@ -1,5 +1,6 @@
 
-/* Featured stop container */
+/* FEATURED STOP CONTAINER
+   Holds the three circular stop previews and controls their overall position. */
 .package-circles {
     position: absolute;
     right: 145px;
@@ -10,7 +11,8 @@
     height: 320px;
 }
 
-/* Individual featured stop */
+/* INDIVIDUAL FEATURED STOP
+   Creates one item containing the image, glow, and attraction label. */
 .circle-stop {
     position: relative;
     width: 120px;
@@ -21,7 +23,8 @@
     isolation: isolate;
 }
 
-/* Soft vertical glow behind every featured stop */
+/* OUTER GLOW
+   Adds a soft colored vertical glow behind each featured-stop image. */
 .circle-stop::before {
     content: "";
     position: absolute;
@@ -46,7 +49,8 @@
     border-radius: 45px;
 }
 
-/* Stronger center glow */
+/* INNER GLOW
+   Adds a brighter center glow so the circular image stands out. */
 .circle-stop::after {
     content: "";
     position: absolute;
@@ -70,7 +74,8 @@
     border-radius: 30px;
 }
 
-/* Circular featured stop image */
+/* FEATURED STOP IMAGE
+   Keeps each attraction photo circular with a subtle outline and shadow. */
 .circle-stop img {
     position: relative;
     width: 120px;
@@ -84,7 +89,8 @@
         0 0 0 1px rgba(255, 255, 255, 0.12);
 }
 
-/* Featured stop label */
+/* FEATURED STOP LABEL
+   Displays the attraction name below its circular preview. */
 .circle-stop span {
     position: relative;
     width: 90px;
@@ -103,7 +109,8 @@
         0 1px 2px rgba(0, 0, 0, 0.65);
 }
 
-/* Stagger the three featured stops */
+/* STAGGERED POSITIONS
+   Offsets the three stops vertically to create a stepped arrangement. */
 .circle-stop:nth-child(1) {
     margin-top: 0;
 }
