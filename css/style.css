@@ -898,22 +898,31 @@ img {
 
 }
 
+.home-hero-inner {
+    position: relative;
+    z-index: 2;
 
+    width: 100%;
 
-.hero-actions {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 
-    display: flex;
-
-
-
-    gap: 14px;
-
-
-
-    margin-top: 34px;
-
+    gap: 80px;
 }
 
+.hero-actions {
+    display: flex;
+    gap: 14px;
+
+    margin-top: 0;
+    margin-left: auto;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    padding-right: 160px;
+}
 
 
 
