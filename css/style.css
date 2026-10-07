@@ -122,9 +122,7 @@ img {
 
 
 
-/* =========================================================
- SITE HEADER: Controls the sticky top navigation, logo, and desktop links.
-   ========================================================= */
+/*  SITE HEADER - Controls the sticky top navigation, logo, and desktop links.*/
 
 
 
@@ -342,9 +340,7 @@ img {
 
 
 
-/* =========================================================
-   MOBILE DRAWER NAVIGATION: Styles the slide-out menu and its dark page backdrop.
-   ========================================================= */
+/* MOBILE DRAWER NAVIGATION: Styles the slide-out menu and its dark page backdrop. */
 
 
 
@@ -606,9 +602,7 @@ img {
 
 
 
-/* =========================================================
-   SHARED BUTTONS:  Reusable primary, outline, and gold button styles.
-   ========================================================= */
+/* SHARED BUTTONS:  Reusable primary, outline, and gold button styles. */
 
 
 
@@ -638,9 +632,9 @@ img {
 
 
 
-    font-size: 13px;
+    font-size: 20px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: .02em;
 
@@ -654,7 +648,7 @@ img {
 
 
 
-    border-radius: 3px;
+    border-radius: 15px;
 
 }
 
@@ -674,7 +668,7 @@ img {
 
     background: #062a57;
 
-    color: #fff;
+    color: #ffffff;
 
 }
 
@@ -690,7 +684,7 @@ img {
 
 
 
-    border: 3px solid #062a57;
+    border: 3px solid #1f5ca6;
 
 }
 
@@ -718,9 +712,7 @@ img {
 
 
 
-/* =========================================================
-   HOMEPAGE HERO :  Main landing banner, title, CTA buttons, and search.
-   ========================================================= */
+/* HOMEPAGE HERO :  Main landing banner, title, CTA buttons, and search. */
 
 
 
@@ -858,7 +850,7 @@ img {
 
 
 
-    max-width: 480px;
+    max-width: 600px;
 
 
 
@@ -924,101 +916,9 @@ img {
 
 
 
-.hero-search {
 
-    background: #fff;
 
-
-
-    border-radius: 10px;
-
-
-
-    height: 56px;
-
-
-
-    display: flex;
-
-    align-items: center;
-
-
-
-    padding: 0 12px 0 16px;
-
-
-
-    box-shadow: var(--shadow);
-
-}
-
-
-
-.hero-search input {
-
-    flex: 1;
-
-
-
-    border: 0;
-
-    outline: 0;
-
-
-
-    color: #223247;
-
-
-
-    font-size: 18px;
-
-
-
-    min-width: 0;
-
-}
-
-
-
-.search-circle {
-
-    width: 40px;
-
-    height: 40px;
-
-
-
-    border-radius: 50%;
-
-
-
-    display: grid;
-
-    place-items: center;
-
-
-
-    background: #a90b0b;
-
-
-
-    color: white;
-
-
-
-    font-size: 19px;
-
-    font-weight: 700;
-
-}
-
-
-
-
-
-/* =========================================================
-   HOMEPAGE TOUR PACKAGES :  Layout and styling for the seven regional package cards.
-   ========================================================= */
+/* HOMEPAGE TOUR PACKAGES :  Layout and styling for the seven regional package cards. */
 
 
 
@@ -1331,7 +1231,7 @@ img {
 }
 
 
-
+/*featured stos circle #1*/
 .circle-stop:nth-child(1) {
 
     width: 120px;
@@ -1342,17 +1242,17 @@ img {
 
     left: 0;
 
-    top: 0;
+    top: 75px;
 
 }
 
 
-
+/*featured stos circle #3*/
 .circle-stop:nth-child(2) {
 
-    width: 105px;
+    width: 120px;
 
-    height: 105px;
+    height: 120px;
 
 
 
@@ -1363,23 +1263,24 @@ img {
 }
 
 
-
+/*featured stos circle #2*/
 .circle-stop:nth-child(3) {
 
-    width: 104px;
+    width: 140px;
 
-    height: 104px;
+    height: 140px;
 
 
+    
 
-    left: 22%;
+    left: 32%;
 
-    bottom: 0;
+    bottom: -20;
 
 }
 
 
-
+/*featured stop text label*/
 .circle-stop span {
 
     position: absolute;
@@ -1421,14 +1322,14 @@ img {
 }
 
 
-
+/*ribbon in right side*/
 .nation-ribbon {
 
     position: absolute;
 
 
 
-    right: 0;
+    right: 20px;
 
     top: 0;
 
@@ -1778,22 +1679,24 @@ img {
 
     width: 100%;
     max-width: 500px;
+    
 
     padding: 34px 0 0 6px;
 }
 
 
-.catalog-label {
+.signature-label {
     margin: 0;
 
     color: #fff;
 
-    font-size: 9px;
+    font-size: 5px;
     font-weight: 700;
     letter-spacing: .22em;
 
     text-transform: uppercase;
 }
+
 
 
 .region-name {
@@ -1908,7 +1811,7 @@ img {
     height: 355px;
 
     overflow: hidden;
-
+    border: 4px solid rgba(255, 255, 255, .95);
     border-radius: 0 48px 0 0;
 }
 
@@ -1936,7 +1839,7 @@ img {
 
     width: 100%;
 
-    padding: 34px 44px 52px;
+    padding: 48px 44px 52px;
 
     overflow: hidden;
     isolation: isolate;
@@ -1947,6 +1850,21 @@ img {
 }
 
 /* SIGNATURE BACKGROUND: Reuses the signature image as a 50%-opacity section background. */
+
+.signature-label {
+    margin: 0;
+
+    color: #f6f6f6;
+
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 100%;
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+
 .signature::before {
     content: "";
 
@@ -1993,12 +1911,14 @@ img {
 .signature-lead {
     max-width: 1120px;
 
-    margin-top: 18px;
+    margin-top: 24px;
+    margin-left: 21px;
     margin-bottom: 16px;
 
     color: #fff;
+    opacity: 100%;
 
-    font-size: 18px;
+    font-size: px;
     line-height: 1.3;
 }
 
@@ -2011,6 +1931,7 @@ img {
     overflow: hidden;
 
     border-radius: 0 24px 24px 24px;
+    border: 4px solid rgba(255, 255, 255, .95);
 
     box-shadow: var(--shadow);
 }
@@ -2188,9 +2109,7 @@ img {
 }
 
 
-/* =========================================================
-   BOOKING / INQUIRY MODAL: Popup form used to collect traveler and trip information.
-   ========================================================= */
+/* BOOKING / INQUIRY MODAL- Popup form used to collect traveler and trip information. */
 
 
 
@@ -2477,11 +2396,6 @@ img {
         font-size: 58px;
     }
 
-    .hero-search {
-        max-width: 620px;
-    }
-
-
     /* HOME PACKAGE CARDS */
 
     .package-card {
@@ -2571,10 +2485,7 @@ img {
 }
 
 
-/* =========================================================
-   MOBILE RESPONSIVE RULES
-   Compact layout adjustments for screens 620px wide and below.
-   ========================================================= */
+/* MOBILE RESPONSIVE RULES-Compact layout adjustments for screens 620px wide and below. */
 
 @media (max-width: 620px) {
 
@@ -2598,15 +2509,6 @@ img {
         flex-wrap: wrap;
         margin-top: 24px;
     }
-
-    .hero-search {
-        height: 50px;
-    }
-
-    .hero-search input {
-        font-size: 15px;
-    }
-
 
     /* HOME PACKAGE CARDS */
 
