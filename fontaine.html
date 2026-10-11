@@ -10,18 +10,19 @@
 <body
     class="region-page"
     style="
-    --region-bg:#73cadd;
+    --region-bg:#032a33;
     --hero-bg:url('../assets/images/fontaine(1).png');
     --signature-bg:url('../assets/images/fontaine_heropage.jpg');
-    --hero-tint:rgba(42,161,203,.12);
+    --hero-tint:rgba(59, 129, 155, 0.12);
     --sig-tint:rgba(35,155,189,.12);    
-    --name-color:#0a3150;
-    --featured-bg:#6fc7da;
+    --name-color:#bbdef7;
+    --featured-bg:#3895dd;
     --price-color:#21439b;
-    --underline:#2aa5c1;"
+    --underline:#3cacc5;"
 >
 
-    <header class="site-header">
+    <!-- SITE HEADER: Brand logo and desktop navigation -->
+<header class="site-header">
         <a class="brand" href="index.html">
             <span class="brand-mark">✦</span>
             <span>TEYVAT TOURS</span>
@@ -54,7 +55,8 @@
         id="drawerBackdrop"
     ></div>
 
-    <aside class="drawer" id="drawer">
+    <!-- MOBILE DRAWER -->
+<aside class="drawer" id="drawer">
         <button
             class="drawer-close"
             id="drawerClose"
@@ -115,9 +117,11 @@
         </div>
     </aside>
 
-    <main>
+    <!-- MAIN CONTENT: Region tour content begins here -->
+<main>
 
-        <section class="region-hero">
+        <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
+<section class="region-hero">
 
             <a
                 class="back-link"
@@ -173,9 +177,10 @@
         </section>
 
 
-        <section class="signature">
+        <!-- SIGNATURE PACKAGE: Main package image, description, duration, and price -->
+<section class="signature">
 
-            <div class="catalog-label">
+            <div class="signature-label">
                 THE SIGNATURE PACKAGE
             </div>
 
@@ -201,7 +206,8 @@
         </section>
 
 
-        <section class="featured" id="featured">
+        <!-- FEATURED STOPS: Three recommended attractions for this region -->
+<section class="featured" id="featured">
 
             <div class="featured-head">
 
@@ -264,7 +270,8 @@
     </main>
 
 
-    <footer class="site-footer" id="about">
+    <!-- SITE FOOTER: Tagline, legal links, and social media links -->
+<footer class="site-footer" id="about">
 
         <p class="footer-tagline">
             Seven nations. Endless journey. One unforgettable adventure.
@@ -378,7 +385,8 @@
 
     </div>
 
-    <script src="js/app.js"></script>
+    <!-- SHARED JAVASCRIPT: Handles navigation, scrolling, search, and booking interactions -->
+<script src="js/app.js"></script>
 
 </body>
 </html>

@@ -122,7 +122,7 @@ img {
 
 
 
-/*HEADER*/
+/*  SITE HEADER - Controls the sticky top navigation, logo, and desktop links.*/
 
 
 
@@ -340,7 +340,7 @@ img {
 
 
 
-/*DRAWE*/
+/* MOBILE DRAWER NAVIGATION: Styles the slide-out menu and its dark page backdrop. */
 
 
 
@@ -602,7 +602,7 @@ img {
 
 
 
-/*BUTTONS*/
+/* SHARED BUTTONS:  Reusable primary, outline, and gold button styles. */
 
 
 
@@ -632,9 +632,9 @@ img {
 
 
 
-    font-size: 13px;
+    font-size: 20px;
 
-    font-weight: 700;
+    font-weight: 600;
 
     letter-spacing: .02em;
 
@@ -648,7 +648,7 @@ img {
 
 
 
-    border-radius: 3px;
+    border-radius: 15px;
 
 }
 
@@ -668,7 +668,7 @@ img {
 
     background: #062a57;
 
-    color: #fff;
+    color: #ffffff;
 
 }
 
@@ -684,7 +684,7 @@ img {
 
 
 
-    border: 3px solid #062a57;
+    border: 3px solid #1f5ca6;
 
 }
 
@@ -712,7 +712,7 @@ img {
 
 
 
-/*HOME*/
+/* HOMEPAGE HERO :  Main landing banner, title, CTA buttons, and search. */
 
 
 
@@ -850,7 +850,7 @@ img {
 
 
 
-    max-width: 480px;
+    max-width: 600px;
 
 
 
@@ -898,117 +898,36 @@ img {
 
 }
 
+.home-hero-inner {
+    position: relative;
+    z-index: 2;
 
-
-.hero-actions {
-
-    display: flex;
-
-
-
-    gap: 14px;
-
-
-
-    margin-top: 34px;
-
-}
-
-
-
-.hero-search {
-
-    background: #fff;
-
-
-
-    border-radius: 10px;
-
-
-
-    height: 56px;
-
-
-
-    display: flex;
-
-    align-items: center;
-
-
-
-    padding: 0 12px 0 16px;
-
-
-
-    box-shadow: var(--shadow);
-
-}
-
-
-
-.hero-search input {
-
-    flex: 1;
-
-
-
-    border: 0;
-
-    outline: 0;
-
-
-
-    color: #223247;
-
-
-
-    font-size: 18px;
-
-
-
-    min-width: 0;
-
-}
-
-
-
-.search-circle {
-
-    width: 40px;
-
-    height: 40px;
-
-
-
-    border-radius: 50%;
-
-
+    width: 100%;
 
     display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
 
-    place-items: center;
+    gap: 80px;
+}
 
+.hero-actions {
+    display: flex;
+    gap: 14px;
 
+    margin-top: 0;
+    margin-left: auto;
 
-    background: #a90b0b;
+    justify-content: flex-end;
+    align-items: center;
 
-
-
-    color: white;
-
-
-
-    font-size: 19px;
-
-    font-weight: 700;
-
+    padding-right: 160px;
 }
 
 
 
 
-
-/*HOME PACKAGES*/
+/* HOMEPAGE TOUR PACKAGES :  Layout and styling for the seven regional package cards. */
 
 
 
@@ -1254,7 +1173,9 @@ img {
 
 
 
-/*PACKAGE CIRCLES*/
+/* =========================================================
+   PACKAGE FEATURED-STOP CIRCLES: Positions the circular attraction previews on package cards.
+   ========================================================= */
 
 
 
@@ -1319,7 +1240,7 @@ img {
 }
 
 
-
+/*featured stos circle #1*/
 .circle-stop:nth-child(1) {
 
     width: 120px;
@@ -1330,17 +1251,17 @@ img {
 
     left: 0;
 
-    top: 0;
+    top: 75px;
 
 }
 
 
-
+/*featured stos circle #3*/
 .circle-stop:nth-child(2) {
 
-    width: 105px;
+    width: 120px;
 
-    height: 105px;
+    height: 120px;
 
 
 
@@ -1351,23 +1272,24 @@ img {
 }
 
 
-
+/*featured stos circle #2*/
 .circle-stop:nth-child(3) {
 
-    width: 104px;
+    width: 140px;
 
-    height: 104px;
+    height: 140px;
 
 
+    
 
-    left: 22%;
+    left: 32%;
 
-    bottom: 0;
+    bottom: -20;
 
 }
 
 
-
+/*featured stop text label*/
 .circle-stop span {
 
     position: absolute;
@@ -1409,14 +1331,14 @@ img {
 }
 
 
-
+/*ribbon in right side*/
 .nation-ribbon {
 
     position: absolute;
 
 
 
-    right: 0;
+    right: 20px;
 
     top: 0;
 
@@ -1478,7 +1400,9 @@ img {
 
 
 
-/*HOME FOOTER*/
+/* =========================================================
+   HOMEPAGE QUICK LINKS: Explore, travel services, and company links above the footer.
+   ========================================================= */
 
 
 
@@ -1584,7 +1508,9 @@ img {
 
 
 
-/*FOOTER*/
+/* =========================================================
+   GLOBAL FOOTER:  Shared tagline, legal links, and social media shortcuts.
+   ========================================================= */
 
 
 
@@ -1694,7 +1620,9 @@ img {
 
 
 
-/* REGION PAGE */
+/* =========================================================
+   REGION PAGES: Shared layout for all seven destination pages.
+   ========================================================= */
 
 .region-page {
     background: var(--region-bg, #63c3dd);
@@ -1702,7 +1630,7 @@ img {
 }
 
 
-/* HERO SECTION */
+/* REGION HERO: Displays the region title, trip details, CTA, background, and main image. */
 
 .region-hero {
     position: relative;
@@ -1710,7 +1638,7 @@ img {
     min-height: 465px;
 
     display: grid;
-    grid-template-columns: 43% 57%;
+    grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
     align-items: center;
     gap: 18px;
 
@@ -1725,7 +1653,7 @@ img {
 
 
 
-/* BACKGROUND IMAGE — TRUE 50% OPACITY */
+/* REGION HERO BACKGROUND: Reuses the region image as a 50%-opacity full-section background. */
 .region-hero::before {
     content: "";
     position: absolute;
@@ -1751,7 +1679,7 @@ img {
 }
 
 
-/* LEFT HERO CONTENT */
+/* REGION HERO TEXT: Controls the catalog label, region title, subtitle, price, and duration. */
 
 .region-copy {
     position: relative;
@@ -1760,22 +1688,24 @@ img {
 
     width: 100%;
     max-width: 500px;
+    
 
     padding: 34px 0 0 6px;
 }
 
 
-.catalog-label {
+.signature-label {
     margin: 0;
 
     color: #fff;
 
-    font-size: 9px;
+    font-size: 5px;
     font-weight: 700;
     letter-spacing: .22em;
 
     text-transform: uppercase;
 }
+
 
 
 .region-name {
@@ -1803,7 +1733,7 @@ img {
     line-height: .96;
 }
 
-/* BACK BUTTON */
+/* BACK BUTTON: Circular arrow that returns the visitor to the homepage. */
 
 .back-link {
     position: absolute;
@@ -1826,7 +1756,7 @@ img {
 
     z-index: 3;
 }
-/* PRICE / DURATION */
+/* PRICE AND DURATION: Groups the starting price and trip length shown in the hero. */
 
 .hero-meta {
     display: flex;
@@ -1862,7 +1792,7 @@ img {
 }
 
 
-/* HERO BUTTON */
+/* HERO CTA BUTTON: Sends the visitor toward the Featured Stops section. */
 
 .region-copy .btn-primary {
     width: 78%;
@@ -1880,7 +1810,7 @@ img {
 }
 
 
-/* HERO IMAGE */
+/* HERO FOREGROUND IMAGE: Sharp destination image displayed above the faded background. */
 
 .region-hero-image {
     position: relative;
@@ -1890,12 +1820,12 @@ img {
     height: 355px;
 
     overflow: hidden;
-
+    border: 4px solid rgba(255, 255, 255, .95);
     border-radius: 0 48px 0 0;
 }
 
 
-/* FORCE EVERY REGION IMAGE TO FILL THE SAME FRAME */
+/* HERO IMAGE CROPPING: Keeps different source images inside a consistent frame. */
 
 .region-hero-image img {
     display: block;
@@ -1911,14 +1841,14 @@ img {
     box-shadow: 0 14px 30px rgba(0, 0, 0, .16);
 }
 
-/* SIGNATURE PACKAGE */
+/* SIGNATURE PACKAGE: Main itinerary image, description, duration, and price panel. */
 
 .signature {
     position: relative;
 
     width: 100%;
 
-    padding: 34px 44px 52px;
+    padding: 48px 44px 52px;
 
     overflow: hidden;
     isolation: isolate;
@@ -1928,7 +1858,22 @@ img {
     box-sizing: border-box;
 }
 
-/* SIGNATURE BACKGROUND IMAGE*/
+/* SIGNATURE BACKGROUND: Reuses the signature image as a 50%-opacity section background. */
+
+.signature-label {
+    margin: 0;
+
+    color: #f6f6f6;
+
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 100%;
+    letter-spacing: .22em;
+
+    text-transform: uppercase;
+}
+
+
 .signature::before {
     content: "";
 
@@ -1975,17 +1920,19 @@ img {
 .signature-lead {
     max-width: 1120px;
 
-    margin-top: 18px;
+    margin-top: 24px;
+    margin-left: 21px;
     margin-bottom: 16px;
 
     color: #fff;
+    opacity: 100%;
 
-    font-size: 18px;
+    font-size: px;
     line-height: 1.3;
 }
 
 
-/* SIGNATURE IMAGE */
+/* SIGNATURE FOREGROUND IMAGE: Sharp signature-package image shown over the faded background. */
 
 .signature-card {
     height: 360px;
@@ -1993,6 +1940,7 @@ img {
     overflow: hidden;
 
     border-radius: 0 24px 24px 24px;
+    border: 4px solid rgba(255, 255, 255, .95);
 
     box-shadow: var(--shadow);
 }
@@ -2008,7 +1956,7 @@ img {
     object-position: var(--signature-image-position, center center);
 }
 
-/* SIGNATURE PRICE */
+/* SIGNATURE PRICE PANEL: Duration and starting-price badge attached to the signature image. */
 
 .signature-price {
     position: absolute;
@@ -2054,7 +2002,7 @@ img {
 }
 
 
-/* FEATURED STOPS */
+/* FEATURED STOPS: Three attraction cards included in the selected region tour. */
 
 .featured {
     padding: 48px 12px 62px;
@@ -2134,7 +2082,7 @@ img {
 }
 
 
-/* REGION BUTTONS */
+/* REGION ACTION BUTTONS: Booking CTA and link back to the full package list. */
 
 .region-actions {
     display: flex;
@@ -2170,7 +2118,7 @@ img {
 }
 
 
-/*MODAL*/
+/* BOOKING / INQUIRY MODAL- Popup form used to collect traveler and trip information. */
 
 
 
@@ -2219,6 +2167,11 @@ img {
 .modal-card {
 
     width: min(520px, 100%);
+
+    /* Keep the inquiry form reachable on short screens and at higher zoom. */
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
 
 
 
@@ -2408,7 +2361,9 @@ img {
 
 
 
-/* TABLET */
+/* =========================================================
+   TABLET RESPONSIVE RULES: Layout adjustments for screens 900px wide and below.
+   ========================================================= */
 
 @media (max-width: 900px) {
 
@@ -2449,11 +2404,6 @@ img {
     .home-title .script {
         font-size: 58px;
     }
-
-    .hero-search {
-        max-width: 620px;
-    }
-
 
     /* HOME PACKAGE CARDS */
 
@@ -2544,7 +2494,7 @@ img {
 }
 
 
-/* MOBILE */
+/* MOBILE RESPONSIVE RULES-Compact layout adjustments for screens 620px wide and below. */
 
 @media (max-width: 620px) {
 
@@ -2568,15 +2518,6 @@ img {
         flex-wrap: wrap;
         margin-top: 24px;
     }
-
-    .hero-search {
-        height: 50px;
-    }
-
-    .hero-search input {
-        font-size: 15px;
-    }
-
 
     /* HOME PACKAGE CARDS */
 
@@ -2815,5 +2756,72 @@ img {
 
     .form-grid .full {
         grid-column: auto;
+    }
+}
+
+/* ZOOM AND NARROW-SCREEN SUPPORT: Allow content to wrap without clipping. */
+.region-copy,
+.region-hero-image,
+.stop-card {
+    min-width: 0;
+}
+
+.region-name,
+.package-info h2 {
+    overflow-wrap: anywhere;
+}
+
+.hero-meta,
+.hero-actions,
+.region-actions {
+    flex-wrap: wrap;
+}
+
+/* Keep package previews below their descriptions when the layout narrows.
+   Normal flow lets each card grow with its text instead of overlapping it. */
+@media (max-width: 900px) {
+    .package-card {
+        min-height: 0;
+        padding-bottom: 18px;
+    }
+
+    .package-info {
+        max-width: calc(100% - 64px);
+    }
+
+    .package-circles {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin: 0 20px 20px;
+    }
+
+    .package-circles .circle-stop {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        flex: 0 0 auto;
+    }
+
+    .package-card .view-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .price-chip {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
     }
 }
