@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Fontaine — Teyvat Tours</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/tour-enhancements.css">
 </head>
 
 <body
@@ -29,13 +30,62 @@
         </a>
 
         <nav class="desktop-nav">
-            <a class="" href="mondstadt.html">Mondstadt</a>
-            <a class="" href="liyue.html">Liyue</a>
-            <a class="" href="inazuma.html">Inazuma</a>
-            <a class="" href="sumeru.html">Sumeru</a>
-            <a class="active" href="fontaine.html">Fontaine</a>
-            <a class="" href="natlan.html">Natlan</a>
-            <a class="" href="snezhnaya.html">Snezhnaya</a>
+            <div class="nation-menu">
+                <a class="" href="mondstadt.html">Mondstadt<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Mondstadt featured stops">
+                    <li><a href="mondstadt.html#cider-lake">Cider Lake</a></li>
+                    <li><a href="mondstadt.html#windrise">Windrise</a></li>
+                    <li><a href="mondstadt.html#grand-cathedral">Grand Cathedral</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="" href="liyue.html">Liyue<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Liyue featured stops">
+                    <li><a href="liyue.html#liyue-harbor">Liyue Harbor</a></li>
+                    <li><a href="liyue.html#mt-aocang">Mt. Aocang</a></li>
+                    <li><a href="liyue.html#wangshu-inn">Wangshu Inn</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="" href="inazuma.html">Inazuma<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Inazuma featured stops">
+                    <li><a href="inazuma.html#narukami-island-grand-shrine">Narukami Island Grand Shrine</a></li>
+                    <li><a href="inazuma.html#ritou-trading-port">Ritou Trading Port</a></li>
+                    <li><a href="inazuma.html#tenshukaku">Tenshukaku</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="" href="sumeru.html">Sumeru<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Sumeru featured stops">
+                    <li><a href="sumeru.html#sumeru-city-academy">Sumeru City Academy</a></li>
+                    <li><a href="sumeru.html#gandharva-ville">Gandharva Ville</a></li>
+                    <li><a href="sumeru.html#caravan-ribat">Caravan Ribat</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="active" href="fontaine.html">Fontaine<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Fontaine featured stops">
+                    <li><a href="fontaine.html#court-of-fontaine">Court of Fontaine</a></li>
+                    <li><a href="fontaine.html#opera-epiclese">Opera Epiclese</a></li>
+                    <li><a href="fontaine.html#lucine-fountain">Lucine Fountain</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="" href="natlan.html">Natlan<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Natlan featured stops">
+                    <li><a href="natlan.html#tepecac-stadium">Tepecac Stadium</a></li>
+                    <li><a href="natlan.html#children-of-the-echoes-canyon">Children of the Echoes Canyon</a></li>
+                    <li><a href="natlan.html#people-of-the-springs-basin">People of the Springs basin</a></li>
+                </ul>
+            </div>
+            <div class="nation-menu">
+                <a class="" href="snezhnaya.html">Snezhnaya<span class="nav-caret" aria-hidden="true">▾</span></a>
+                <ul class="nation-stops" aria-label="Snezhnaya featured stops">
+                    <li><a href="snezhnaya.html#zapolyarny-palace">Zapolyarny Palace</a></li>
+                    <li><a href="snezhnaya.html#frost-bound-valleys">Frost-bound Valleys</a></li>
+                    <li><a href="snezhnaya.html#glacial-outposts">Glacial Outposts</a></li>
+                </ul>
+            </div>
             <a class="" href="about.html">About Us</a>        
         </nav>
 
@@ -221,28 +271,36 @@
 
             <div class="stop-grid">
 
-                <article class="stop-card">
+                <article id="court-of-fontaine" class="stop-card stop-card-primary">
                     <img
                         src="assets/images/court_of_fontaine.png"
                         alt="Court of Fontaine"
                     >
+                    <p class="stop-kicker">Journey highlight</p>
+
                     <h3>Court of Fontaine</h3>
+
+                    <p class="stop-description">Begin at the Court of Fontaine and take in the city scenery. Explore its streets, admire the architecture, and find a favorite view to remember your visit.</p>
                 </article>
 
-                <article class="stop-card">
+                <article id="opera-epiclese" class="stop-card">
                     <img
                         src="assets/images/opera_epiclese.png"
                         alt="Opera Epiclese"
                     >
                     <h3>Opera Epiclese</h3>
+
+                    <p class="stop-description">Visit Opera Epiclese for a closer look at one of the tour’s architectural highlights. Pause to appreciate the setting and capture its distinctive appearance.</p>
                 </article>
 
-                <article class="stop-card">
+                <article id="lucine-fountain" class="stop-card">
                     <img
                         src="assets/images/lucine_fountaine.png"
                         alt="Lucine Fountain"
                     >
                     <h3>Lucine Fountain</h3>
+
+                    <p class="stop-description">Unwind at Lucine Fountain after exploring the city. Enjoy a peaceful pause and a final photo opportunity before continuing your Fontaine journey.</p>
                 </article>
 
             </div>
