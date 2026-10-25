@@ -26,20 +26,19 @@ body.about-page {
 }
 
 .about-icon-wrap {
-    width: 125px;
-    height: 125px;
-    border: 4px solid #0b2a5d;
-    border-radius: 50%;
+    width: 190px;
+    height: 190px;
+    border: none;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255,255,255,.08);
     flex: 0 0 auto;
 }
 
 .about-icon-wrap img {
-    width: 78px;
-    height: 78px;
+    width: 200px;
+    height: 200px;
     object-fit: contain;
 }
 
@@ -103,10 +102,9 @@ body.about-page {
 }
 
 .company-mark {
-    width: 58px;
-    height: 58px;
-    border: 3px solid #e8ab2e;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border: none;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -114,8 +112,8 @@ body.about-page {
 }
 
 .company-mark img {
-    width: 38px;
-    height: 38px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
 }
 

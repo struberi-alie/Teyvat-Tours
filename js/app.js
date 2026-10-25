@@ -104,13 +104,13 @@ $$('[data-scroll-featured]').forEach(button => {
    page filename, icon filename, and nation color class in CSS.
    ========================================================== */
 const destinations = [
-    { name: 'Mondstadt', slug: 'mondstadt', description: 'City of Freedom' },
-    { name: 'Liyue', slug: 'liyue', description: 'Harbor of Stone' },
-    { name: 'Inazuma', slug: 'inazuma', description: 'Isles of Eternity' },
-    { name: 'Sumeru', slug: 'sumeru', description: 'Land of Wisdom' },
-    { name: 'Fontaine', slug: 'fontaine', description: 'Nation of Justice' },
-    { name: 'Natlan', slug: 'natlan', description: 'Land of Flames' },
-    { name: 'Snezhnaya', slug: 'snezhnaya', description: 'Realm of Frost' }
+    { name: 'Mondstadt', slug: 'mondstadt', description: 'The City of Freedom' },
+    { name: 'Liyue', slug: 'liyue', description: 'The Harbor of Stone & Commerce' },
+    { name: 'Inazuma', slug: 'inazuma', description: 'The Realm of the Thunder' },
+    { name: 'Sumeru', slug: 'sumeru', description: 'The Land of Wisdom & Rainforest' },
+    { name: 'Fontaine', slug: 'fontaine', description: 'Capital of Justice, Steam, & Aquatics' },
+    { name: 'Natlan', slug: 'natlan', description: 'The Land of Ash, Hot Springs, and Valor' },
+    { name: 'Snezhnaya', slug: 'snezhnaya', description: 'The Eternal White Tundra' }
 ];
 
 // Return the current filename; queries and hashes do not affect the result.
@@ -132,7 +132,6 @@ function updateActiveNavigation() {
             link.setAttribute('aria-current', 'page');
             const label = document.createElement('span');
             label.className = 'tt-current-label';
-            label.textContent = 'Current page';
             link.querySelector('[data-destination-name]').parentElement.append(label);
             destinationIsActive = true;
         }
