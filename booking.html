@@ -172,7 +172,15 @@
                         <input id="agree-terms" type="checkbox" required aria-labelledby="agreement-text">
                         <span id="agreement-text">
                             <label for="agree-terms">I agree to the</label>
-                            <a href="terms.html" target="_blank" rel="noopener">Terms and Conditions</a>.
+                            <button
+                                class="terms-link"
+                                type="button"
+                                popovertarget="terms-overlay"
+                                popovertargetaction="show"
+                                aria-haspopup="dialog"
+                            >
+                                Terms and Conditions
+                            </button>.
                         </span>
                     </div>
                     <button class="action-button" type="submit">Confirm booking</button>
@@ -196,6 +204,55 @@
                     <p>Thank you for choosing Teyvat Tours!</p>
                     <a class="action-button dark" href="index.html">Done</a>
                 </div>
+            </section>
+
+            <!-- TERMS OVERLAY: Native HTML popover; no JavaScript required.
+                 Closing this panel preserves the existing booking form entries. -->
+            <section
+                id="terms-overlay"
+                class="terms-overlay"
+                popover="auto"
+                role="dialog"
+                aria-labelledby="terms-overlay-title"
+            >
+                <header class="terms-overlay-header">
+                    <button
+                        class="terms-back"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                        aria-label="Back to booking"
+                    >
+                        ←
+                    </button>
+                    <h2 id="terms-overlay-title">Terms and Conditions</h2>
+                </header>
+
+                <!-- Reuse terms.html as the scrollable content of the overlay. -->
+                <iframe
+                    class="terms-frame"
+                    src="terms.html#embedded"
+                    title="Teyvat Tours booking terms and conditions"
+                ></iframe>
+
+                <footer class="terms-overlay-actions">
+                    <button
+                        class="terms-action terms-action-primary"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                    >
+                        I Understand
+                    </button>
+                    <button
+                        class="terms-action terms-action-secondary"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                    >
+                        Cancel
+                    </button>
+                </footer>
             </section>
         </main>
     </body>

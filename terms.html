@@ -8,8 +8,8 @@
         <link rel="stylesheet" href="css/terms.css">
     </head>
     <body>
-        <main class="terms-page">
-            <a class="back-home" href="index.html" aria-label="Back to homepage">←</a>
+        <main class="terms-page" id="embedded">
+            <a class="back-home" href="booking.html" aria-label="Back to booking">←</a>
 
             <header class="terms-heading">
                 <p class="eyebrow">Teyvat Tours</p>
@@ -79,9 +79,15 @@
 
             <footer class="terms-contact">
                 <h2>Need clarification?</h2>
-                <p>Visit our <a href="inquiry.html">inquiry page</a> to ask about your package or booking arrangements.</p>
-                <p>If you opened this page from the booking form, return to that tab to continue your booking.</p>
+                <p>Visit our <a href="inquiry.html" target="_top">inquiry page</a> to ask about your package or booking arrangements.</p>
+                
             </footer>
+
+            <!-- Standalone terms page: both actions return to booking. -->
+            <nav class="terms-standalone-actions" aria-label="Booking actions">
+                <a class="terms-action terms-action-primary" href="booking.html">I Understand</a>
+                <a class="terms-action terms-action-secondary" href="booking.html">Cancel</a>
+            </nav>
         </main>
     </body>
 </html>
