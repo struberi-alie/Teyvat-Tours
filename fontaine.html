@@ -1,174 +1,68 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Fontaine — Teyvat Tours</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tour-enhancements.css">
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Fontaine — Teyvat Tours</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tour-enhancements.css">
+    </head>
+    <body class="page-fontaine region-page" >
+        
+        <!-- NAV BAR -->
+        <header class="tt-header">
+            <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
+                <span class="tt-brand-mark" aria-hidden="true">✧</span> <!--CHANGE-->
+                <span>
+                    TEYVAT TOURS
+                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
+                </span>
+            </a>
+            <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
+                <span aria-hidden="true">☰</span>
+            </button>
+            <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
+                <div class="tt-destinations" id="ttDestinations">
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
+                        Destinations
+                        <span class="tt-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="tt-panel" id="ttDestinationPanel" hidden>
+                        <div class="tt-panel-heading">
+                            <span>EXPLORE TEYVAT</span>
+                        </div>
+                        <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
 
-<body
-    class="region-page"
-    style="
-    --region-bg:#032a33;
-    --hero-bg:url('../assets/images/fontaine(1).png');
-    --signature-bg:url('../assets/images/fontaine_heropage.jpg');
-    --hero-tint:rgba(59, 129, 155, 0.12);
-    --sig-tint:rgba(35,155,189,.12);    
-    --name-color:#bbdef7;
-    --featured-bg:#3895dd;
-    --price-color:#21439b;
-    --underline:#3cacc5;"
->
+                        <ul class="tt-region-list" id="destinationList">
+                        </ul>
 
-    <!-- SITE HEADER: Brand logo and desktop navigation -->
-<header class="site-header">
-        <a class="brand" href="index.html">
-            <span class="brand-mark">✦</span>
-            <span>TEYVAT TOURS</span>
-        </a>
-
-        <nav class="desktop-nav">
-            <div class="nation-menu">
-                <a class="" href="mondstadt.html">Mondstadt<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Mondstadt featured stops">
-                    <li><a href="mondstadt.html#cider-lake">Cider Lake</a></li>
-                    <li><a href="mondstadt.html#windrise">Windrise</a></li>
-                    <li><a href="mondstadt.html#grand-cathedral">Grand Cathedral</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="" href="liyue.html">Liyue<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Liyue featured stops">
-                    <li><a href="liyue.html#liyue-harbor">Liyue Harbor</a></li>
-                    <li><a href="liyue.html#mt-aocang">Mt. Aocang</a></li>
-                    <li><a href="liyue.html#wangshu-inn">Wangshu Inn</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="" href="inazuma.html">Inazuma<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Inazuma featured stops">
-                    <li><a href="inazuma.html#narukami-island-grand-shrine">Narukami Island Grand Shrine</a></li>
-                    <li><a href="inazuma.html#ritou-trading-port">Ritou Trading Port</a></li>
-                    <li><a href="inazuma.html#tenshukaku">Tenshukaku</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="" href="sumeru.html">Sumeru<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Sumeru featured stops">
-                    <li><a href="sumeru.html#sumeru-city-academy">Sumeru City Academy</a></li>
-                    <li><a href="sumeru.html#gandharva-ville">Gandharva Ville</a></li>
-                    <li><a href="sumeru.html#caravan-ribat">Caravan Ribat</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="active" href="fontaine.html">Fontaine<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Fontaine featured stops">
-                    <li><a href="fontaine.html#court-of-fontaine">Court of Fontaine</a></li>
-                    <li><a href="fontaine.html#opera-epiclese">Opera Epiclese</a></li>
-                    <li><a href="fontaine.html#lucine-fountain">Lucine Fountain</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="" href="natlan.html">Natlan<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Natlan featured stops">
-                    <li><a href="natlan.html#tepecac-stadium">Tepecac Stadium</a></li>
-                    <li><a href="natlan.html#children-of-the-echoes-canyon">Children of the Echoes Canyon</a></li>
-                    <li><a href="natlan.html#people-of-the-springs-basin">People of the Springs basin</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a class="" href="snezhnaya.html">Snezhnaya<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Snezhnaya featured stops">
-                    <li><a href="snezhnaya.html#zapolyarny-palace">Zapolyarny Palace</a></li>
-                    <li><a href="snezhnaya.html#frost-bound-valleys">Frost-bound Valleys</a></li>
-                    <li><a href="snezhnaya.html#glacial-outposts">Glacial Outposts</a></li>
-                </ul>
-            </div>
-            <a class="" href="about.html">About Us</a>        
-        </nav>
-
-        <button
-            class="menu-btn"
-            id="menuBtn"
-            aria-label="Open navigation"
-        >
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <div
-        class="drawer-backdrop"
-        id="drawerBackdrop"
-    ></div>
-
-    <!-- MOBILE DRAWER -->
-<aside class="drawer" id="drawer">
-        <button
-            class="drawer-close"
-            id="drawerClose"
-            aria-label="Close navigation"
-        >
-            ×
-        </button>
-
-        <nav>
-            <a class="big-link" href="index.html">HOME</a>
-
-            <span class="big-link">EXPLORE</span>
-
-            <div class="nation-list">
-                <a href="mondstadt.html">
-                    <img src="assets/images/mondstadt_icon.webp" alt="">
-                    Mondstadt
+                        <template id="destinationTemplate">
+                            <li>
+                                <a class="tt-region">
+                                    <span class="tt-emblem">
+                                        <img alt="">
+                                    </span>
+                                    <span>
+                                        <strong data-destination-name></strong>
+                                        <small data-destination-description></small>
+                                    </span>
+                                    <span class="tt-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </li>
+                        </template>
+                        <a class="tt-all-tours" href="#packages">
+                            View all tour packages
+                            <span aria-hidden="true">→</span>
+                        </a>
+                    </div>
+                </div>
+                <a class="tt-nav-link" href="about.html">About Us</a>
+                <a class="tt-nav-link tt-contact" href="#bookingModal" data-book="">
+                    Contact Us
+                    <span aria-hidden="true">✦</span>
                 </a>
-
-                <a href="liyue.html">
-                    <img src="assets/images/liyue_icon.webp" alt="">
-                    Liyue
-                </a>
-
-                <a href="inazuma.html">
-                    <img src="assets/images/inazuma_icon.webp" alt="">
-                    Inazuma
-                </a>
-
-                <a href="sumeru.html">
-                    <img src="assets/images/sumeru_icon.webp" alt="">
-                    Sumeru
-                </a>
-
-                <a href="fontaine.html">
-                    <img src="assets/images/fontaine_icon.webp" alt="">
-                    Fontaine
-                </a>
-
-                <a href="natlan.html">
-                    <img src="assets/images/natlan_icon.webp" alt="">
-                    Natlan
-                </a>
-
-                <a href="snezhnaya.html">
-                    <img src="assets/images/snezhnaya_icon.webp" alt="">
-                    Snezhnaya
-                </a>
-            </div>
-
-            <a class="big-link" href="#inquire" data-book="">INQUIRE</a>
-            <a class="big-link" href="#about">ABOUT US</a>
-        </nav>
-
-        <div class="drawer-settings">
-            <img src="assets/images/settings_icon.webp" alt="">
-            Settings
-        </div>
-    </aside>
-
-    <!-- MAIN CONTENT: Region tour content begins here -->
-<main>
+            </nav>
+        </header>
 
         <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
 <section class="region-hero">
@@ -326,125 +220,53 @@
         </section>
 
     </main>
-
-
-    <!-- SITE FOOTER: Tagline, legal links, and social media links -->
-<footer class="site-footer" id="about">
-
-        <p class="footer-tagline">
-            Seven nations. Endless journey. One unforgettable adventure.
-        </p>
-
-        <div class="footer-bottom">
-
-            <div class="legal">
-                <span>©2026 TeyvatTours</span>
-                <a href="#">Privacy</a>
-                <a href="#">Terms and Conditions</a>
+        <!-- SITE FOOTER: Tagline, legal links, and social media links -->
+        <footer class="site-footer" id="about">
+            <p class="footer-tagline">Seven nations. Endless journey. One unforgettable adventure.</p>
+            <div class="footer-bottom">
+                <div class="legal">
+                    <span>©2026 TeyvatTours</span>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms and Conditions</a>
+                </div>
+                <div class="socials" aria-label="Social media" >
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">◎</a>
+                    <a href="#" aria-label="TikTok">♪</a>
+                    <a href="#" aria-label="YouTube">▶</a>
+                </div>
             </div>
-
-            <div
-                class="socials"
-                aria-label="Social media"
-            >
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Instagram">◎</a>
-                <a href="#" aria-label="TikTok">♪</a>
-                <a href="#" aria-label="YouTube">▶</a>
+        </footer>
+        <div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" >
+            <div class="modal-card">
+                <button class="modal-close" id="modalClose" aria-label="Close inquiry form" >×</button>
+                <h2 id="bookingTitle">Begin Your Journey</h2>
+                <p>Send your preferred travel details. This prototype keeps the interaction front-end only.</p>
+                <form id="bookingForm" class="form-grid" >
+                    <input required placeholder="Full name" >
+                    <input required type="email" placeholder="Email" >
+                    <select id="regionSelect">
+                        <option value="Mondstadt" >Mondstadt</option>
+                        <option value="Liyue" >Liyue</option>
+                        <option value="Inazuma" >Inazuma</option>
+                        <option value="Sumeru" >Sumeru</option>
+                        <option value="Fontaine" selected>Fontaine</option>
+                        <option value="Natlan" >Natlan</option>
+                        <option value="Snezhnaya" >Snezhnaya</option>
+                    </select>
+                    <input type="date">
+                    <input type="number" min="1" value="2" placeholder="Travelers" >
+                    <input placeholder="Phone number">
+                    <textarea class="full" placeholder="Questions or special requests" >
+                    </textarea>
+                    <button class="btn btn-primary full" type="submit" >SUBMIT INQUIRY</button>
+                </form>
+                <div class="success-note" id="successNote" >
+                </div>
             </div>
-
         </div>
-
-    </footer>
-
-
-    <div
-        class="modal"
-        id="bookingModal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="bookingTitle"
-    >
-
-        <div class="modal-card">
-
-            <button
-                class="modal-close"
-                id="modalClose"
-            >
-                ×
-            </button>
-
-            <h2 id="bookingTitle">
-                Begin Your Journey
-            </h2>
-
-            <p>
-                Send your preferred travel details. This prototype keeps the interaction front-end only.
-            </p>
-
-            <form
-                id="bookingForm"
-                class="form-grid"
-            >
-
-                <input
-                    required
-                    placeholder="Full name"
-                >
-
-                <input
-                    required
-                    type="email"
-                    placeholder="Email"
-                >
-
-                <select id="regionSelect">
-                    <option value="Mondstadt" >Mondstadt</option>
-                    <option value="Liyue" >Liyue</option>
-                    <option value="Inazuma" >Inazuma</option>
-                    <option value="Sumeru" >Sumeru</option>
-                    <option value="Fontaine" selected>Fontaine</option>
-                    <option value="Natlan" >Natlan</option>
-                    <option value="Snezhnaya" >Snezhnaya</option>
-                </select>
-
-                <input type="date">
-
-                <input
-                    type="number"
-                    min="1"
-                    value="2"
-                    placeholder="Travelers"
-                >
-
-                <input placeholder="Phone number">
-
-                <textarea
-                    class="full"
-                    placeholder="Questions or special requests"
-                ></textarea>
-
-                <button
-                    class="btn btn-primary full"
-                    type="submit"
-                >
-                    SUBMIT INQUIRY
-                </button>
-
-            </form>
-
-            <div
-                class="success-note"
-                id="successNote"
-            ></div>
-
-        </div>
-
-    </div>
-
-    <!-- SHARED JAVASCRIPT: Handles navigation, scrolling, search, and booking interactions -->
-<script src="js/app.js"></script>
-
-</body>
+        <!-- SHARED JAVASCRIPT: Handles navigation, scrolling, search, and booking interactions -->
+        <script src="js/app.js">
+        </script>
+    </body>
 </html>

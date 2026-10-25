@@ -167,36 +167,7 @@
     font-size: 14px;
 }
 
-/* Main highlight spans the first row; the other two stops sit below. */
-.region-page .stop-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
-}
-
-.region-page .stop-card {
-    min-width: 0;
-    padding: 14px 14px 24px;
-}
-
-.region-page .stop-card-primary {
-    grid-column: 1 / -1;
-}
-
-.region-page .stop-card img {
-    display: block;
-    height: 230px;
-}
-
-.region-page .stop-card-primary img {
-    height: clamp(260px, 32vw, 380px);
-}
-
-.region-page .stop-card h3 {
-    margin: 14px 6px 0;
-    line-height: 1.15;
-    overflow-wrap: anywhere;
-}
-
+/* Featured-stop layout uses the original equal-card rules in style.css. */
 .region-page .stop-kicker {
     margin: 20px 6px 0;
     color: #405570;
@@ -229,18 +200,6 @@
 }
 
 @media (max-width: 620px) {
-    .region-page .stop-grid {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 20px;
-    }
-
-    .region-page .stop-card img {
-        height: 210px;
-    }
-
-    .region-page .stop-card-primary img {
-        height: 260px;
-    }
 
     .region-page .signature-price {
         width: 210px;
