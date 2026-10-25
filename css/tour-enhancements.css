@@ -167,22 +167,100 @@
     font-size: 14px;
 }
 
-/* Featured-stop layout uses the original equal-card rules in style.css. */
+/* FEATURED STOPS: Equal-size photo cards with descriptions on interaction. */
+.region-page .featured {
+    padding-inline: clamp(16px, 3vw, 56px);
+}
+
+.region-page .stop-grid {
+    max-width: 1440px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.region-page .stop-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 560px;
+    min-height: 0;
+    padding: 12px 12px 22px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Flex allows the photograph to make room without resizing the card. */
+.region-page .stop-card img {
+    display: block;
+    width: 100%;
+    height: 0;
+    min-height: 180px;
+    flex: 1 1 0;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.region-page .stop-card h3 {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin: 18px 4px 0;
+    font-size: clamp(26px, 2.2vw, 34px);
+    line-height: 1.12;
+}
+
+/* Also hides the old label if a cached page still contains it. */
 .region-page .stop-kicker {
-    margin: 20px 6px 0;
-    color: #405570;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: .12em;
-    text-transform: uppercase;
+    display: none;
 }
 
 .region-page .stop-description {
-    margin: 14px 6px 0;
-    max-width: 75ch;
+    flex: 0 1 auto;
+    min-height: 0;
+    max-height: 0;
+    margin: 0 4px;
+    overflow: hidden;
+    opacity: 0;
     color: #344052;
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.6;
+    transition: max-height .3s ease, opacity .2s ease, margin .3s ease;
+}
+
+/* Hover, keyboard focus, and tapping a focusable card reveal the copy. */
+.region-page .stop-card:is(:hover, :focus-within) .stop-description {
+    max-height: 260px;
+    margin-top: 16px;
+    overflow-y: auto;
+    opacity: 1;
+}
+
+.region-page .stop-card:focus-visible {
+    outline: 3px solid #e8b735;
+    outline-offset: 5px;
+}
+
+@media (max-width: 1000px) {
+    .region-page .stop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .region-page .stop-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 520px;
+    }
+
+    .region-page .stop-card {
+        height: 540px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .region-page .stop-description {
+        transition: none;
+    }
 }
 
 @media (max-width: 900px) {
