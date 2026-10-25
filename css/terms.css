@@ -1,0 +1,84 @@
+/* BOOKING CONSENT: Checkbox and an underlined link to the separate terms page. */
+.booking-agreement {
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.booking-agreement > span {
+    text-align: left;
+}
+
+.booking-agreement label {
+    cursor: pointer;
+}
+
+.booking-agreement a,
+.terms-page a:not(.back-home) {
+    color: #e2c58a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.booking-agreement a:hover,
+.terms-page a:not(.back-home):hover {
+    color: #fff3d5;
+}
+
+/* TERMS PAGE: Full-width layout with responsive side padding. */
+.terms-page {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 32px clamp(20px, 5vw, 96px) 60px;
+}
+
+.terms-heading {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #42516a;
+}
+
+.terms-heading h1 {
+    margin-bottom: 16px;
+}
+
+.terms-heading > p:last-child,
+.terms-section p,
+.terms-contact p {
+    color: #d2dbe8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.terms-section {
+    margin-bottom: 28px;
+}
+
+.terms-section h2,
+.terms-contact h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    color: #f4e3bd;
+}
+
+.terms-section p {
+    margin: 0;
+}
+
+.terms-contact {
+    margin-top: 38px;
+    padding-top: 24px;
+    border-top: 1px solid #42516a;
+}
+
+/* MOBILE: Keep the consent row aligned when its text wraps. */
+@media (max-width: 620px) {
+    .booking-agreement {
+        align-items: flex-start;
+    }
+
+    .booking-agreement input {
+        margin-top: 4px;
+    }
+}

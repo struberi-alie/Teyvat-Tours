@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="#bookingModal" data-book="">
+                <a class="tt-nav-link tt-contact" href="inquiry.html">
                     Contact Us
                     <span aria-hidden="true">✦</span>
                 </a>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#packages">VIEW TOUR PACKAGES</a>
-                        <button class="btn btn-outline" data-book="">INQUIRE</button>
+                        <a class="btn btn-outline" href="inquiry.html">INQUIRE</a>
                     </div>
                 </div>
             </section>
@@ -329,7 +329,7 @@
                     <div>
                         <h4>TRAVEL SERVICES</h4>
                         <a href="#packages">Tour Packages</a>
-                        <a href="#" data-book="">Plan Your Journey</a>
+                        <a href="booking.html">Plan Your Journey</a>
                         <a href="#packages">Travel Guide</a>
                         <a href="#packages">Destinations</a>
                         <a href="#">FAQ's</a>
@@ -338,7 +338,7 @@
                         <h4>ABOUT US</h4>
                         <a href="#about">Our Story</a>
                         <a href="#about">Why Travel With Us</a>
-                        <a href="#" data-book="">Contact Us</a>
+                        <a href="inquiry.html">Contact Us</a>
                         <a href="#">Terms & Conditions</a>
                         <a href="#">Privacy Policy</a>
                     </div>
@@ -362,34 +362,6 @@
                 </div>
             </div>
         </footer>
-        <div class="modal" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="bookingTitle" >
-            <div class="modal-card">
-                <button class="modal-close" id="modalClose" aria-label="Close inquiry form" type="button" >×</button>
-                <h2 id="bookingTitle">Begin Your Journey</h2>
-                <p>Send your preferred travel details. This prototype keeps the interaction front-end only.</p>
-                <form id="bookingForm" class="form-grid" >
-                    <input required placeholder="Full name" >
-                    <input required type="email" placeholder="Email" >
-                    <select id="regionSelect">
-                        <option value="Mondstadt" >Mondstadt</option>
-                        <option value="Liyue" >Liyue</option>
-                        <option value="Inazuma" >Inazuma</option>
-                        <option value="Sumeru" >Sumeru</option>
-                        <option value="Fontaine" >Fontaine</option>
-                        <option value="Natlan" >Natlan</option>
-                        <option value="Snezhnaya" >Snezhnaya</option>
-                    </select>
-                    <input type="date">
-                    <input type="number" min="1" value="2" placeholder="Travelers" >
-                    <input placeholder="Phone number">
-                    <textarea class="full" placeholder="Questions or special requests" >
-                    </textarea>
-                    <button class="btn btn-primary full" type="submit" >SUBMIT INQUIRY</button>
-                </form>
-                <div class="success-note" id="successNote" >
-                </div>
-            </div>
-        </div>
         <!-- JAVASCRIPT -->
         <script src="js/app.js">
         </script>
