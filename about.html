@@ -7,59 +7,40 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="page-about about-page">
-        
         <!-- NAV BAR -->
         <header class="tt-header">
             <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
-                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true"> <!--CHANGE-->
-                <span>
-                    TEYVAT TOURS
-                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
-                </span>
+                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true">
+                <span>TEYVAT TOURS <small>SEVEN NATIONS. ONE JOURNEY.</small></span>
             </a>
             <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
                 <span aria-hidden="true">☰</span>
             </button>
+
             <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
                 <div class="tt-destinations" id="ttDestinations">
-                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
-                        Destinations
-                        <span class="tt-chevron" aria-hidden="true"></span>
-                    </button>
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">Destinations <span class="tt-chevron" aria-hidden="true"></span></button>
                     <div class="tt-panel" id="ttDestinationPanel" hidden>
                         <div class="tt-panel-heading">
                             <span>EXPLORE TEYVAT</span>
                         </div>
                         <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
-
-                        <ul class="tt-region-list" id="destinationList">
-                        </ul>
+                        <ul class="tt-region-list" id="destinationList"></ul>
 
                         <template id="destinationTemplate">
                             <li>
                                 <a class="tt-region">
-                                    <span class="tt-emblem">
-                                        <img alt="">
-                                    </span>
-                                    <span>
-                                        <strong data-destination-name></strong>
-                                        <small data-destination-description></small>
-                                    </span>
+                                    <span class="tt-emblem"><img alt=""></span>
+                                    <span><strong data-destination-name=""></strong> <small data-destination-description=""></small></span>
                                     <span class="tt-arrow" aria-hidden="true">↗</span>
                                 </a>
                             </li>
                         </template>
-                        <a class="tt-all-tours" href="index.html#packages">
-                            View all tour packages
-                            <span aria-hidden="true">→</span>
-                        </a>
+                        <a class="tt-all-tours" href="index.html#packages">View all tour packages <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">
-                    Contact Us
-                    <span aria-hidden="true">✦</span>
-                </a>
+                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
 
@@ -67,10 +48,10 @@
         <main>
             <!-- ABOUT HERO: Agency introduction and brand icon -->
             <section class="about-hero">
-                <a class="back-link" href="index.html" aria-label="Back to homepage">←</a>
+                <a class="back-link" href="index.html" aria-label="Back to homepage"><img src="assets/images/back-icon.png" alt=""></a>
                 <div class="about-hero-inner">
                     <div class="about-icon-wrap">
-                        <img src="assets/images/tt-logo-about-us.png" alt="Teyvat Tours icon">
+                        <img src="assets/images/tt-logo.png" alt="Teyvat Tours icon">
                     </div>
                     <div class="about-hero-copy">
                         <p class="eyebrow">ABOUT US</p>
@@ -78,11 +59,13 @@
                     </div>
                 </div>
             </section>
+
             <!-- ABOUT DETAILS: Company profile, mission, vision, and director -->
             <section class="about-content">
                 <div class="about-grid">
                     <div class="about-left">
                         <h2 class="about-section-title">COMPANY PROFILE</h2>
+
                         <article class="profile-card" id="company-profile">
                             <div class="company-heading">
                                 <div class="company-mark">
@@ -99,12 +82,14 @@
                         <div class="mission-vision" id="mission-vision">
                             <div class="mini-block">
                                 <h3>MISSION</h3>
+
                                 <article class="mini-card">
                                     <p>To bridge the seven nations of Teyvat by providing safe, reliable, and accessible travel experiences for all—demystifying regional boundaries, ensuring absolute transit security, and transforming complex continental journeys into seamless, unforgettable memories for every traveler, family, and explorer.</p>
                                 </article>
                             </div>
                             <div class="mini-block">
                                 <h3>VISION</h3>
+
                                 <article class="mini-card">
                                     <p>To be Teyvat’s most trusted and unified travel network, where geographical hazards, political divides, and cultural barriers are replaced by open doors, seamless logistics, and a shared wonder for the world we all call home.</p>
                                 </article>
@@ -113,9 +98,10 @@
                     </div>
                     <div class="about-right">
                         <h2 class="about-section-title">DIRECTOR</h2>
+
                         <article class="director-card">
                             <div class="director-intro">
-                                <img class="director-photo" src="assets/images/lumine.jpg" alt="Director Lumine" >
+                                <img class="director-photo" src="assets/images/lumine.jpg" alt="Director Lumine">
                                 <div class="director-identity">
                                     <h3>Lumine</h3>
                                     <p>Grand Merchant &amp; Founder</p>
@@ -145,7 +131,6 @@
                 </div>
             </div>
         </footer>
-
 
         <!-- SHARED JAVASCRIPT: Controls navigation and shared site interactions -->
         <script src="js/app.js">

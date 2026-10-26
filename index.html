@@ -7,75 +7,53 @@
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body class="page-index home">
-        <!-- NAV BAR -->
+
+<!-- NAV BAR -->
         <header class="tt-header">
             <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
-                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true"> <!--CHANGE-->
-                <span>
-                    TEYVAT TOURS
-                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
-                </span>
+                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true">
+                <span>TEYVAT TOURS <small>SEVEN NATIONS. ONE JOURNEY.</small></span>
             </a>
             <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
                 <span aria-hidden="true">☰</span>
             </button>
+
             <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
                 <div class="tt-destinations" id="ttDestinations">
-                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
-                        Destinations
-                        <span class="tt-chevron" aria-hidden="true"></span>
-                    </button>
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">Destinations <span class="tt-chevron" aria-hidden="true"></span></button>
                     <div class="tt-panel" id="ttDestinationPanel" hidden>
                         <div class="tt-panel-heading">
                             <span>EXPLORE TEYVAT</span>
                         </div>
                         <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
-
-                        <ul class="tt-region-list" id="destinationList">
-                        </ul>
+                        <ul class="tt-region-list" id="destinationList"></ul>
 
                         <template id="destinationTemplate">
                             <li>
                                 <a class="tt-region">
-                                    <span class="tt-emblem">
-                                        <img alt="">
-                                    </span>
-                                    <span>
-                                        <strong data-destination-name></strong>
-                                        <small data-destination-description></small>
-                                    </span>
+                                    <span class="tt-emblem"><img alt=""></span>
+                                    <span><strong data-destination-name=""></strong> <small data-destination-description=""></small></span>
                                     <span class="tt-arrow" aria-hidden="true">↗</span>
                                 </a>
                             </li>
                         </template>
-                        <a class="tt-all-tours" href="#packages">
-                            View all tour packages
-                            <span aria-hidden="true">→</span>
-                        </a>
+                        <a class="tt-all-tours" href="#packages">View all tour packages <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">
-                    Contact Us
-                    <span aria-hidden="true">✦</span>
-                </a>
+                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
 
-
-        <!-- MAIN CONTENT-Homepage hero, tour packages, and quick links -->
+<!-- MAIN CONTENT: Homepage hero, tour packages, and quick links -->
         <main>
-            <!-- HOME HERO-Main intro, CTA buttons, and destination search -->
+
+<!-- HOME HERO: Main intro, CTA buttons, and destination search -->
             <section class="home-hero">
                 <div class="home-hero-inner">
                     <div>
-                        <div class="hero-kicker">
-                            TEYVAT TOURS
-                        </div>
-                        <h1 class="home-title">
-                            WHERE EVERY NATION
-                            <span>TELLS A STORY</span>
-                        </h1>
+                        <div class="hero-kicker">TEYVAT TOURS</div>
+                        <h1 class="home-title">WHERE EVERY NATION <span>TELLS A STORY</span></h1>
                     </div>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#packages">VIEW TOUR PACKAGES</a>
@@ -83,240 +61,210 @@
                     </div>
                 </div>
             </section>
-            <!-- Package cards -->
+
+<!-- Package cards -->
             <section class="packages" id="packages">
                 <h2 class="section-label">TOUR PACKAGES</h2>
                 <div class="package-stack">
-                    <!-- MONDSTADT TOUR CARD -->
-                    <article class="package-theme-mondstadt package-card" data-search="Mondstadt THE CITY OF FREEDOM EXPEDITION Cider Lake Windrise Grand Cathedral" >
+<!-- MONDSTADT TOUR CARD -->
+                    <article class="package-theme-mondstadt package-card" data-search="Mondstadt THE CITY OF FREEDOM EXPEDITION Cider Lake Windrise Grand Cathedral">
                         <div class="package-info">
                             <h2>Mondstadt</h2>
                             <h3>THE CITY OF FREEDOM EXPEDITION</h3>
                             <p>Experience the romantic charm of windmills, rolling green hills, and historic stone architecture. Perfect for travelers looking for a relaxing nature getaway.</p>
-                            <div class="price-chip">
-                                Base Price: ₱12,500/person
-                                <br>
-                                3 Days / 2 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱12,500/person<br> 3 Days / 2 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/Cider_Lake.jpg" alt="Cider Lake" >
+                                <img src="assets/images/Cider_Lake.jpg" alt="Cider Lake">
                                 <span>Cider Lake</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/windrise.webp" alt="Windrise" >
+                                <img src="assets/images/windrise.webp" alt="Windrise">
                                 <span>Windrise</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/grand_cathedral.webp" alt="Grand Cathedral" >
+                                <img src="assets/images/grand_cathedral.webp" alt="Grand Cathedral">
                                 <span>Grand Cathedral</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/mondstadt_icon.webp" alt="Mondstadt symbol" >
+                            <img src="assets/images/mondstadt_icon.webp" alt="Mondstadt symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="mondstadt.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="mondstadt.html">VIEW PACKAGE</a>
                     </article>
 
-
-                    <!-- LIYUE TOUR CARD -->
-                    <article class="package-theme-liyue package-card" data-search="Liyue THE HARBOR OF STONE AND COMMERCE Liyue Harbor Mt. Aocang Wangshu Inn" >
+<!-- LIYUE TOUR CARD -->
+                    <article class="package-theme-liyue package-card" data-search="Liyue THE HARBOR OF STONE AND COMMERCE Liyue Harbor Mt. Aocang Wangshu Inn">
                         <div class="package-info">
                             <h2>Liyue</h2>
                             <h3>THE HARBOR OF STONE AND COMMERCE</h3>
                             <p>A bustling port city tour blending breathtaking mountain ranges, ancient folklore, and world-class culinary adventures.</p>
-                            <div class="price-chip">
-                                Base Price: ₱15,000/person
-                                <br>
-                                4 Days / 3 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱15,000/person<br> 4 Days / 3 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/liyue_harbor.jpg" alt="Liyue Harbor" >
+                                <img src="assets/images/liyue_harbor.jpg" alt="Liyue Harbor">
                                 <span>Liyue Harbor</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/mount_aocang.jpg" alt="Mt. Aocang" >
+                                <img src="assets/images/mount_aocang.jpg" alt="Mt. Aocang">
                                 <span>Mt. Aocang</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/wangshu_inn.jpg" alt="Wangshu Inn" >
+                                <img src="assets/images/wangshu_inn.jpg" alt="Wangshu Inn">
                                 <span>Wangshu Inn</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/liyue_icon.webp" alt="Liyue symbol" >
+                            <img src="assets/images/liyue_icon.webp" alt="Liyue symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="liyue.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="liyue.html">VIEW PACKAGE</a>
                     </article>
 
-
-                    <!-- INAZUMA TOUR CARD -->
-                    <article class="package-theme-inazuma package-card" data-search="Inazuma THE REALM OF ETERNAL THUNDER Narukami Island Grand Shrine Ritou Trading Port Tenshukaku" >
+<!-- INAZUMA TOUR CARD -->
+                    <article class="package-theme-inazuma package-card" data-search="Inazuma THE REALM OF ETERNAL THUNDER Narukami Island Grand Shrine Ritou Trading Port Tenshukaku">
                         <div class="package-info">
                             <h2>Inazuma</h2>
                             <h3>THE REALM OF ETERNAL THUNDER</h3>
                             <p>Discover a culturally rich archipelago featuring striking purple foliage, traditional shrines, and serene coastal views.</p>
-                            <div class="price-chip">
-                                Base Price: ₱18,000/person
-                                <br>
-                                4 Days / 3 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱18,000/person<br> 4 Days / 3 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/narukami_island_grand_shrine.jpg" alt="Narukami Island Grand Shrine" >
+                                <img src="assets/images/narukami_island_grand_shrine.jpg" alt="Narukami Island Grand Shrine">
                                 <span>Narukami Island Grand Shrine</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/ritou_trading.jpg" alt="Ritou Trading Port" >
+                                <img src="assets/images/ritou_trading.jpg" alt="Ritou Trading Port">
                                 <span>Ritou Trading Port</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/tenshukaku.jpg" alt="Tenshukaku" >
+                                <img src="assets/images/tenshukaku.jpg" alt="Tenshukaku">
                                 <span>Tenshukaku</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/inazuma_icon.webp" alt="Inazuma symbol" >
+                            <img src="assets/images/inazuma_icon.webp" alt="Inazuma symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="inazuma.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="inazuma.html">VIEW PACKAGE</a>
                     </article>
 
-
-                    <!-- SUMERU TOUR CARD -->
-                    <article class="package-theme-sumeru package-card" data-search="Sumeru THE CITY OF WISDOM & RAINFOREST RETREAT Sumeru City Academy Gandharva Ville Caravan Ribat" >
+<!-- SUMERU TOUR CARD -->
+                    <article class="package-theme-sumeru package-card" data-search="Sumeru THE CITY OF WISDOM &amp; RAINFOREST RETREAT Sumeru City Academy Gandharva Ville Caravan Ribat">
                         <div class="package-info">
                             <h2>Sumeru</h2>
-                            <h3>THE CITY OF WISDOM & RAINFOREST RETREAT</h3>
+                            <h3>THE CITY OF WISDOM &amp; RAINFOREST RETREAT</h3>
                             <p>A dual-environment journey taking you from the majestic halls of learning to the dense, mystical canopies of the rainforest.</p>
-                            <div class="price-chip">
-                                Base Price: ₱14,000/person
-                                <br>
-                                3 Days / 3 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱14,000/person<br> 3 Days / 3 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/sumeru_city_academy.png" alt="Sumeru City Academy" >
+                                <img src="assets/images/sumeru_city_academy.png" alt="Sumeru City Academy">
                                 <span>Sumeru City Academy</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/Gandharva_ville.jpg" alt="Gandharva Ville" >
+                                <img src="assets/images/Gandharva_ville.jpg" alt="Gandharva Ville">
                                 <span>Gandharva Ville</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/caravan_ribat.webp" alt="Caravan Ribat" >
+                                <img src="assets/images/caravan_ribat.webp" alt="Caravan Ribat">
                                 <span>Caravan Ribat</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/sumeru_icon.webp" alt="Sumeru symbol" >
+                            <img src="assets/images/sumeru_icon.webp" alt="Sumeru symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="sumeru.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="sumeru.html">VIEW PACKAGE</a>
                     </article>
 
-
-                    <!-- FONTAINE TOUR CARD -->
-                    <article class="package-theme-fontaine package-card" data-search="Fontaine THE CAPITAL OF JUSTICE, STEAM, AND AQUATICS Court of Fontaine Opera Epiclese Lucine Fountain" >
+<!-- FONTAINE TOUR CARD -->
+                    <article class="package-theme-fontaine package-card" data-search="Fontaine THE CAPITAL OF JUSTICE, STEAM, AND AQUATICS Court of Fontaine Opera Epiclese Lucine Fountain">
                         <div class="package-info">
                             <h2>Fontaine</h2>
                             <h3>THE CAPITAL OF JUSTICE, STEAM, AND AQUATICS</h3>
                             <p>Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine water.</p>
-                            <div class="price-chip">
-                                Base Price: ₱20,000/person
-                                <br>
-                                5 Days / 4 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱20,000/person<br> 5 Days / 4 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/court_of_fontaine.jpg" alt="Court of Fontaine" >
+                                <img src="assets/images/court_of_fontaine.jpg" alt="Court of Fontaine">
                                 <span>Court of Fontaine</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/opera_epiclese.jpg" alt="Opera Epiclese" >
+                                <img src="assets/images/opera_epiclese.jpg" alt="Opera Epiclese">
                                 <span>Opera Epiclese</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/lucine_fountaine.jpg" alt="Lucine Fountain" >
+                                <img src="assets/images/lucine_fountaine.jpg" alt="Lucine Fountain">
                                 <span>Lucine Fountain</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/fontaine_icon.webp" alt="Fontaine symbol" >
+                            <img src="assets/images/fontaine_icon.webp" alt="Fontaine symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="fontaine.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="fontaine.html">VIEW PACKAGE</a>
                     </article>
 
-
-                    <!-- NATLAN TOUR CARD -->
-                    <article class="package-theme-natlan package-card" data-search="Natlan THE LAND OF ASH, HOT SPRINGS, AND VALOR Tepecac Stadium Children of the Echoes Canyon People of the Springs basin" >
+<!-- NATLAN TOUR CARD -->
+                    <article class="package-theme-natlan package-card" data-search="Natlan THE LAND OF ASH, HOT SPRINGS, AND VALOR Tepecac Stadium Children of the Echoes Canyon People of the Springs basin">
                         <div class="package-info">
                             <h2>Natlan</h2>
                             <h3>THE LAND OF ASH, HOT SPRINGS, AND VALOR</h3>
                             <p>An energetic adventure featuring dramatic volcanic landscapes, therapeutic thermal springs, and vibrant tribal festivals.</p>
-                            <div class="price-chip">
-                                Base Price: ₱16,500/person
-                                <br>
-                                4 Days / 3 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱16,500/person<br> 4 Days / 3 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/tepecac_stadium.jpg" alt="Tepecac Stadium" >
+                                <img src="assets/images/tepecac_stadium.jpg" alt="Tepecac Stadium">
                                 <span>Tepecac Stadium</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/Children _of_the_Echoes_Canyon.webp" alt="Children of the Echoes Canyon" >
+                                <img src="assets/images/Children _of_the_Echoes_Canyon.webp" alt="Children of the Echoes Canyon">
                                 <span>Children of the Echoes Canyon</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/the_People_of_the_Springs_basin..webp" alt="People of the Springs basin" >
+                                <img src="assets/images/the_People_of_the_Springs_basin..webp" alt="People of the Springs basin">
                                 <span>People of the Springs basin</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/natlan_icon.webp" alt="Natlan symbol" >
+                            <img src="assets/images/natlan_icon.webp" alt="Natlan symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="natlan.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="natlan.html">VIEW PACKAGE</a>
                     </article>
-                    <!-- SNEZHNAYA TOUR CARD -->
-                    <article class="package-theme-snezhnaya package-card" data-search="Snezhnaya THE ETERNAL WHITE TUNDRA Zapolyarny Palace Frost-bound Valleys Glacial Outposts" >
+
+<!-- SNEZHNAYA TOUR CARD -->
+                    <article class="package-theme-snezhnaya package-card" data-search="Snezhnaya THE ETERNAL WHITE TUNDRA Zapolyarny Palace Frost-bound Valleys Glacial Outposts">
                         <div class="package-info">
                             <h2>Snezhnaya</h2>
                             <h3>THE ETERNAL WHITE TUNDRA</h3>
                             <p>A majestic winter expedition exploring frosted architectural marvels, grand palaces, and cozy alpine chalets under the aurora.</p>
-                            <div class="price-chip">
-                                Base Price: ₱22,000/person
-                                <br>
-                                5 Days / 4 Nights
-                            </div>
+                            <div class="price-chip">Base Price: ₱22,000/person<br> 5 Days / 4 Nights</div>
                         </div>
                         <div class="package-circles">
                             <div class="circle-stop">
-                                <img src="assets/images/zapolyarny_palace_outskirt.jpg" alt="Zapolyarny Palace" >
+                                <img src="assets/images/zapolyarny_palace_outskirt.jpg" alt="Zapolyarny Palace">
                                 <span>Zapolyarny Palace</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/frost_bound_Valleys.jpg" alt="Frost-bound Valleys" >
+                                <img src="assets/images/frost_bound_Valleys.jpg" alt="Frost-bound Valleys">
                                 <span>Frost-bound Valleys</span>
                             </div>
                             <div class="circle-stop">
-                                <img src="assets/images/glacial_outpost.jpg" alt="Glacial Outposts" >
+                                <img src="assets/images/glacial_outpost.jpg" alt="Glacial Outposts">
                                 <span>Glacial Outposts</span>
                             </div>
                         </div>
                         <div class="nation-ribbon">
-                            <img src="assets/images/snezhnaya_icon.webp" alt="Snezhnaya symbol" >
+                            <img src="assets/images/snezhnaya_icon.webp" alt="Snezhnaya symbol">
                         </div>
-                        <a class="btn btn-gold view-btn" href="snezhnaya.html" >VIEW PACKAGE</a>
+                        <a class="btn btn-gold view-btn" href="snezhnaya.html">VIEW PACKAGE</a>
                     </article>
                 </div>
             </section>
-            <!-- HOME QUICK LINKS -->
+
+<!-- HOME QUICK LINKS -->
             <section class="home-footer-top">
                 <div class="social-mini">
                     <span>f</span>
@@ -348,33 +296,31 @@
                         <a href="about.html#company-profile">Our Story</a>
                         <a href="about.html#mission-vision">Why Travel With Us</a>
                         <a href="inquiry.html">Contact Us</a>
-                        <a href="terms.html">Terms & Conditions</a>
+                        <a href="terms.html">Terms &amp; Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </div>
                 </div>
             </section>
-        <!-- TRAVEL GUIDE AND FAQ: Native details controls work without JavaScript. -->
-        <section class="travel-faq" id="travel-faq" aria-labelledby="faq-title">
-            <h2 id="faq-title">Before You Travel</h2>
-            <details>
-                <summary>How do I choose a tour package?</summary>
-                <p>Compare the seven nations in the tour catalog. Open a package to view its starting price, duration, and three featured stops.</p>
-            </details>
-            <details>
-                <summary>How can I plan my journey?</summary>
-                <p>Open the <a href="booking.html">booking page</a>, choose your destination, and enter your preferred date and traveler details. Read the terms before proceeding.</p>
-            </details>
-            <details>
-                <summary>Where can I ask about inclusions or special requests?</summary>
-                <p>Use the <a href="inquiry.html">inquiry page</a> for questions about packages, travel dates, accommodations, and inclusions.</p>
-            </details>
-            <details>
-                <summary>Does this website take payments or confirm reservations?</summary>
-                <p>This project currently demonstrates the booking interface. It does not process payments or create a confirmed reservation.</p>
-            </details>
-        </section>
+
+<!-- TRAVEL GUIDE AND FAQ: Native details controls work without JavaScript. -->
+            <section class="travel-faq" id="travel-faq" aria-labelledby="faq-title">
+                <h2 id="faq-title">Before You Travel</h2>
+                <details>
+                    <summary>How do I choose a tour package?</summary>
+                    <p>Compare the seven nations in the tour catalog. Open a package to view its starting price, duration, and three featured stops.</p>
+                </details>
+                <details>
+                    <summary>How can I plan my journey?</summary>
+                    <p>Open the <a href="booking.html">booking page</a>, choose your destination, and enter your preferred date and traveler details. Read the terms before proceeding.</p>
+                </details>
+                <details>
+                    <summary>Where can I ask about inclusions or special requests?</summary>
+                    <p>Use the <a href="inquiry.html">inquiry page</a> for questions about packages, travel dates, accommodations, and inclusions.</p>
+                </details>
+            </section>
         </main>
-        <!--FOOTER -->
+
+<!-- FOOTER -->
         <footer class="site-footer" id="about">
             <p class="footer-tagline">Seven nations. Endless journey. One unforgettable adventure.</p>
             <div class="footer-bottom">
@@ -383,7 +329,7 @@
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms and Conditions</a>
                 </div>
-                <div class="socials" aria-label="Social media" >
+                <div class="socials" aria-label="Social media">
                     <span class="social-placeholder" role="img" aria-label="Facebook">f</span>
                     <span class="social-placeholder" role="img" aria-label="Instagram">◎</span>
                     <span class="social-placeholder" role="img" aria-label="TikTok">♪</span>
@@ -391,7 +337,8 @@
                 </div>
             </div>
         </footer>
-        <!-- JAVASCRIPT -->
+
+<!-- JAVASCRIPT -->
         <script src="js/app.js">
         </script>
     </body>

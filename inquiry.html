@@ -1,104 +1,81 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inquiry — Teyvat Tours</title>
-    <link rel="stylesheet" href="css/travel-forms.css">
-</head>
-<body>
-    <main class="form-shell">
-        <a 
-        class="back-home" 
-        href="index.html" 
-        aria-label="Back to homepage">←
-        </a>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Inquiry — Teyvat Tours</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <main class="form-shell">
+            <a class="back-home" href="index.html" aria-label="Back to homepage"><img src="assets/images/back-icon.png" alt=""></a>
 
-        <header class="form-heading">
-            <h1>
-                How can we help you?
-            </h1>
-            <p>
-                Tell us about your trip or request.
-            </p></header>
+            <header class="form-heading">
+                <h1>How can we help you?</h1>
+                <p>Tell us about your trip or request.</p>
+            </header>
 
-
-        <form action="inquiry.html#received" method="get">
-            <div class="inquiry-topic field">
-                <label for="topic">
-                    I would like to inquire about
-                </label>
-                <select id="topic" required>
-                    <option value="" selected disabled>Select a topic</option>
-                    <option>Tours and packages</option>
-                    <option>Travel dates</option>
-                    <option>Inclusions</option>
-                    <option>Accommodations</option>
-                    <option>Others</option>
-                </select>
-                <small>Choose the option that best fits your inquiry.</small>
-            </div>
-            <fieldset>
-                <legend>Traveler information</legend>
-                <div class="field-grid">
-                    <div class="field">
-                        <label for="full-name">Full name</label>
-                        <input id="full-name" type="text" autocomplete="name" required>
-                    </div>
-                    <div class="field">
-                        <label for="email">Email address</label>
-                        <input id="email" type="email" autocomplete="email" required>
-                    </div>
-                    <div class="field">
-                        <label for="phone">Contact number</label>
-                        <input id="phone" type="tel" autocomplete="tel" required>
-                    </div>
-                    <div class="field">
-                        <label for="inquiry-destination">Preferred destination</label>
-                        <select id="inquiry-destination" required>
-                            <option value="" selected disabled>Pick your preferred destination</option>
-                            <option value="mondstadt">Mondstadt</option>
-                            <option value="liyue">Liyue</option>
-                            <option value="inazuma">Inazuma</option>
-                            <option value="sumeru">Sumeru</option>
-                            <option value="fontaine">Fontaine</option>
-                            <option value="natlan">Natlan</option>
-                            <option value="snezhnaya">Snezhnaya</option>
-                        </select>
-                    </div>
+            <form action="inquiry.html#received" method="get">
+                <div class="inquiry-topic field">
+                    <label for="topic">I would like to inquire about</label>
+                    <select id="topic" required>
+                        <option value="" selected disabled>Select a topic</option>
+                        <option>Tours and packages</option>
+                        <option>Travel dates</option>
+                        <option>Inclusions</option>
+                        <option>Accommodations</option>
+                        <option>Others</option>
+                    </select>
+                    <small>Choose the option that best fits your inquiry.</small>
                 </div>
-            </fieldset>
-            <fieldset>
-                <legend>
-                    How can we help you?
-                </legend>
-                <label class="sr-only" for="message">
-                    Your inquiry
-                </label>
-                <textarea id="message" 
-                rows="5" 
-                placeholder="Please tell us about your inquiry." 
-                required>
-                </textarea>
-            </fieldset>
-            <div class="submit-area">
-                <button class="action-button" 
-                type="submit">Submit
-                </button>
-            </div>
-        </form>
-        <section class="status-screen" id="received" aria-labelledby="inquiry-received">
-            <div class="status-card">
-                <h2 id="inquiry-received">
-                    Thank you for your inquiry
-                </h2>
-                <a class="action-button dark" 
-                href="index.html">
-                Done
-                </a>
-            </div>
-        </section>
 
-    </main>
-</body>
+                <fieldset>
+                    <legend>Traveler information</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="full-name">Full name</label>
+                            <input id="full-name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input id="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Contact number</label>
+                            <input id="phone" type="tel" autocomplete="tel" required>
+                        </div>
+                        <div class="field">
+                            <label for="inquiry-destination">Preferred destination</label>
+                            <select id="inquiry-destination" required>
+                                <option value="" selected disabled>Pick your preferred destination</option>
+                                <option value="mondstadt">Mondstadt</option>
+                                <option value="liyue">Liyue</option>
+                                <option value="inazuma">Inazuma</option>
+                                <option value="sumeru">Sumeru</option>
+                                <option value="fontaine">Fontaine</option>
+                                <option value="natlan">Natlan</option>
+                                <option value="snezhnaya">Snezhnaya</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>How can we help you?</legend>
+                    <label class="sr-only" for="message">Your inquiry</label>
+                    <textarea id="message" rows="5" placeholder="Please tell us about your inquiry." required></textarea>
+                </fieldset>
+                <div class="submit-area">
+                    <button class="action-button" type="submit">Submit</button>
+                </div>
+            </form>
+
+            <section class="status-screen" id="received" aria-labelledby="inquiry-received">
+                <div class="status-card">
+                    <h2 id="inquiry-received">Thank you for your inquiry</h2>
+                    <a class="action-button dark" href="index.html">Done</a>
+                </div>
+            </section>
+        </main>
+    </body>
 </html>
