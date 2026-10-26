@@ -3094,3 +3094,25 @@ body.about-page {
     }
 
 }
+
+
+/* ==========================================================
+   DESTINATION SECTION HEIGHTS — Desktop only.
+   Hero, Signature Package, and Featured Stops share equal rows.
+   The tallest section (normally Featured Stops) sets the height.
+   Images and cards keep their existing sizes.
+   ========================================================== */
+@media (min-width: 901px) {
+    .region-page > main {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: 1fr;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    .region-page > main > section {
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
