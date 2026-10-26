@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Booking — Teyvat Tours</title>
+        <link rel="stylesheet" href="css/travel-forms.css">
+        <link rel="stylesheet" href="css/terms.css">
+    </head>
+    <body>
+        <main class="form-shell">
+            <a class="back-home" href="index.html" aria-label="Back to homepage">←</a>
+            <header class="form-heading">
+                <p class="eyebrow">Ready to travel</p>
+                <h1>Book your journey</h1>
+                <p>Complete the details below to schedule your next escape.</p>
+            </header>
+            <form action="booking.html#confirmation" method="get" id="booking-form">
+                <!-- DESTINATION: Related form fields grouped together. -->
+                <fieldset class="destination-section">
+                    <legend>Destination</legend>
+                    <div class="field">
+                        <label for="destination">Choose your destination</label>
+                        <select id="destination" required>
+                            <option value="" selected disabled>Pick your preferred destination</option>
+                            <option value="mondstadt">Mondstadt</option>
+                            <option value="liyue">Liyue</option>
+                            <option value="inazuma">Inazuma</option>
+                            <option value="sumeru">Sumeru</option>
+                            <option value="fontaine">Fontaine</option>
+                            <option value="natlan">Natlan</option>
+                            <option value="snezhnaya">Snezhnaya</option>
+                        </select>
+                    </div>
+                    <div class="destination-previews">
+                        <p class="destination-placeholder">Choose a destination to preview its photograph, price, and trip duration.</p>
+                        <!-- MONDSTADT PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="mondstadt">
+                            <img src="assets/images/mondstadt.jpg" alt="Mondstadt landscape">
+                            <div>
+                                <h2>Mondstadt</h2>
+                                <p class="package-meta">₱12,500 per person · 3 Days / 2 Nights</p>
+                                <p>Experience the romantic charm of windmills, rolling green hills, and historic stone architecture. Perfect for travelers looking for a relaxing nature getaway.</p>
+                                <a href="mondstadt.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- LIYUE PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="liyue">
+                            <img src="assets/images/liyue.webp" alt="Liyue landscape">
+                            <div>
+                                <h2>Liyue</h2>
+                                <p class="package-meta">₱15,000 per person · 4 Days / 3 Nights</p>
+                                <p>A bustling port city tour blending breathtaking mountain ranges, ancient folklore, and world-class culinary adventures.</p>
+                                <a href="liyue.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- INAZUMA PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="inazuma">
+                            <img src="assets/images/inazuma.jpg" alt="Inazuma landscape">
+                            <div>
+                                <h2>Inazuma</h2>
+                                <p class="package-meta">₱18,000 per person · 4 Days / 3 Nights</p>
+                                <p>Discover a culturally rich archipelago featuring striking purple foliage, traditional shrines, and serene coastal views.</p>
+                                <a href="inazuma.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- SUMERU PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="sumeru">
+                            <img src="assets/images/sumeru.jpg" alt="Sumeru landscape">
+                            <div>
+                                <h2>Sumeru</h2>
+                                <p class="package-meta">₱14,000 per person · 3 Days / 3 Nights</p>
+                                <p>A dual-environment journey taking you from the majestic halls of learning to the dense, mystical canopies of the rainforest.</p>
+                                <a href="sumeru.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- FONTAINE PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="fontaine">
+                            <img src="assets/images/fontaine(1).png" alt="Fontaine landscape">
+                            <div>
+                                <h2>Fontaine</h2>
+                                <p class="package-meta">₱20,000 per person · 5 Days / 4 Nights</p>
+                                <p>Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine water.</p>
+                                <a href="fontaine.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- NATLAN PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="natlan">
+                            <img src="assets/images/natlan.png" alt="Natlan landscape">
+                            <div>
+                                <h2>Natlan</h2>
+                                <p class="package-meta">₱16,500 per person · 4 Days / 3 Nights</p>
+                                <p>An energetic adventure featuring dramatic volcanic landscapes,
+                therapeutic thermal springs, and vibrant tribal festivals.</p>
+                                <a href="natlan.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                        <!-- SNEZHNAYA PACKAGE PREVIEW -->
+                        <article class="destination-preview" data-region="snezhnaya">
+                            <img src="assets/images/snezhnaya.jpg" alt="Snezhnaya landscape">
+                            <div>
+                                <h2>Snezhnaya</h2>
+                                <p class="package-meta">₱22,000 per person · 5 Days / 4 Nights</p>
+                                <p>A majestic winter expedition exploring frosted architectural marvels, grand palaces, and cozy alpine chalets under the aurora.</p>
+                                <a href="snezhnaya.html">View package details and inclusions →</a>
+                            </div>
+                        </article>
+                    </div>
+                </fieldset>
+                <!-- TRAVELER INFORMATION: Related form fields grouped together. -->
+                <fieldset>
+                    <legend>Traveler information</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="full-name">Full name</label>
+                            <input id="full-name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input id="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Contact number</label>
+                            <input id="phone" type="tel" autocomplete="tel" required>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- TRIP DETAILS: Related form fields grouped together. -->
+                <fieldset>
+                    <legend>Trip details</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="travel-date">Travel date</label>
+                            <input id="travel-date" type="date" required>
+                        </div>
+                        <div class="field">
+                            <span class="field-label">Number of travelers</span>
+                            <div class="traveler-counts">
+                                <div class="field">
+                                    <label for="adults">Adults</label>
+                                    <input id="adults" type="number" min="1" max="99" value="1" required>
+                                </div>
+                                <div class="field">
+                                    <label for="children">Children</label>
+                                    <input id="children" type="number" min="0" max="99" value="0" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <!-- SPECIAL REQUEST: Related form fields grouped together. -->
+                <fieldset>
+                    <legend>Special request</legend>
+                    <label class="sr-only" for="requests">Special requests (optional)</label>
+                    <textarea id="requests" rows="4" placeholder="Let us know about accessibility needs or other requests (optional)."></textarea>
+                </fieldset>
+                <!-- PAYMENT METHOD: Related form fields grouped together. -->
+                <fieldset>
+                    <legend>Payment method</legend>
+                    <div class="payment-options">
+                        <label>
+                            <input type="radio" name="payment" value="gcash" required> GCash</label>
+                        <label>
+                            <input type="radio" name="payment" value="card"> Credit card / Debit card</label>
+                        <label>
+                            <input type="radio" name="payment" value="bank"> Bank transfer</label>
+                    </div>
+                </fieldset>
+                <div class="submit-area">
+                    <!-- Required consent; the terms open separately to preserve form entries. -->
+                    <div class="agreement booking-agreement">
+                        <input id="agree-terms" type="checkbox" required aria-labelledby="agreement-text">
+                        <span id="agreement-text">
+                            <label for="agree-terms">I agree to the</label>
+                            <button
+                                class="terms-link"
+                                type="button"
+                                popovertarget="terms-overlay"
+                                popovertargetaction="show"
+                                aria-haspopup="dialog"
+                            >
+                                Terms and Conditions
+                            </button>.
+                        </span>
+                    </div>
+                    <button class="action-button" type="submit">Confirm booking</button>
+                </div>
+            </form>
+            <!-- CONFIRMATION: Opened by the form action using CSS :target. -->
+            <section class="status-screen" id="confirmation" aria-labelledby="confirm-title">
+                <div class="status-card">
+                    <p class="eyebrow">Ready to travel?</p>
+                    <h2 id="confirm-title">Are you sure you want to continue booking?</h2>
+                    <div class="status-actions">
+                        <a class="action-button outline" href="booking.html">Cancel</a>
+                        <a class="action-button dark" href="#received">Confirm</a>
+                    </div>
+                </div>
+            </section>
+            <!-- COMPLETION SCREEN: Done returns to the homepage. -->
+            <section class="status-screen" id="received" aria-labelledby="received-title">
+                <div class="status-card">
+                    <h2 id="received-title">Booking request received</h2>
+                    <p>Thank you for choosing Teyvat Tours!</p>
+                    <a class="action-button dark" href="index.html">Done</a>
+                </div>
+            </section>
+
+            <!-- TERMS OVERLAY: Native HTML popover; no JavaScript required.
+                 Closing this panel preserves the existing booking form entries. -->
+            <section
+                id="terms-overlay"
+                class="terms-overlay"
+                popover="auto"
+                role="dialog"
+                aria-labelledby="terms-overlay-title"
+            >
+                <header class="terms-overlay-header">
+                    <button
+                        class="terms-back"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                        aria-label="Back to booking"
+                    >
+                        ←
+                    </button>
+                    <h2 id="terms-overlay-title">Terms and Conditions</h2>
+                </header>
+
+                <!-- Reuse terms.html as the scrollable content of the overlay. -->
+                <iframe
+                    class="terms-frame"
+                    src="terms.html#embedded"
+                    title="Teyvat Tours booking terms and conditions"
+                ></iframe>
+
+                <footer class="terms-overlay-actions">
+                    <button
+                        class="terms-action terms-action-primary"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                    >
+                        I Understand
+                    </button>
+                    <button
+                        class="terms-action terms-action-secondary"
+                        type="button"
+                        popovertarget="terms-overlay"
+                        popovertargetaction="hide"
+                    >
+                        Cancel
+                    </button>
+                </footer>
+            </section>
+        </main>
+    </body>
+</html>

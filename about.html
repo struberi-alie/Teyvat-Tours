@@ -1,545 +1,154 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>About Us — Teyvat Tours</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/tour-enhancements.css">
-
-    <style>
-        /* ABOUT PAGE BASE: Overall colors and default page styling */
-        body.about-page {
-            margin: 0;
-            background: #0d1930;
-            color: #071b3d;
-        }
-
-        /* ABOUT HERO: Intro banner and background image */
-        .about-hero {
-            position: relative;
-            min-height: 420px;
-            background:
-                linear-gradient(rgba(255,255,255,.06), rgba(255,255,255,.06)),
-                url("assets/images/about-us.jpg") center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            padding: 70px 5%;
-            overflow: hidden;
-        }
-
-        .about-hero-inner {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-        }
-
-        .about-icon-wrap {
-            width: 125px;
-            height: 125px;
-            border: 4px solid #0b2a5d;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(255,255,255,.08);
-            flex: 0 0 auto;
-        }
-
-        .about-icon-wrap img {
-            width: 78px;
-            height: 78px;
-            object-fit: contain;
-        }
-
-        .about-hero-copy .eyebrow {
-            margin: 0 0 5px;
-            color: #fff;
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: .02em;
-        }
-
-        .about-hero-copy h1 {
-            margin: 0;
-
-            color: #0b1c3e;
-
-            font-family: var(--serif);
-            font-size: clamp(58px, 4.8vw, 78px);
-            font-weight: 700;
-            line-height: .88;
-
-            text-shadow: 0 1px 0 rgba(255,255,255,.15);
-        }
-        /* ABOUT CONTENT: Main profile, mission, vision, and director area */
-        .about-content {
-            position: relative;
-            padding: 55px 3% 70px;
-            background:
-                linear-gradient(rgba(18,56,150,.76), rgba(24,134,220,.56)),
-                url("assets/images/about-us.jpg") center 58%/cover fixed no-repeat;
-        }
-
-        .about-grid {
-            max-width: 1250px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.08fr .92fr;
-            gap: 24px;
-            align-items: start;
-        }
-
-        .about-section-title {
-            margin: 0 0 14px;
-            color: #fff;
-            font-family: Georgia, serif;
-            font-size: 28px;
-            font-weight: 800;
-            letter-spacing: .02em;
-        }
-
-        .profile-card,
-        .director-card,
-        .mini-card {
-            background: #fff;
-            border-radius: 18px;
-        }
-
-        .profile-card {
-            padding: 30px 24px 28px;
-        }
-
-        .company-heading {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 20px;
-        }
-
-        .company-mark {
-            width: 58px;
-            height: 58px;
-            border: 3px solid #e8ab2e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex: 0 0 auto;
-        }
-
-        .company-mark img {
-            width: 38px;
-            height: 38px;
-            object-fit: contain;
-        }
-
-        .company-heading h2 {
-            margin: 0;
-            font-family: Georgia, serif;
-            font-size: 26px;
-            letter-spacing: .05em;
-        }
-
-        .company-heading span {
-            display: block;
-            margin-top: 2px;
-            font-size: 12px;
-        }
-
-        .profile-card p,
-        .director-card p {
-            margin: 0;
-            font-size: 21px;
-            line-height: 1.25;
-        }
-
-        .mission-vision {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-            margin-top: 6px;
-        }
-
-        .mini-block h3 {
-            margin: 12px 0 10px 4px;
-            color: #fff;
-            font-family: Georgia, serif;
-            font-size: 26px;
-        }
-
-        .mini-card {
-            min-height: 265px;
-            padding: 20px 22px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .mini-card p {
-            margin: 0;
-            font-size: 18px;
-            line-height: 1.55;
-        }
-
-        .director-card {
-            padding: 28px 26px 34px;
-        }
-
-        .director-photo {
-            width: 205px;
-            height: 205px;
-            object-fit: cover;
-            border-radius: 16px;
-            display: block;
-            margin-bottom: 34px;
-        }
-
-        .director-intro {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            gap: 24px;
-            margin-bottom: 28px;
-        }
-
-        .director-intro .director-photo {
-            flex: 0 0 auto;
-            margin-bottom: 0;
-        }
-
-        .director-identity {
-            flex: 1 1 160px;
-        }
-
-        .director-identity h3 {
-            margin: 0 0 8px;
-            font-family: var(--serif);
-            font-size: clamp(32px, 3vw, 44px);
-            line-height: 1.1;
-        }
-
-        .director-identity p {
-            margin: 0;
-            font-family: var(--serif);
-            font-size: 22px;
-            line-height: 1.3;
-        }
-
-        .about-hero .back-link {
-            background: #0b2a5d;
-        }
-
-        .site-footer.about-footer {
-            background: #111927;
-        }
-
-        /* TABLET RESPONSIVE: Stacks content and reduces large elements */
-        @media (max-width: 900px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mission-vision {
-                grid-template-columns: 1fr;
-            }
-
-            .about-hero-inner {
-                align-items: flex-start;
-            }
-
-            .about-icon-wrap {
-                width: 90px;
-                height: 90px;
-            }
-
-            .about-icon-wrap img {
-                width: 58px;
-                height: 58px;
-            }
-
-            .profile-card p,
-            .director-card p {
-                font-size: 17px;
-            }
-        }
-
-        /* MOBILE RESPONSIVE: Compact layout for smaller screens */
-        @media (max-width: 600px) {
-            .about-hero {
-                min-height: 330px;
-                padding: 45px 20px;
-            }
-
-            .about-hero-inner {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .about-content {
-                padding-left: 18px;
-                padding-right: 18px;
-            }
-
-            .director-photo {
-                width: 160px;
-                height: 160px;
-            }
-        }
-    </style>
-</head>
-
-<body class="about-page">
-
-    <!-- SITE HEADER: Shared Teyvat Tours navigation -->
-<header class="site-header">
-        <a class="brand" href="index.html">
-            <span class="brand-mark">✦</span>
-            <span>TEYVAT TOURS</span>
-        </a>
-
-        <nav class="desktop-nav">
-            <div class="nation-menu">
-                <a href="mondstadt.html">Mondstadt<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Mondstadt featured stops">
-                    <li><a href="mondstadt.html#cider-lake">Cider Lake</a></li>
-                    <li><a href="mondstadt.html#windrise">Windrise</a></li>
-                    <li><a href="mondstadt.html#grand-cathedral">Grand Cathedral</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="liyue.html">Liyue<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Liyue featured stops">
-                    <li><a href="liyue.html#liyue-harbor">Liyue Harbor</a></li>
-                    <li><a href="liyue.html#mt-aocang">Mt. Aocang</a></li>
-                    <li><a href="liyue.html#wangshu-inn">Wangshu Inn</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="inazuma.html">Inazuma<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Inazuma featured stops">
-                    <li><a href="inazuma.html#narukami-island-grand-shrine">Narukami Island Grand Shrine</a></li>
-                    <li><a href="inazuma.html#ritou-trading-port">Ritou Trading Port</a></li>
-                    <li><a href="inazuma.html#tenshukaku">Tenshukaku</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="sumeru.html">Sumeru<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Sumeru featured stops">
-                    <li><a href="sumeru.html#sumeru-city-academy">Sumeru City Academy</a></li>
-                    <li><a href="sumeru.html#gandharva-ville">Gandharva Ville</a></li>
-                    <li><a href="sumeru.html#caravan-ribat">Caravan Ribat</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="fontaine.html">Fontaine<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Fontaine featured stops">
-                    <li><a href="fontaine.html#court-of-fontaine">Court of Fontaine</a></li>
-                    <li><a href="fontaine.html#opera-epiclese">Opera Epiclese</a></li>
-                    <li><a href="fontaine.html#lucine-fountain">Lucine Fountain</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="natlan.html">Natlan<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Natlan featured stops">
-                    <li><a href="natlan.html#tepecac-stadium">Tepecac Stadium</a></li>
-                    <li><a href="natlan.html#children-of-the-echoes-canyon">Children of the Echoes Canyon</a></li>
-                    <li><a href="natlan.html#people-of-the-springs-basin">People of the Springs basin</a></li>
-                </ul>
-            </div>
-            <div class="nation-menu">
-                <a href="snezhnaya.html">Snezhnaya<span class="nav-caret" aria-hidden="true">▾</span></a>
-                <ul class="nation-stops" aria-label="Snezhnaya featured stops">
-                    <li><a href="snezhnaya.html#zapolyarny-palace">Zapolyarny Palace</a></li>
-                    <li><a href="snezhnaya.html#frost-bound-valleys">Frost-bound Valleys</a></li>
-                    <li><a href="snezhnaya.html#glacial-outposts">Glacial Outposts</a></li>
-                </ul>
-            </div>
-            <a class="active" href="about.html">About Us</a>
-        </nav>
-
-        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
-
-    <div class="drawer-backdrop" id="drawerBackdrop"></div>
-
-    <!-- MOBILE DRAWER: Region links for smaller screens -->
-<aside class="drawer" id="drawer">
-        <button class="drawer-close" id="drawerClose" aria-label="Close navigation">×</button>
-
-        <nav>
-            <a class="big-link" href="index.html">HOME</a>
-            <span class="big-link">EXPLORE</span>
-
-            <div class="nation-list">
-                <a href="mondstadt.html"><img src="assets/images/mondstadt_icon.webp" alt="">Mondstadt</a>
-                <a href="liyue.html"><img src="assets/images/liyue_icon.webp" alt="">Liyue</a>
-                <a href="inazuma.html"><img src="assets/images/inazuma_icon.webp" alt="">Inazuma</a>
-                <a href="sumeru.html"><img src="assets/images/sumeru_icon.webp" alt="">Sumeru</a>
-                <a href="fontaine.html"><img src="assets/images/fontaine_icon.webp" alt="">Fontaine</a>
-                <a href="natlan.html"><img src="assets/images/natlan_icon.webp" alt="">Natlan</a>
-                <a href="snezhnaya.html"><img src="assets/images/snezhnaya_icon.webp" alt="">Snezhnaya</a>
-            </div>
-
-            <a class="big-link" href="index.html#inquire" data-book="">INQUIRE</a>
-            <a class="big-link" href="about.html">ABOUT US</a>
-        </nav>
-
-        <div class="drawer-settings">
-            <img src="assets/images/settings_icon.webp" alt="">
-            Settings
-        </div>
-    </aside>
-
-<!-- MAIN CONTENT: Company information and director profile -->
-<main>
-
-    <!-- ABOUT HERO: Agency introduction and brand icon -->
-    <section class="about-hero">
-        <a class="back-link" href="index.html" aria-label="Back to homepage">←</a>
-            <div class="about-hero-inner">
-
-                <div class="about-icon-wrap">
-                    <img src="assets/images/teyvaticon.png" alt="Teyvat Tours icon">
-                </div>
-
-                <div class="about-hero-copy">
-                    <p class="eyebrow">ABOUT US</p>
-                    <h1>Your Trusted Travel Partner</h1>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- ABOUT DETAILS: Company profile, mission, vision, and director -->
-<section class="about-content">
-            <div class="about-grid">
-
-                <div class="about-left">
-                    <h2 class="about-section-title">COMPANY PROFILE</h2>
-
-                    <article class="profile-card">
-                        <div class="company-heading">
-
-                            <div class="company-mark">
-                                <img src="assets/images/teyvaticon.png" alt="">
-                            </div>
-
-                            <div>
-                                <h2>TEYVAT TOURS</h2>
-                                <span>Travel Agency</span>
-                            </div>
-
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>About Us — Teyvat Tours</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body class="page-about about-page">
+        
+        <!-- NAV BAR -->
+        <header class="tt-header">
+            <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
+                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true"> <!--CHANGE-->
+                <span>
+                    TEYVAT TOURS
+                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
+                </span>
+            </a>
+            <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
+                <span aria-hidden="true">☰</span>
+            </button>
+            <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
+                <div class="tt-destinations" id="ttDestinations">
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
+                        Destinations
+                        <span class="tt-chevron" aria-hidden="true"></span>
+                    </button>
+                    <div class="tt-panel" id="ttDestinationPanel" hidden>
+                        <div class="tt-panel-heading">
+                            <span>EXPLORE TEYVAT</span>
                         </div>
+                        <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
 
-                        <p>
-                            Founded by a legendary former traveler, Teyvat Tours is a premier,
-                            sole-proprietor travel agency dedicated to safe transit across the Seven Nations.
-                            We specialize in navigating high-risk terrain, bypassing localized storms,
-                            and providing elite diplomatic clearance through the Knights of Favonius,
-                            the Liyue Qixing, and the Yashiro Commission.
-                        </p>
-                    </article>
+                        <ul class="tt-region-list" id="destinationList">
+                        </ul>
 
-                    <div class="mission-vision">
-
-                        <div class="mini-block">
-                            <h3>MISSION</h3>
-
-                            <article class="mini-card">
-                                <p>
-                                    To bridge the seven nations of Teyvat by providing safe, reliable,
-                                    and accessible travel experiences for all—demystifying regional
-                                    boundaries, ensuring absolute transit security, and transforming
-                                    complex continental journeys into seamless, unforgettable memories
-                                    for every traveler, family, and explorer.
-                                </p>
-                            </article>
-                        </div>
-
-                        <div class="mini-block">
-                            <h3>VISION</h3>
-
-                            <article class="mini-card">
-                                <p>
-                                    To be Teyvat’s most trusted and unified travel network, where
-                                    geographical hazards, political divides, and cultural barriers are
-                                    replaced by open doors, seamless logistics, and a shared wonder
-                                    for the world we all call home.
-                                </p>
-                            </article>
-                        </div>
-
+                        <template id="destinationTemplate">
+                            <li>
+                                <a class="tt-region">
+                                    <span class="tt-emblem">
+                                        <img alt="">
+                                    </span>
+                                    <span>
+                                        <strong data-destination-name></strong>
+                                        <small data-destination-description></small>
+                                    </span>
+                                    <span class="tt-arrow" aria-hidden="true">↗</span>
+                                </a>
+                            </li>
+                        </template>
+                        <a class="tt-all-tours" href="index.html#packages">
+                            View all tour packages
+                            <span aria-hidden="true">→</span>
+                        </a>
                     </div>
                 </div>
+                <a class="tt-nav-link" href="about.html">About Us</a>
+                <a class="tt-nav-link tt-contact" href="inquiry.html">
+                    Contact Us
+                    <span aria-hidden="true">✦</span>
+                </a>
+            </nav>
+        </header>
 
-                <div class="about-right">
-                    <h2 class="about-section-title">DIRECTOR</h2>
-
-                    <article class="director-card">
-
-                        <div class="director-intro">
-                            <img
-                                class="director-photo"
-                                src="assets/images/lumine.jpg"
-                                alt="Director Lumine"
-                            >
-                            <div class="director-identity">
-                                <h3>Lumine</h3>
-                                <p>Grand Merchant &amp; Founder</p>
+        <!-- MAIN CONTENT: Company information and director profile -->
+        <main>
+            <!-- ABOUT HERO: Agency introduction and brand icon -->
+            <section class="about-hero">
+                <a class="back-link" href="index.html" aria-label="Back to homepage">←</a>
+                <div class="about-hero-inner">
+                    <div class="about-icon-wrap">
+                        <img src="assets/images/tt-logo-about-us.png" alt="Teyvat Tours icon">
+                    </div>
+                    <div class="about-hero-copy">
+                        <p class="eyebrow">ABOUT US</p>
+                        <h1>Your Trusted Travel Partner</h1>
+                    </div>
+                </div>
+            </section>
+            <!-- ABOUT DETAILS: Company profile, mission, vision, and director -->
+            <section class="about-content">
+                <div class="about-grid">
+                    <div class="about-left">
+                        <h2 class="about-section-title">COMPANY PROFILE</h2>
+                        <article class="profile-card" id="company-profile">
+                            <div class="company-heading">
+                                <div class="company-mark">
+                                    <img src="assets/images/tt-logo-about-us.png" alt="">
+                                </div>
+                                <div>
+                                    <h2>TEYVAT TOURS</h2>
+                                    <span>Travel Agency</span>
+                                </div>
+                            </div>
+                            <p>Founded by a legendary former traveler, Teyvat Tours is a premier, sole-proprietor travel agency dedicated to safe transit across the Seven Nations.</p>
+                            <p>We specialize in navigating high-risk terrain, bypassing localized storms, and providing elite diplomatic clearance through the Knights of Favonius, the Liyue Qixing, and the Yashiro Commission.</p>
+                        </article>
+                        <div class="mission-vision" id="mission-vision">
+                            <div class="mini-block">
+                                <h3>MISSION</h3>
+                                <article class="mini-card">
+                                    <p>To bridge the seven nations of Teyvat by providing safe, reliable, and accessible travel experiences for all—demystifying regional boundaries, ensuring absolute transit security, and transforming complex continental journeys into seamless, unforgettable memories for every traveler, family, and explorer.</p>
+                                </article>
+                            </div>
+                            <div class="mini-block">
+                                <h3>VISION</h3>
+                                <article class="mini-card">
+                                    <p>To be Teyvat’s most trusted and unified travel network, where geographical hazards, political divides, and cultural barriers are replaced by open doors, seamless logistics, and a shared wonder for the world we all call home.</p>
+                                </article>
                             </div>
                         </div>
-
-                        <p>
-                            Director Lumine is an outlander and legendary pioneer who personally
-                            charted the safe routes utilized by this agency. Having successfully
-                            walked the paths of Mondstadt, Liyue, Inazuma, Sumeru, Fontaine,
-                            Natlan, and Snezhnaya, she retired from active wandering to establish
-                            Teyvat's first unified logistics network. Her unparalleled firsthand
-                            knowledge of regional Ley Lines and localized hazards guarantees a
-                            zero-casualty rate for all guided expeditions.
-                        </p>
-
-                    </article>
+                    </div>
+                    <div class="about-right">
+                        <h2 class="about-section-title">DIRECTOR</h2>
+                        <article class="director-card">
+                            <div class="director-intro">
+                                <img class="director-photo" src="assets/images/lumine.jpg" alt="Director Lumine" >
+                                <div class="director-identity">
+                                    <h3>Lumine</h3>
+                                    <p>Grand Merchant &amp; Founder</p>
+                                </div>
+                            </div>
+                            <p>Director Lumine is an outlander and legendary pioneer who personally charted the safe routes utilized by this agency. Having successfully walked the paths of Mondstadt, Liyue, Inazuma, Sumeru, Fontaine, Natlan, and Snezhnaya, she retired from active wandering to establish Teyvat's first unified logistics network. Her unparalleled firsthand knowledge of regional Ley Lines and localized hazards guarantees a zero-casualty rate for all guided expeditions.</p>
+                        </article>
+                    </div>
                 </div>
+            </section>
+        </main>
 
+        <!-- SITE FOOTER: Tagline, legal links, and social media links -->
+        <footer class="site-footer about-footer" id="about">
+            <p class="footer-tagline">Seven nations. Endless journey. One unforgettable adventure.</p>
+            <div class="footer-bottom">
+                <div class="legal">
+                    <span>©2026 TeyvatTours</span>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms and Conditions</a>
+                </div>
+                <div class="socials" aria-label="Social media">
+                    <span class="social-placeholder" role="img" aria-label="Facebook">f</span>
+                    <span class="social-placeholder" role="img" aria-label="Instagram">◎</span>
+                    <span class="social-placeholder" role="img" aria-label="TikTok">♪</span>
+                    <span class="social-placeholder" role="img" aria-label="YouTube">▶</span>
+                </div>
             </div>
-        </section>
+        </footer>
 
-    </main>
 
-    <!-- SITE FOOTER: Tagline, legal links, and social media links -->
-<footer class="site-footer about-footer" id="about">
-        <p class="footer-tagline">
-            Seven nations. Endless journey. One unforgettable adventure.
-        </p>
-
-        <div class="footer-bottom">
-            <div class="legal">
-                <span>©2026 TeyvatTours</span>
-                <a href="#">Privacy</a>
-                <a href="#">Terms and Conditions</a>
-            </div>
-
-            <div class="socials" aria-label="Social media">
-                <a href="#" aria-label="Facebook">f</a>
-                <a href="#" aria-label="Instagram">◎</a>
-                <a href="#" aria-label="TikTok">♪</a>
-                <a href="#" aria-label="YouTube">▶</a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- SHARED JAVASCRIPT: Controls navigation and shared site interactions -->
-<script src="js/app.js"></script>
-
-</body>
+        <!-- SHARED JAVASCRIPT: Controls navigation and shared site interactions -->
+        <script src="js/app.js">
+        </script>
+    </body>
 </html>

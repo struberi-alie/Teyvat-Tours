@@ -1,0 +1,282 @@
+/* BOOKING CONSENT: Checkbox and an underlined link to the separate terms page. */
+.booking-agreement {
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.booking-agreement > span {
+    text-align: left;
+}
+
+.booking-agreement label {
+    cursor: pointer;
+}
+
+.booking-agreement a,
+.terms-page a:not(.back-home) {
+    color: #e2c58a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.booking-agreement a:hover,
+.terms-page a:not(.back-home):hover {
+    color: #fff3d5;
+}
+
+/* TERMS PAGE: Full-width layout with responsive side padding. */
+.terms-page {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 32px clamp(20px, 5vw, 96px) 60px;
+}
+
+.terms-heading {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #42516a;
+}
+
+.terms-heading h1 {
+    margin-bottom: 16px;
+}
+
+.terms-heading > p:last-child,
+.terms-section p,
+.terms-contact p {
+    color: #d2dbe8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.terms-section {
+    margin-bottom: 28px;
+}
+
+.terms-section h2,
+.terms-contact h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    color: #3542b6;
+}
+
+.terms-section p {
+    margin: 0;
+}
+
+.terms-contact {
+    margin-top: 38px;
+    padding-top: 24px;
+    border-top: 1px solid #3542b6;
+}
+
+/* MOBILE: Keep the consent row aligned when its text wraps. */
+@media (max-width: 620px) {
+    .booking-agreement {
+        align-items: flex-start;
+    }
+
+    .booking-agreement input {
+        margin-top: 4px;
+    }
+}
+
+/* UNDERLINED TERMS CONTROL: Styled as a link, opens the native HTML popover. */
+.terms-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #e2c58a;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.terms-link:hover {
+    color: #fff3d5;
+}
+
+/* OVERLAY PANEL: Centered with the booking page visible around its edges. */
+.terms-overlay {
+    width: min(760px, calc(100vw - 40px));
+    height: min(820px, calc(100dvh - 64px));
+    max-height: calc(100dvh - 64px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #c0c8d5;
+    border-radius: 12px;
+    background: #e0e1e4;
+    color: #142139;
+    box-shadow: 0 24px 90px #0007;
+    overflow: hidden;
+}
+
+/* Keep the panel hidden until its popover is open. */
+.terms-overlay:popover-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-overlay::backdrop {
+    background: rgb(3 12 27 / 55%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+body:has(.terms-overlay:popover-open) {
+    overflow: hidden;
+}
+
+.terms-overlay-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    padding: 18px 24px;
+    border-bottom: 1px solid #b8c1d0;
+}
+
+.terms-overlay-header h2 {
+    margin: 0;
+    color: #b8860b;
+    font-size: 26px;
+}
+
+.terms-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #142139;
+    border-radius: 50%;
+    background: transparent;
+    color: #142139;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Only the terms content scrolls; the back button and footer stay visible. */
+.terms-frame {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: #e0e1e4;
+}
+
+.terms-overlay-actions,
+.terms-standalone-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px 24px;
+}
+
+.terms-overlay-actions {
+    flex-shrink: 0;
+    border-top: 1px solid #b8c1d0;
+}
+
+.terms-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    min-width: 150px;
+    padding: 10px 22px;
+    border: 1px solid #142139;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.terms-action-primary,
+.terms-page a.terms-action-primary {
+    background: #061a38;
+    color: #fff;
+    text-decoration: none;
+}
+
+.terms-action-secondary,
+.terms-page a.terms-action-secondary {
+    background: #f7f7f5;
+    color: #142139;
+    text-decoration: none;
+}
+
+/* EMBEDDED TERMS: Reuse the same document with a light panel theme.
+   Its own navigation is hidden because the parent overlay supplies close controls. */
+body:has(.terms-page:target) {
+    background: #e0e1e4;
+    color: #142139;
+}
+
+.terms-page:target {
+    padding: 24px 30px;
+}
+
+.terms-page:target > .back-home,
+.terms-page:target > .terms-standalone-actions,
+.terms-page:target .terms-heading h1 {
+    display: none;
+}
+
+.terms-page:target .terms-heading > p:last-child,
+.terms-page:target .terms-section p,
+.terms-page:target .terms-contact p {
+    color: #344259;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.terms-page:target .terms-section h2,
+.terms-page:target .terms-contact h2 {
+    color: #b8860b;
+    font-size: 23px;
+}
+
+.terms-page:target a:not(.back-home) {
+    color: #184b83;
+}
+
+/* MOBILE: Retain a visible margin around the overlay. */
+@media (max-width: 620px) {
+    .terms-overlay {
+        width: calc(100vw - 24px);
+        height: calc(100dvh - 32px);
+        max-height: calc(100dvh - 32px);
+    }
+
+    .terms-overlay-header {
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .terms-overlay-header h2 {
+        font-size: 21px;
+    }
+
+    .terms-overlay-actions {
+        gap: 10px;
+        padding: 14px 12px;
+    }
+
+    .terms-overlay-actions .terms-action {
+        flex: 1;
+        min-width: 0;
+        padding-inline: 12px;
+    }
+
+    .terms-page:target {
+        padding: 20px;
+    }
+}
