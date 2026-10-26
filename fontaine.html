@@ -6,218 +6,117 @@
         <title>Fontaine — Teyvat Tours</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="page-fontaine region-page" >
-
+    <body class="page-fontaine region-page">
         <!-- NAV BAR -->
         <header class="tt-header">
             <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
-                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true"> <!--CHANGE-->
-                <span>
-                    TEYVAT TOURS
-                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
-                </span>
+                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true">
+                <span>TEYVAT TOURS <small>SEVEN NATIONS. ONE JOURNEY.</small></span>
             </a>
             <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
                 <span aria-hidden="true">☰</span>
             </button>
+
             <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
                 <div class="tt-destinations" id="ttDestinations">
-                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
-                        Destinations
-                        <span class="tt-chevron" aria-hidden="true"></span>
-                    </button>
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">Destinations <span class="tt-chevron" aria-hidden="true"></span></button>
                     <div class="tt-panel" id="ttDestinationPanel" hidden>
                         <div class="tt-panel-heading">
                             <span>EXPLORE TEYVAT</span>
                         </div>
                         <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
-
-                        <ul class="tt-region-list" id="destinationList">
-                        </ul>
+                        <ul class="tt-region-list" id="destinationList"></ul>
 
                         <template id="destinationTemplate">
                             <li>
                                 <a class="tt-region">
-                                    <span class="tt-emblem">
-                                        <img alt="">
-                                    </span>
-                                    <span>
-                                        <strong data-destination-name></strong>
-                                        <small data-destination-description></small>
-                                    </span>
+                                    <span class="tt-emblem"><img alt=""></span>
+                                    <span><strong data-destination-name=""></strong> <small data-destination-description=""></small></span>
                                     <span class="tt-arrow" aria-hidden="true">↗</span>
                                 </a>
                             </li>
                         </template>
-                        <a class="tt-all-tours" href="index.html#packages">
-                            View all tour packages
-                            <span aria-hidden="true">→</span>
-                        </a>
+                        <a class="tt-all-tours" href="index.html#packages">View all tour packages <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">
-                    Contact Us
-                    <span aria-hidden="true">✦</span>
-                </a>
+                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
-<!-- ------------------------------------------------------------------------------------------->
+
+        <!-- ----------------------------------------------------------------------------------------- -->
         <main>
-        <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
-<section class="region-hero">
-
-            <a
-                class="back-link"
-                href="index.html"
-                aria-label="Back to all nations"
-            >
-                ←
-            </a>
-
-            <div class="region-copy">
-
-                <div class="catalog-label">
-                    TEYVAT REGION CATALOG
-                </div>
-
-                <h1 class="region-name">Fontaine</h1>
-
-                <div class="region-subtitle">
-                    The Capital of Justice, Steam, and Aquatics
-                </div>
-
-                <div class="hero-meta">
-
-                    <div>
-                        <div class="meta-label">FROM</div>
-                        <div class="meta-value">₱20,000</div>
-                        <div class="meta-note">per person</div>
+            <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
+            <section class="region-hero">
+                <a class="back-link" href="index.html" aria-label="Back to homepage"><img src="assets/images/back-icon.png" alt=""></a>
+                <div class="region-copy">
+                    <div class="catalog-label">TEYVAT REGION CATALOG</div>
+                    <h1 class="region-name">Fontaine</h1>
+                    <div class="region-subtitle">The Capital of Justice, Steam, and Aquatics</div>
+                    <div class="hero-meta">
+                        <div>
+                            <div class="meta-label">FROM</div>
+                            <div class="meta-value">₱20,000</div>
+                            <div class="meta-note">per person</div>
+                        </div>
+                        <div>
+                            <div class="meta-label">DURATION</div>
+                            <div class="meta-value">5 Days / 4 Nights</div>
+                        </div>
                     </div>
+                    <button class="btn btn-primary" data-scroll-featured="">Explore Featured Stops <span>→</span></button>
+                </div>
+                <div class="region-hero-image">
+                    <img src="assets/images/fontaine(1).jpg" alt="Fontaine landscape">
+                </div>
+            </section>
 
-                    <div>
-                        <div class="meta-label">DURATION</div>
-                        <div class="meta-value">5 Days / 4 Nights</div>
+            <!-- SIGNATURE PACKAGE: Main package image, description, duration, and price -->
+            <section class="signature">
+                <div class="signature-label">THE SIGNATURE PACKAGE</div>
+                <p class="signature-lead">Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine water.</p>
+                <div class="signature-card">
+                    <img src="assets/images/fontaine_heropage.jpg" alt="Fontaine signature destination">
+                    <div class="signature-price">
+                        <small>5 Days / 4 Nights</small>
+                        <strong>₱20,000</strong>
+                        <span>per person</span>
                     </div>
-
                 </div>
+            </section>
 
-                <button
-                    class="btn btn-primary"
-                    data-scroll-featured
-                >
-                    Explore Featured Stops <span>→</span>
-                </button>
-
-            </div>
-
-            <div class="region-hero-image">
-                <img
-                    src="assets/images/fontaine(1).jpg"
-                    alt="Fontaine landscape"
-                >
-            </div>
-
-        </section>
-
-
-        <!-- SIGNATURE PACKAGE: Main package image, description, duration, and price -->
-<section class="signature">
-
-            <div class="signature-label">
-                THE SIGNATURE PACKAGE
-            </div>
-
-            <p class="signature-lead">
-                Step into a picturesque hub of art, fashion, and advanced clockwork engineering surrounded by pristine water.
-            </p>
-
-            <div class="signature-card">
-
-                <img
-                    src="assets/images/fontaine_heropage.jpg"
-                    alt="Fontaine signature destination"
-                >
-
-                <div class="signature-price">
-                    <small>5 Days / 4 Nights</small>
-                    <strong>₱20,000</strong>
-                    <span>per person</span>
+            <!-- FEATURED STOPS: Three recommended attractions for this region -->
+            <section class="featured" id="featured">
+                <div class="featured-head">
+                    <div class="catalog-label">THREE PLACES, ONE JOURNEY</div>
+                    <h2>Featured Stops</h2>
                 </div>
+                <div class="stop-grid">
+                    <article id="court-of-fontaine" class="stop-card stop-card-primary" tabindex="0">
+                        <img src="assets/images/court_of_fontaine.jpg" alt="Court of Fontaine">
+                        <h3>Court of Fontaine</h3>
+                        <p class="stop-description">Begin at the Court of Fontaine and take in the city scenery. Explore its streets, admire the architecture, and find a favorite view to remember your visit.</p>
+                    </article>
 
-            </div>
+                    <article id="opera-epiclese" class="stop-card" tabindex="0">
+                        <img src="assets/images/opera_epiclese.jpg" alt="Opera Epiclese">
+                        <h3>Opera Epiclese</h3>
+                        <p class="stop-description">Visit Opera Epiclese for a closer look at one of the tour’s architectural highlights. Pause to appreciate the setting and capture its distinctive appearance.</p>
+                    </article>
 
-        </section>
-
-
-        <!-- FEATURED STOPS: Three recommended attractions for this region -->
-<section class="featured" id="featured">
-
-            <div class="featured-head">
-
-                <div class="catalog-label">
-                    THREE PLACES, ONE JOURNEY
+                    <article id="lucine-fountain" class="stop-card" tabindex="0">
+                        <img src="assets/images/lucine_fountaine.jpg" alt="Lucine Fountain">
+                        <h3>Lucine Fountain</h3>
+                        <p class="stop-description">Unwind at Lucine Fountain after exploring the city. Enjoy a peaceful pause and a final photo opportunity before continuing your Fontaine journey.</p>
+                    </article>
                 </div>
+                <div class="region-actions">
+                    <a class="btn btn-primary" href="booking.html">BEGIN YOUR JOURNEY</a>
+                    <a class="btn btn-outline" href="index.html#packages">EXPLORE OTHER NATION</a>
+                </div>
+            </section>
+        </main>
 
-                <h2>Featured Stops</h2>
-
-            </div>
-
-            <div class="stop-grid">
-
-                <article id="court-of-fontaine" class="stop-card stop-card-primary" tabindex="0">
-                    <img
-                        src="assets/images/court_of_fontaine.jpg"
-                        alt="Court of Fontaine"
-                    >
-
-                    <h3>Court of Fontaine</h3>
-
-                    <p class="stop-description">Begin at the Court of Fontaine and take in the city scenery. Explore its streets, admire the architecture, and find a favorite view to remember your visit.</p>
-                </article>
-
-                <article id="opera-epiclese" class="stop-card" tabindex="0">
-                    <img
-                        src="assets/images/opera_epiclese.jpg"
-                        alt="Opera Epiclese"
-                    >
-                    <h3>Opera Epiclese</h3>
-
-                    <p class="stop-description">Visit Opera Epiclese for a closer look at one of the tour’s architectural highlights. Pause to appreciate the setting and capture its distinctive appearance.</p>
-                </article>
-
-                <article id="lucine-fountain" class="stop-card" tabindex="0">
-                    <img
-                        src="assets/images/lucine_fountaine.jpg"
-                        alt="Lucine Fountain"
-                    >
-                    <h3>Lucine Fountain</h3>
-
-                    <p class="stop-description">Unwind at Lucine Fountain after exploring the city. Enjoy a peaceful pause and a final photo opportunity before continuing your Fontaine journey.</p>
-                </article>
-
-            </div>
-
-            <div class="region-actions">
-
-                <a
-                    class="btn btn-primary"
-                 href="booking.html">
-                    BEGIN YOUR JOURNEY
-                </a>
-
-                <a
-                    class="btn btn-outline"
-                    href="index.html#packages"
-                >
-                    EXPLORE OTHER NATION
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
         <!-- SITE FOOTER: Tagline, legal links, and social media links -->
         <footer class="site-footer" id="about">
             <p class="footer-tagline">Seven nations. Endless journey. One unforgettable adventure.</p>
@@ -227,7 +126,7 @@
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms and Conditions</a>
                 </div>
-                <div class="socials" aria-label="Social media" >
+                <div class="socials" aria-label="Social media">
                     <span class="social-placeholder" role="img" aria-label="Facebook">f</span>
                     <span class="social-placeholder" role="img" aria-label="Instagram">◎</span>
                     <span class="social-placeholder" role="img" aria-label="TikTok">♪</span>
@@ -235,6 +134,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- SHARED JAVASCRIPT: Handles existing navigation, scrolling, and search -->
         <script src="js/app.js">
         </script>

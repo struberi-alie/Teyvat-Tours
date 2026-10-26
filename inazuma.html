@@ -6,219 +6,113 @@
         <title>Inazuma — Teyvat Tours</title>
         <link rel="stylesheet" href="css/style.css">
     </head>
-    <body class="page-inazuma region-page" >
-        
+    <body class="page-inazuma region-page">
         <!-- NAV BAR -->
         <header class="tt-header">
             <a class="tt-brand" href="index.html" aria-label="Teyvat Tours home">
-                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true"> <!--CHANGE-->
-                <span>
-                    TEYVAT TOURS
-                    <small>SEVEN NATIONS. ONE JOURNEY.</small>
-                </span>
+                <img class="tt-brand-mark" src="assets/images/tt-logo.png" alt="" aria-hidden="true">
+                <span>TEYVAT TOURS <small>SEVEN NATIONS. ONE JOURNEY.</small></span>
             </a>
             <button class="tt-menu-toggle" id="ttMenuToggle" type="button" aria-expanded="false" aria-controls="ttNavigation" aria-label="Open navigation">
                 <span aria-hidden="true">☰</span>
             </button>
+
             <nav class="tt-navigation" id="ttNavigation" aria-label="Main navigation">
                 <div class="tt-destinations" id="ttDestinations">
-                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">
-                        Destinations
-                        <span class="tt-chevron" aria-hidden="true"></span>
-                    </button>
+                    <button class="tt-nav-link tt-destination-toggle" id="ttDestinationToggle" type="button" aria-expanded="false" aria-controls="ttDestinationPanel">Destinations <span class="tt-chevron" aria-hidden="true"></span></button>
                     <div class="tt-panel" id="ttDestinationPanel" hidden>
                         <div class="tt-panel-heading">
                             <span>EXPLORE TEYVAT</span>
                         </div>
                         <p class="tt-panel-intro">Seven nations. Where will you wander?</p>
-
-                        <ul class="tt-region-list" id="destinationList">
-                        </ul>
+                        <ul class="tt-region-list" id="destinationList"></ul>
 
                         <template id="destinationTemplate">
                             <li>
-                                <a class="tt-region">
-                                    <span class="tt-emblem">
-                                        <img alt="">
-                                    </span>
-                                    <span>
-                                        <strong data-destination-name></strong>
-                                        <small data-destination-description></small>
-                                    </span>
-                                </a>
+                                <a class="tt-region"><span class="tt-emblem"><img alt=""></span> <span><strong data-destination-name=""></strong> <small data-destination-description=""></small></span></a>
                             </li>
                         </template>
-                        <a class="tt-all-tours" href="index.html#packages">
-                            View all tour packages
-                            <span aria-hidden="true">→</span>
-                        </a>
+                        <a class="tt-all-tours" href="index.html#packages">View all tour packages <span aria-hidden="true">→</span></a>
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">
-                    Contact Us
-                    <span aria-hidden="true">✦</span>
-                </a>
+                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
 
         <!-- MAIN CONTENT: Region tour content begins here -->
         <main>
-
-        <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
-<section class="region-hero">
-
-            <a
-                class="back-link"
-                href="index.html"
-                aria-label="Back to all nations"
-            >
-                ←
-            </a>
-
-            <div class="region-copy">
-
-                <div class="catalog-label">
-                    TEYVAT REGION CATALOG
-                </div>
-
-                <h1 class="region-name">Inazuma</h1>
-
-                <div class="region-subtitle">
-                    The Realm of Eternal Thunder
-                </div>
-
-                <div class="hero-meta">
-
-                    <div>
-                        <div class="meta-label">FROM</div>
-                        <div class="meta-value">₱18,000</div>
-                        <div class="meta-note">per person</div>
+            <!-- REGION HERO: Title, description, price, duration, CTA, and hero image -->
+            <section class="region-hero">
+                <a class="back-link" href="index.html" aria-label="Back to homepage"><img src="assets/images/back-icon.png" alt=""></a>
+                <div class="region-copy">
+                    <div class="catalog-label">TEYVAT REGION CATALOG</div>
+                    <h1 class="region-name">Inazuma</h1>
+                    <div class="region-subtitle">The Realm of Eternal Thunder</div>
+                    <div class="hero-meta">
+                        <div>
+                            <div class="meta-label">FROM</div>
+                            <div class="meta-value">₱18,000</div>
+                            <div class="meta-note">per person</div>
+                        </div>
+                        <div>
+                            <div class="meta-label">DURATION</div>
+                            <div class="meta-value">4 Days / 3 Nights</div>
+                        </div>
                     </div>
+                    <button class="btn btn-primary" data-scroll-featured="">Explore Featured Stops <span>→</span></button>
+                </div>
+                <div class="region-hero-image">
+                    <img src="assets/images/inazuma.jpg" alt="Inazuma landscape">
+                </div>
+            </section>
 
-                    <div>
-                        <div class="meta-label">DURATION</div>
-                        <div class="meta-value">4 Days / 3 Nights</div>
+            <!-- SIGNATURE PACKAGE: Main package image, description, duration, and price -->
+            <section class="signature">
+                <div class="signature-label">THE SIGNATURE PACKAGE</div>
+                <p class="signature-lead">Discover a culturally rich archipelago featuring striking purple foliage, traditional shrines, and serene coastal views.</p>
+                <div class="signature-card">
+                    <img src="assets/images/inazuma_heropage.jpg" alt="Inazuma signature destination">
+                    <div class="signature-price">
+                        <small>4 Days / 3 Nights</small>
+                        <strong>₱18,000</strong>
+                        <span>per person</span>
                     </div>
-
                 </div>
+            </section>
 
-                <button
-                    class="btn btn-primary"
-                    data-scroll-featured
-                >
-                    Explore Featured Stops <span>→</span>
-                </button>
-
-            </div>
-
-            <div class="region-hero-image">
-                <img
-                    src="assets/images/inazuma.jpg"
-                    alt="Inazuma landscape"
-                >
-            </div>
-
-        </section>
-
-
-        <!-- SIGNATURE PACKAGE: Main package image, description, duration, and price -->
-<section class="signature">
-
-            <div class="signature-label">
-                THE SIGNATURE PACKAGE
-            </div>
-
-            <p class="signature-lead">
-                Discover a culturally rich archipelago featuring striking purple foliage, traditional shrines, and serene coastal views.
-            </p>
-
-            <div class="signature-card">
-
-                <img
-                    src="assets/images/inazuma_heropage.jpg"
-                    alt="Inazuma signature destination"
-                >
-
-                <div class="signature-price">
-                    <small>4 Days / 3 Nights</small>
-                    <strong>₱18,000</strong>
-                    <span>per person</span>
+            <!-- FEATURED STOPS: Three recommended attractions for this region -->
+            <section class="featured" id="featured">
+                <div class="featured-head">
+                    <div class="catalog-label">THREE PLACES, ONE JOURNEY</div>
+                    <h2>Featured Stops</h2>
                 </div>
+                <div class="stop-grid">
+                    <article id="narukami-island-grand-shrine" class="stop-card stop-card-primary" tabindex="0">
+                        <img src="assets/images/narukami_island_grand_shrine.jpg" alt="Narukami Island Grand Shrine">
+                        <h3>Narukami Island Grand Shrine</h3>
+                        <p class="stop-description">Discover the atmosphere of the Grand Shrine on Narukami Island. Take in the setting and architectural details as you explore this highlight of your Inazuma journey.</p>
+                    </article>
 
-            </div>
+                    <article id="ritou-trading-port" class="stop-card" tabindex="0">
+                        <img src="assets/images/ritou_trading.jpg" alt="Ritou Trading Port">
+                        <h3>Ritou Trading Port</h3>
+                        <p class="stop-description">Explore Ritou Trading Port and its lively streets. This stop offers a change of pace, with plenty of details to discover and scenes to photograph.</p>
+                    </article>
 
-        </section>
-
-
-        <!-- FEATURED STOPS: Three recommended attractions for this region -->
-<section class="featured" id="featured">
-
-            <div class="featured-head">
-
-                <div class="catalog-label">
-                    THREE PLACES, ONE JOURNEY
+                    <article id="tenshukaku" class="stop-card" tabindex="0">
+                        <img src="assets/images/tenshukaku.jpg" alt="Tenshukaku">
+                        <h3>Tenshukaku</h3>
+                        <p class="stop-description">Take in the striking presence of Tenshukaku. Focus on its architecture and surroundings for a memorable final look at your Inazuma adventure.</p>
+                    </article>
                 </div>
+                <div class="region-actions">
+                    <a class="btn btn-primary" href="booking.html">BEGIN YOUR JOURNEY</a>
+                    <a class="btn btn-outline" href="index.html#packages">EXPLORE OTHER NATION</a>
+                </div>
+            </section>
+        </main>
 
-                <h2>Featured Stops</h2>
-
-            </div>
-
-            <div class="stop-grid">
-
-                <article id="narukami-island-grand-shrine" class="stop-card stop-card-primary" tabindex="0">
-                    <img
-                        src="assets/images/narukami_island_grand_shrine.jpg"
-                        alt="Narukami Island Grand Shrine"
-                    >
-
-                    <h3>Narukami Island Grand Shrine</h3>
-
-                    <p class="stop-description">Discover the atmosphere of the Grand Shrine on Narukami Island. Take in the setting and architectural details as you explore this highlight of your Inazuma journey.</p>
-                </article>
-
-                <article id="ritou-trading-port" class="stop-card" tabindex="0">
-                    <img
-                        src="assets/images/ritou_trading.jpg"
-                        alt="Ritou Trading Port"
-                    >
-                    <h3>Ritou Trading Port</h3>
-
-                    <p class="stop-description">Explore Ritou Trading Port and its lively streets. This stop offers a change of pace, with plenty of details to discover and scenes to photograph.</p>
-                </article>
-
-                <article id="tenshukaku" class="stop-card" tabindex="0">
-                    <img
-                        src="assets/images/tenshukaku.jpg"
-                        alt="Tenshukaku"
-                    >
-                    <h3>Tenshukaku</h3>
-
-                    <p class="stop-description">Take in the striking presence of Tenshukaku. Focus on its architecture and surroundings for a memorable final look at your Inazuma adventure.</p>
-                </article>
-
-            </div>
-
-            <div class="region-actions">
-
-                <a
-                    class="btn btn-primary"
-                 href="booking.html">
-                    BEGIN YOUR JOURNEY
-                </a>
-
-                <a
-                    class="btn btn-outline"
-                    href="index.html#packages"
-                >
-                    EXPLORE OTHER NATION
-                </a>
-
-            </div>
-
-        </section>
-
-    </main>
         <!-- SITE FOOTER: Tagline, legal links, and social media links -->
         <footer class="site-footer" id="about">
             <p class="footer-tagline">Seven nations. Endless journey. One unforgettable adventure.</p>
@@ -228,7 +122,7 @@
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms and Conditions</a>
                 </div>
-                <div class="socials" aria-label="Social media" >
+                <div class="socials" aria-label="Social media">
                     <span class="social-placeholder" role="img" aria-label="Facebook">f</span>
                     <span class="social-placeholder" role="img" aria-label="Instagram">◎</span>
                     <span class="social-placeholder" role="img" aria-label="TikTok">♪</span>
@@ -236,6 +130,7 @@
                 </div>
             </div>
         </footer>
+
         <!-- SHARED JAVASCRIPT: Handles existing navigation, scrolling, and search -->
         <script src="js/app.js">
         </script>

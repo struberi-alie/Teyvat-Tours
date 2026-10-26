@@ -1,25 +1,27 @@
-@import url('https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap');
+/* TEYVAT TOURS — Unified stylesheet. Keep this file in css/style.css. */
+@import url("https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
 @font-face {
-    font-family: 'DM Sans Local';
-    src: url('../assets/fonts/DMSans-Regular.ttf') format('truetype');
+    font-family: "DM Sans Local";
+    src: url("../assets/fonts/DMSans-Regular.ttf") format("truetype");
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Crimson Text Local';
-    src: url('../assets/fonts/CrimsonText-Regular.ttf') format('truetype');
+    font-family: "Crimson Text Local";
+    src: url("../assets/fonts/CrimsonText-Regular.ttf") format("truetype");
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Birthstone Bounce Local';
-    src: url('../assets/fonts/BirthstoneBounce-Regular.ttf') format('truetype');
+    font-family: "Birthstone Bounce Local";
+    src: url("../assets/fonts/BirthstoneBounce-Regular.ttf") format("truetype");
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Scintilla Local';
-    src: url('../assets/fonts/Scintilla-3z7rG.otf') format('opentype');
+    font-family: "Scintilla Local";
+    src: url("../assets/fonts/Scintilla-3z7rG.otf") format("opentype");
     font-display: swap;
 }
 
@@ -32,9 +34,9 @@
     --white: #fff;
     --muted: #dce7ef;
     --shadow: 0 18px 45px rgba(0, 0, 0, .22);
-    --sans: 'DM Sans Local', 'DM Sans', Arial, sans-serif;
-    --serif: 'Crimson Text Local', 'Crimson Text', Georgia, serif;
-    --script: 'Birthstone Bounce Local', 'Birthstone Bounce', cursive;
+    --sans: "DM Sans Local", "DM Sans", Arial, sans-serif;
+    --serif: "Crimson Text Local", "Crimson Text", Georgia, serif;
+    --script: "Birthstone Bounce Local", "Birthstone Bounce", cursive;
 }
 
 * {
@@ -45,7 +47,7 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+body:where(:not(:has(.form-shell, .terms-page))) {
     margin: 0;
     font-family: var(--sans);
     background: #5eb7df;
@@ -53,21 +55,21 @@ body {
     overflow-x: hidden;
 }
 
-a {
+:where(body:not(:has(.form-shell, .terms-page))) a {
     color: inherit;
     text-decoration: none;
 }
 
-button, input, select, textarea {
+:where(body:not(:has(.form-shell, .terms-page))) button, :where(body:not(:has(.form-shell, .terms-page))) input, :where(body:not(:has(.form-shell, .terms-page))) select, :where(body:not(:has(.form-shell, .terms-page))) textarea {
     font: inherit;
 }
 
-img {
+:where(body:not(:has(.form-shell, .terms-page))) img {
     display: block;
     max-width: 100%;
 }
 
-/*  SITE HEADER - Controls the sticky top navigation, logo, and desktop links.*/
+/* SITE HEADER - Controls the sticky top navigation, logo, and desktop links. */
 .site-header {
     height: 66px;
     background: var(--navy);
@@ -106,7 +108,6 @@ img {
 .desktop-nav {
     display: flex;
     align-items: center;
-    gap: 26px;
     font-size: 12px;
     color: #e8edf4;
 }
@@ -122,7 +123,7 @@ img {
 }
 
 .desktop-nav a.active:after {
-    content: '';
+    content: "";
     position: absolute;
     height: 3px;
     background: var(--gold);
@@ -248,7 +249,7 @@ img {
     border-radius: 50%;
 }
 
-/* SHARED BUTTONS:  Reusable primary, outline, and gold button styles. */
+/* SHARED BUTTONS: Reusable primary, outline, and gold button styles. */
 .btn {
     border: 0;
     display: inline-flex;
@@ -288,16 +289,11 @@ img {
     box-shadow: 0 3px 0 rgba(70, 50, 0, .3);
 }
 
-/* HOMEPAGE HERO :  Main landing banner, title, CTA buttons, and search. */
+/* HOMEPAGE HERO : Main landing banner, title, CTA buttons, and search. */
 .home {
     color: #fff;
     background-color: #102f59;
-    background-image:
-        linear-gradient(
-            rgba(18, 56, 150, 0.65),
-            rgba(24, 134, 220, 0.45)
-        ),
-        url('/assets/images/index-bg.jpg');
+    background-image: linear-gradient( rgba(18, 56, 150, 0.65), rgba(24, 134, 220, 0.45) ), url("/assets/images/index-bg.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -307,7 +303,7 @@ img {
 .home-hero {
     min-height: 510px;
     position: relative;
-    background: url('../assets/images/mainpage.jpg') center / cover no-repeat;
+    background: url("../assets/images/mainpage.jpg") center / cover no-repeat;
     display: flex;
     align-items: center;
     padding: 76px 7vw 55px;
@@ -315,20 +311,10 @@ img {
 }
 
 .home-hero:before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient( 90deg, rgba(6, 43, 94, .58) 0%, rgba(20, 72, 142, .25) 42%, rgba(12, 32, 75, .08) 100% );
-}
-
-.home-hero-inner {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(300px, 520px);
-    align-items: center;
-    gap: 40px;
 }
 
 .hero-kicker {
@@ -381,7 +367,7 @@ img {
     padding-right: 160px;
 }
 
-/* HOMEPAGE TOUR PACKAGES :  Layout and styling for the seven regional package cards. */
+/* HOMEPAGE TOUR PACKAGES : Layout and styling for the seven regional package cards. */
 .packages {
     padding: 34px 3.4vw 24px;
     max-width: none;
@@ -412,7 +398,7 @@ img {
 }
 
 .package-card:before {
-    content: '';
+    content: "";
     position: absolute;
     inset: 0;
     background: linear-gradient( 90deg, var(--overlay, rgba(17, 87, 110, .8)) 0%, var(--overlay-mid, rgba(17, 87, 110, .52)) 52%, rgba(0, 0, 0, .10) 100% );
@@ -465,9 +451,7 @@ img {
     z-index: 3;
 }
 
-/* =========================================================
-   PACKAGE FEATURED-STOP CIRCLES: Positions the circular attraction previews on package cards.
-   ========================================================= */
+/* PACKAGE FEATURED-STOP CIRCLES: Positions the circular attraction previews on package cards. */
 .package-circles {
     position: absolute;
     right: 17%;
@@ -491,7 +475,7 @@ img {
     object-fit: cover;
 }
 
-/*featured stos circle #1*/
+/* featured stos circle #1 */
 .circle-stop:nth-child(1) {
     width: 120px;
     height: 120px;
@@ -499,7 +483,7 @@ img {
     top: 75px;
 }
 
-/*featured stos circle #3*/
+/* featured stos circle #3 */
 .circle-stop:nth-child(2) {
     width: 120px;
     height: 120px;
@@ -507,7 +491,7 @@ img {
     top: 75px;
 }
 
-/*featured stos circle #2*/
+/* featured stos circle #2 */
 .circle-stop:nth-child(3) {
     width: 140px;
     height: 140px;
@@ -515,7 +499,7 @@ img {
     bottom: -20px;
 }
 
-/*featured stop text label*/
+/* featured stop text label */
 .circle-stop span {
     position: absolute;
     left: 50%;
@@ -529,7 +513,7 @@ img {
     width: 90%;
 }
 
-/*ribbon in right side*/
+/* ribbon in right side */
 .nation-ribbon {
     position: absolute;
     right: 20px;
@@ -550,9 +534,7 @@ img {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .15));
 }
 
-/* =========================================================
-   HOMEPAGE QUICK LINKS: Explore, travel services, and company links above the footer.
-   ========================================================= */
+/* HOMEPAGE QUICK LINKS: Explore, travel services, and company links above the footer. */
 .home-footer-top {
     max-width: 1200px;
     margin: 8px auto 0;
@@ -588,9 +570,7 @@ img {
     color: white;
 }
 
-/* =========================================================
-   GLOBAL FOOTER:  Shared tagline, legal links, and social media shortcuts.
-   ========================================================= */
+/* GLOBAL FOOTER: Shared tagline, legal links, and social media shortcuts. */
 .site-footer {
     background: var(--navy);
     color: white;
@@ -632,9 +612,7 @@ img {
     opacity: .95;
 }
 
-/* =========================================================
-   REGION PAGES: Shared layout for all seven destination pages.
-   ========================================================= */
+/* REGION PAGES: Shared layout for all seven destination pages. */
 .region-page {
     background: var(--region-bg, #63c3dd);
     color: #fff;
@@ -685,15 +663,6 @@ img {
     padding: 34px 0 0 6px;
 }
 
-.signature-label {
-    margin: 0;
-    color: #fff;
-    font-size: 5px;
-    font-weight: 700;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-}
-
 .region-name {
     margin: 6px 0 0;
     color: var(--name-color, #071d3b);
@@ -722,12 +691,20 @@ img {
     height: 40px;
     display: grid;
     place-items: center;
-    border: 2px solid rgba(255, 255, 255, .95);
-    border-radius: 50%;
+    border: 0;
+    border-radius: 0;
     color: #fff;
     font-size: 24px;
     line-height: 1;
     z-index: 3;
+    padding: 0;
+}
+
+.back-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 /* PRICE AND DURATION: Groups the starting price and trip length shown in the hero. */
@@ -1004,7 +981,6 @@ img {
 
 .modal-card {
     width: min(520px, 100%);
-    /* Keep the inquiry form reachable on short screens and at higher zoom. */
     max-height: calc(100vh - 40px);
     max-height: calc(100dvh - 40px);
     overflow-y: auto;
@@ -1071,9 +1047,7 @@ img {
     font-weight: 600;
 }
 
-/* =========================================================
-   TABLET RESPONSIVE RULES: Layout adjustments for screens 900px wide and below.
-   ========================================================= */
+/* TABLET RESPONSIVE RULES: Layout adjustments for screens 900px wide and below. */
 @media (max-width: 900px) {
     .desktop-nav {
         display: none;
@@ -1193,7 +1167,6 @@ img {
     .stop-card h3 {
         font-size: 25px;
     }
-
 }
 
 /* MOBILE RESPONSIVE RULES-Compact layout adjustments for screens 620px wide and below. */
@@ -1441,7 +1414,6 @@ img {
     .form-grid .full {
         grid-column: auto;
     }
-
 }
 
 /* ZOOM AND NARROW-SCREEN SUPPORT: Allow content to wrap without clipping. */
@@ -1457,8 +1429,7 @@ img {
     flex-wrap: wrap;
 }
 
-/* Keep package previews below their descriptions when the layout narrows.
-   Normal flow lets each card grow with its text instead of overlapping it. */
+/* Keep package previews below their descriptions when the layout narrows. Normal flow lets each card grow with its text instead of overlapping it. */
 @media (max-width: 900px) {
     .package-card {
         min-height: 0;
@@ -1504,7 +1475,6 @@ img {
         max-width: 100%;
         overflow-wrap: anywhere;
     }
-
 }
 
 /* UPGRADED NAVBAR — shared desktop and mobile navigation. */
@@ -1513,47 +1483,47 @@ img {
 }
 
 .tt-header {
-    position:sticky;
-    top:0;
-    z-index:50;
-    width:100%;
-    min-height:84px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:24px;
-    padding:16px clamp(20px,5vw,80px);
-    background:linear-gradient(110deg,#111a29,#192439);
-    border-bottom:1px solid #bfa16a80;
-    box-shadow:0 5px 24px #06102133;
-    color:#f5eddc;
-    font-family:Arial,sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px clamp(20px,5vw,80px);
+    background: linear-gradient(110deg,#111a29,#192439);
+    border-bottom: 1px solid #bfa16a80;
+    box-shadow: 0 5px 24px #06102133;
+    color: #f5eddc;
+    font-family: Arial,sans-serif;
 }
 
 .tt-header a {
-    text-decoration:none;
-    color:inherit;
+    text-decoration: none;
+    color: inherit;
 }
 
 .tt-header button {
-    font:inherit;
-    cursor:pointer;
+    font: inherit;
+    cursor: pointer;
 }
 
 .tt-header a:focus-visible, .tt-header button:focus-visible {
-    outline:2px solid #f2d28d;
-    outline-offset:4px;
+    outline: 2px solid #f2d28d;
+    outline-offset: 4px;
 }
 
 .tt-brand {
-    display:flex;
-    align-items:center;
-    gap:13px;
-    flex-shrink:0;
-    font-family:Georgia,serif;
-    font-size:19px;
-    font-weight:700;
-    letter-spacing:1.3px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+    font-family: Georgia,serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
     transform: translateX(-25px);
 }
 
@@ -1567,452 +1537,450 @@ img {
 }
 
 .tt-brand small {
-    display:block;
-    margin-top:6px;
-    font:8px Arial,sans-serif;
-    letter-spacing:2.3px;
-    color:#c3b89f;
+    display: block;
+    margin-top: 6px;
+    font: 8px Arial,sans-serif;
+    letter-spacing: 2.3px;
+    color: #c3b89f;
 }
 
 .tt-navigation {
-    display:flex;
-    align-items:center;
-    gap:26px;
+    display: flex;
+    align-items: center;
+    gap: 26px;
 }
 
 .tt-header .tt-nav-link {
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    min-height:44px;
-    padding:10px 4px;
-    border:0;
-    background:transparent;
-    color:#eee6d7;
-    font-size:14px;
-    letter-spacing:.4px;
-    transition:color .18s,background .18s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 10px 4px;
+    border: 0;
+    background: transparent;
+    color: #eee6d7;
+    font-size: 14px;
+    letter-spacing: .4px;
+    transition: color .18s,background .18s;
 }
 
 .tt-header .tt-nav-link:hover, .tt-header .tt-nav-link[aria-expanded="true"] {
-    color:#f2d28d;
+    color: #f2d28d;
 }
 
 .tt-header .tt-contact {
-    padding:10px 20px;
-    border:1px solid #bfa16a90;
-    border-radius:4px;
-    background:#c9ab6e0d;
+    padding: 10px 20px;
+    border: 1px solid #bfa16a90;
+    border-radius: 4px;
+    background: #c9ab6e0d;
 }
 
 .tt-header .tt-contact:hover {
-    background:#c9ab6e1f;
+    background: #c9ab6e1f;
 }
 
 .tt-contact span {
-    color:#dfc087;
+    color: #dfc087;
 }
 
 .tt-destinations {
-    position:relative;
+    position: relative;
 }
 
 .tt-chevron {
-    width:7px;
-    height:7px;
-    border-right:1.5px solid currentColor;
-    border-bottom:1.5px solid currentColor;
-    transform:rotate(45deg) translateY(-2px);
-    transition:transform .18s;
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .18s;
 }
 
 [aria-expanded="true"] .tt-chevron {
-    transform:rotate(225deg);
+    transform: rotate(225deg);
 }
 
 .tt-panel {
-    position:absolute;
-    top:calc(100% + 20px);
-    right:-90px;
-    width:390px;
-    max-width:calc(100vw - 32px);
-    padding:22px;
-    border:1px solid #bfa16a80;
-    border-radius:6px;
-    background:linear-gradient(145deg,#1c2a40,#111b2b);
-    box-shadow:0 18px 48px #030a1466;
-    max-height:calc(100dvh - 112px);
-    overflow-y:auto;
+    position: absolute;
+    top: calc(100% + 20px);
+    right: -90px;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    padding: 22px;
+    border: 1px solid #bfa16a80;
+    border-radius: 6px;
+    background: linear-gradient(145deg,#1c2a40,#111b2b);
+    box-shadow: 0 18px 48px #030a1466;
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
 }
 
 .tt-panel[hidden] {
-    display:none;
+    display: none;
 }
 
 .tt-panel-heading {
-    display:flex;
-    justify-content:space-between;
-    color:#e3c58e;
-    font-size:10px;
-    font-weight:700;
-    letter-spacing:2.5px;
+    display: flex;
+    justify-content: space-between;
+    color: #e3c58e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
 }
 
 .tt-panel-intro {
-    margin:8px 0 16px;
-    color:#c3cbd7;
-    font-size:12px;
-    line-height:1.5;
+    margin: 8px 0 16px;
+    color: #c3cbd7;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .tt-region-list {
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:grid;
-    gap:3px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 3px;
 }
 
 .tt-region {
-    display:flex;
-    align-items:center;
-    gap:13px;
-    padding:9px 10px;
-    border:1px solid transparent;
-    border-radius:4px;
-    transition:background .18s,border-color .18s;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background .18s,border-color .18s;
 }
 
 .tt-region:hover, .tt-region:focus-visible {
-    background:#ffffff09;
-    border-color:#c9ab6e55;
+    background: #ffffff09;
+    border-color: #c9ab6e55;
 }
 
 .tt-emblem {
-    display:grid;
-    place-items:center;
-    flex-shrink:0;
-    width:34px;
-    height:34px;
-    border:1px solid var(--nation-color);
-    border-radius:50%;
-    color:var(--nation-color);
-    background:#ffffff06;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--nation-color);
+    border-radius: 50%;
+    color: var(--nation-color);
+    background: #ffffff06;
 }
 
 .tt-emblem img {
-    width:25px;
-    height:25px;
-    object-fit:contain;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
 }
 
 .tt-region strong {
-    display:block;
-    font:16px Georgia,serif;
-    color:#f5eddc;
+    display: block;
+    font: 16px Georgia,serif;
+    color: #f5eddc;
 }
 
 .tt-region small {
-    display:block;
-    margin-top:4px;
-    font-size:10px;
-    letter-spacing:.5px;
-    color:#b6c1d1;
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: .5px;
+    color: #b6c1d1;
 }
 
 .tt-arrow {
-    margin-left:auto;
-    color:var(--nation-color);
-    font-size:15px;
+    margin-left: auto;
+    color: var(--nation-color);
+    font-size: 15px;
 }
 
 .tt-all-tours {
-    display:flex;
-    justify-content:space-between;
-    border-top:1px solid #bfa16a40;
-    margin-top:15px;
-    padding:16px 3px 0;
-    font-size:12px;
-    color:#e3c58e !important;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #bfa16a40;
+    margin-top: 15px;
+    padding: 16px 3px 0;
+    font-size: 12px;
+    color: #e3c58e !important;
 }
 
 .tt-menu-toggle {
-    display:none;
-    border:1px solid #bfa16a80;
-    border-radius:4px;
-    background:transparent;
-    color:#e3c58e;
-    width:44px;
-    height:44px;
-    font-size:23px !important;
+    display: none;
+    border: 1px solid #bfa16a80;
+    border-radius: 4px;
+    background: transparent;
+    color: #e3c58e;
+    width: 44px;
+    height: 44px;
+    font-size: 23px !important;
 }
 
-@media(max-width:720px) {
+@media (max-width:720px) {
     .tt-header {
-        min-height:76px;
-        padding:14px 20px;
-        flex-wrap:wrap;
-        gap:0;
+        min-height: 76px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 0;
     }
 
     .tt-brand {
-        font-size:16px;
-        letter-spacing:1px;
+        font-size: 16px;
+        letter-spacing: 1px;
     }
 
     .tt-brand small {
-        font-size:7px;
-        letter-spacing:1.4px;
+        font-size: 7px;
+        letter-spacing: 1.4px;
     }
 
     .tt-menu-toggle {
-        display:block;
+        display: block;
     }
 
     .tt-navigation {
-        display:none;
-        width:100%;
-        flex-direction:column;
-        align-items:stretch;
-        gap:8px;
-        padding-top:18px;
-        margin-top:14px;
-        border-top:1px solid #bfa16a40;
-        max-height:calc(100dvh - 105px);
-        overflow-y:auto;
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding-top: 18px;
+        margin-top: 14px;
+        border-top: 1px solid #bfa16a40;
+        max-height: calc(100dvh - 105px);
+        overflow-y: auto;
     }
 
     .tt-navigation.is-open {
-        display:flex;
+        display: flex;
     }
 
     .tt-header .tt-nav-link {
-        width:100%;
-        justify-content:space-between;
-        padding:12px;
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px;
     }
 
     .tt-panel {
-        position:static;
-        width:100%;
-        max-width:none;
-        max-height:none;
-        margin:6px 0;
-        padding:16px;
-        box-shadow:none;
+        position: static;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        margin: 6px 0;
+        padding: 16px;
+        box-shadow: none;
     }
-
 }
 
-@media(prefers-reduced-motion:reduce) {
+@media (prefers-reduced-motion:reduce) {
     .tt-header * {
-        transition:none !important;
+        transition: none !important;
     }
-
 }
 
 /* HOMEPAGE VISUALS — nation colors and package backgrounds. */
 .nav-nation-mondstadt {
-    --nation-color:#7bd9bc;
+    --nation-color: #7bd9bc;
 }
 
 .nav-nation-liyue {
-    --nation-color:#e8ba63;
+    --nation-color: #e8ba63;
 }
 
 .nav-nation-inazuma {
-    --nation-color:#bd9cf0;
+    --nation-color: #bd9cf0;
 }
 
 .nav-nation-sumeru {
-    --nation-color:#acd475;
+    --nation-color: #acd475;
 }
 
 .nav-nation-fontaine {
-    --nation-color:#78c3f2;
+    --nation-color: #78c3f2;
 }
 
 .nav-nation-natlan {
-    --nation-color:#ed977b;
+    --nation-color: #ed977b;
 }
 
 .nav-nation-snezhnaya {
-    --nation-color:#b5dce8;
+    --nation-color: #b5dce8;
 }
 
 .package-theme-mondstadt {
-    background-image:url('../assets/images/mondstadt hero page.webp');
-    --overlay:rgba(40,130,154,.76);
-    --overlay-mid:rgba(45,140,157,.48);
-    --chip:#16a7d2;
-    --ribbon:#1685a1;
-    --title:#08213d;
+    background-image: url("../assets/images/mondstadt hero page.webp");
+    --overlay: rgba(40,130,154,.76);
+    --overlay-mid: rgba(45,140,157,.48);
+    --chip: #16a7d2;
+    --ribbon: #1685a1;
+    --title: #08213d;
 }
 
 .package-theme-liyue {
-    background-image:url('../assets/images/liyue.webp');
-    --overlay:rgba(123,21,18,.76);
-    --overlay-mid:rgba(123,21,18,.52);
-    --chip:#b31518;
-    --ribbon:#a4080b;
-    --title:#fff3dc;
+    background-image: url("../assets/images/liyue.webp");
+    --overlay: rgba(123,21,18,.76);
+    --overlay-mid: rgba(123,21,18,.52);
+    --chip: #b31518;
+    --ribbon: #a4080b;
+    --title: #fff3dc;
 }
 
 .package-theme-inazuma {
-    background-image:url('../assets/images/inazuma.jpg');
-    --overlay:rgba(112,64,157,.70);
-    --overlay-mid:rgba(112,64,157,.46);
-    --chip:#8659b4;
-    --ribbon:#8050be;
-    --title:#52215e;
+    background-image: url("../assets/images/inazuma.jpg");
+    --overlay: rgba(112,64,157,.70);
+    --overlay-mid: rgba(112,64,157,.46);
+    --chip: #8659b4;
+    --ribbon: #8050be;
+    --title: #52215e;
 }
 
 .package-theme-sumeru {
-    background-image:url('../assets/images/sumeru.jpg');
-    --overlay:rgba(91,145,69,.73);
-    --overlay-mid:rgba(90,145,69,.48);
-    --chip:#d0ad18;
-    --ribbon:#b79a16;
-    --title:#43530e;
+    background-image: url("../assets/images/sumeru.jpg");
+    --overlay: rgba(91,145,69,.73);
+    --overlay-mid: rgba(90,145,69,.48);
+    --chip: #d0ad18;
+    --ribbon: #b79a16;
+    --title: #43530e;
 }
 
 .package-theme-fontaine {
-    background-image:url('../assets/images/fontaine_heropage.jpg');
-    --overlay:rgba(40,142,180,.72);
-    --overlay-mid:rgba(40,142,180,.46);
-    --chip:#49b0c8;
-    --ribbon:#287c92;
-    --title:#0a3150;
+    background-image: url("../assets/images/fontaine_heropage.jpg");
+    --overlay: rgba(40,142,180,.72);
+    --overlay-mid: rgba(40,142,180,.46);
+    --chip: #49b0c8;
+    --ribbon: #287c92;
+    --title: #0a3150;
 }
 
 .package-theme-natlan {
-    background-image:url('../assets/images/natlan_heropage.png');
-    --overlay:rgba(170,72,29,.72);
-    --overlay-mid:rgba(170,72,29,.45);
-    --chip:#d29025;
-    --ribbon:#ad4218;
-    --title:#7a1d0a;
+    background-image: url("../assets/images/natlan_heropage.png");
+    --overlay: rgba(170,72,29,.72);
+    --overlay-mid: rgba(170,72,29,.45);
+    --chip: #d29025;
+    --ribbon: #ad4218;
+    --title: #7a1d0a;
 }
 
 .package-theme-snezhnaya {
-    background-image:url('../assets/images/snezhnaya.jpg');
-    --overlay:rgba(89,181,212,.72);
-    --overlay-mid:rgba(89,181,212,.48);
-    --chip:#0b4161;
-    --ribbon:#dff0f3;
-    --title:#0b4161;
+    background-image: url("../assets/images/snezhnaya.jpg");
+    --overlay: rgba(89,181,212,.72);
+    --overlay-mid: rgba(89,181,212,.48);
+    --chip: #0b4161;
+    --ribbon: #dff0f3;
+    --title: #0b4161;
 }
 
 /* MONDSTADT — destination page colors and backgrounds. */
 body.page-mondstadt {
-    --region-bg:#094051;
-    --hero-bg:url('../assets/images/mondstadt.jpg');
-    --signature-bg:url('../assets/images/mondstadt hero page.jpg');
-    --hero-tint:rgba(40,162,204,.53);
-    --sig-tint:rgba(39,140,176,.42);
-    --name-color:#18d2d5;
-    --featured-bg:#18a5d0;
-    --price-color:#102f59;
-    --underline:#159bc4;
-    --featured-image: url('../assets/images/mondstadt-bg.jpg');
+    --region-bg: #094051;
+    --hero-bg: url("../assets/images/mondstadt.jpg");
+    --signature-bg: url("../assets/images/mondstadt hero page.jpg");
+    --hero-tint: rgba(40,162,204,.53);
+    --sig-tint: rgba(39,140,176,.42);
+    --name-color: #18d2d5;
+    --featured-bg: #18a5d0;
+    --price-color: #102f59;
+    --underline: #159bc4;
+    --featured-image: url("../assets/images/mondstadt-bg.jpg");
 }
 
 /* LIYUE — destination page colors and backgrounds. */
 body.page-liyue {
-    --region-bg:#a74a0d;
-    --hero-bg:url('../assets/images/liyue.webp');
-    --hero-bg-size:cover;
-    --signature-bg-size:cover;
-    --hero-bg-position:center center;
-    --signature-bg-position:center center;
-    --signature-bg:url('../assets/images/liyue_heropage.jpg');
-    --hero-tint:rgba(108,84,34,.48);
-    --sig-tint:rgba(76,52,17,.42);
-    --name-color:#e9cc8e;
-    --featured-bg:#ef8437;
-    --price-color:#6c5422;
-    --underline:#8e6e2c;
-    --featured-image: url('../assets/images/liyue-bg.jpg');
+    --region-bg: #a74a0d;
+    --hero-bg: url("../assets/images/liyue.webp");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --hero-bg-position: center center;
+    --signature-bg-position: center center;
+    --signature-bg: url("../assets/images/liyue_heropage.jpg");
+    --hero-tint: rgba(108,84,34,.48);
+    --sig-tint: rgba(76,52,17,.42);
+    --name-color: #e9cc8e;
+    --featured-bg: #ef8437;
+    --price-color: #6c5422;
+    --underline: #8e6e2c;
+    --featured-image: url("../assets/images/liyue-bg.jpg");
 }
 
 /* INAZUMA — destination page colors and backgrounds. */
 body.page-inazuma {
-    --region-bg:#52154a;
-    --hero-bg:url('../assets/images/inazuma.jpg');
-    --hero-bg-size:cover;
-    --signature-bg-size:cover;
-    --hero-bg-position:center center;
-    --signature-bg-position:center center;
-    --signature-bg:url('../assets/images/inazuma_heropage.jpg');
-    --hero-tint:rgba(112, 71, 136, 0.48);
-    --sig-tint:rgba(110,80,160,.40);
-    --name-color:#e4b4f0;
-    --featured-bg:#c48ac0;
-    --price-color:#610a5e;
-    --underline:#9c317f;
-    --featured-image: url('../assets/images/inazuma-bg.jpg');
+    --region-bg: #52154a;
+    --hero-bg: url("../assets/images/inazuma.jpg");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --hero-bg-position: center center;
+    --signature-bg-position: center center;
+    --signature-bg: url("../assets/images/inazuma_heropage.jpg");
+    --hero-tint: rgba(112, 71, 136, 0.48);
+    --sig-tint: rgba(110,80,160,.40);
+    --name-color: #e4b4f0;
+    --featured-bg: #c48ac0;
+    --price-color: #610a5e;
+    --underline: #9c317f;
+    --featured-image: url("../assets/images/inazuma-bg.jpg");
 }
 
 /* SUMERU — destination page colors and backgrounds. */
 body.page-sumeru {
-    --region-bg:#007d13;
-    --hero-bg:url('../assets/images/sumeru.jpg');
-    --signature-bg:url('../assets/images/sumeru_heropage.jpg');
-    --hero-tint:rgba(83,161,121,.48);
-    --sig-tint:rgba(74,163,125,.42);
-    --name-color:#abf98c;
-    --featured-bg:#24790f;
-    --price-color:#3f5310;
-    --underline:#64751d;
-    --featured-image: url('../assets/images/sumeru-bg.jpg');
+    --region-bg: #007d13;
+    --hero-bg: url("../assets/images/sumeru.jpg");
+    --signature-bg: url("../assets/images/sumeru_heropage.jpg");
+    --hero-tint: rgba(83,161,121,.48);
+    --sig-tint: rgba(74,163,125,.42);
+    --name-color: #abf98c;
+    --featured-bg: #24790f;
+    --price-color: #3f5310;
+    --underline: #64751d;
+    --featured-image: url("../assets/images/sumeru-bg.jpg");
 }
 
 /* FONTAINE — destination page colors and backgrounds. */
 body.page-fontaine {
-    --region-bg:#032a33;
-    --hero-bg:url('../assets/images/fontaine(1).jpg');
-    --signature-bg:url('../assets/images/fontaine_heropage.jpg');
-    --hero-tint:rgba(59, 129, 155, 0.12);
-    --sig-tint:rgba(35,155,189,.12);
-    --name-color:#bbdef7;
-    --featured-bg:#3895dd;
-    --price-color:#21439b;
-    --underline:#3cacc5;
-    --featured-image: url('../assets/images/fontaine-bg.jpg');
+    --region-bg: #032a33;
+    --hero-bg: url("../assets/images/fontaine(1).jpg");
+    --signature-bg: url("../assets/images/fontaine_heropage.jpg");
+    --hero-tint: rgba(59, 129, 155, 0.12);
+    --sig-tint: rgba(35,155,189,.12);
+    --name-color: #bbdef7;
+    --featured-bg: #3895dd;
+    --price-color: #21439b;
+    --underline: #3cacc5;
+    --featured-image: url("../assets/images/fontaine-bg.jpg");
 }
 
 /* NATLAN — destination page colors and backgrounds. */
 body.page-natlan {
-    --region-bg:#422c07;
-    --hero-bg:url('../assets/images/natlan.png');
-    --hero-bg-size:cover;
-    --signature-bg-size:cover;
-    --signature-bg:url('../assets/images/natlan_heropage.png');
-    --hero-bg-position:center center;
-    --hero-image-position:center center;
-    --signature-bg-position:center center;
-    --signature-image-position:center center;
-    --name-color:#dfb855;
-    --featured-bg:#b17c27;
-    --price-color:#884b16;
-    --underline:#b65a1f;
-    --featured-image: url('../assets/images/natlan-bg.jpg');
+    --region-bg: #422c07;
+    --hero-bg: url("../assets/images/natlan.png");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --signature-bg: url("../assets/images/natlan_heropage.png");
+    --hero-bg-position: center center;
+    --hero-image-position: center center;
+    --signature-bg-position: center center;
+    --signature-image-position: center center;
+    --name-color: #dfb855;
+    --featured-bg: #b17c27;
+    --price-color: #884b16;
+    --underline: #b65a1f;
+    --featured-image: url("../assets/images/natlan-bg.jpg");
 }
 
 /* SNEZHNAYA — destination page colors and backgrounds. */
 body.page-snezhnaya {
-    --region-bg:#1c7f9a;
-    --hero-bg:url('../assets/images/snezhnaya.jpg');
-    --signature-bg:url('../assets/images/snezhnaya_heropage.jpg');
-    --hero-tint:rgba(73,183,221,.45);
-    --sig-tint:rgba(66,177,215,.40);
-    --name-color:#97d3f6;
-    --featured-bg:#b9dce5;
-    --featured-text:#0b4161;
-    --price-color:#33bad2;
-    --underline:#259fc3;
-    --featured-image: url('../assets/images/snezhnaya-bg.jpg');
+    --region-bg: #1c7f9a;
+    --hero-bg: url("../assets/images/snezhnaya.jpg");
+    --signature-bg: url("../assets/images/snezhnaya_heropage.jpg");
+    --hero-tint: rgba(73,183,221,.45);
+    --sig-tint: rgba(66,177,215,.40);
+    --name-color: #97d3f6;
+    --featured-bg: #b9dce5;
+    --featured-text: #0b4161;
+    --price-color: #33bad2;
+    --underline: #259fc3;
+    --featured-image: url("../assets/images/snezhnaya-bg.jpg");
 }
 
 /* ACTIVE NAVIGATION — visible current-page state for mouse and keyboard users. */
@@ -2042,9 +2010,7 @@ body.page-snezhnaya {
 
 /* SHARED TOUR STYLES */
 /* Shared tour refinements: load after style.css on every page. */
-
-/* Hover a nation in the top navigation to choose a featured stop.
-   Focus-within also exposes the links to keyboard users. */
+/* Hover a nation in the top navigation to choose a featured stop. Focus-within also exposes the links to keyboard users. */
 .desktop-nav {
     height: 100%;
     gap: clamp(10px, 1.5vw, 24px);
@@ -2132,7 +2098,6 @@ body.page-snezhnaya {
     max-width: 100%;
     padding: 22px 26px;
     border-radius: 18px 0 0 0;
-    background: #102f59;
     box-shadow: -5px -5px 24px rgba(0, 0, 0, .2);
 }
 
@@ -2150,22 +2115,17 @@ body.page-snezhnaya {
     font-size: 14px;
 }
 
-/* FEATURED STOPS:  */
+/* FEATURED STOPS: */
 .region-page .featured {
     background-color: #102f59;
-    background-image:
-        linear-gradient(
-            rgba(6, 26, 56, 0.55),
-            rgba(6, 26, 56, 0.35)
-        ),
-        var(--featured-image, none),
-        var(--hero-bg, none);
+    background-image: linear-gradient( rgba(6, 26, 56, 0.55), rgba(6, 26, 56, 0.35) ), var(--featured-image, none), var(--hero-bg, none);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: scroll;
     color: #fff;
 }
+
 .region-page .stop-grid {
     max-width: 1440px;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2257,16 +2217,13 @@ body.page-snezhnaya {
     }
 }
 
-
 @media (max-width: 620px) {
-
     .region-page .signature-price {
         width: 210px;
         min-height: 140px;
         padding: 16px 20px;
     }
 }
-
 
 /* ABOUT PAGE STYLES */
 /* ABOUT PAGE BASE: Overall colors and default page styling */
@@ -2323,11 +2280,8 @@ body.about-page {
 
 .about-hero-copy h1 {
     margin: 0;
-    color: #0b1c3e;
     font-family: var(--serif);
-    font-size: clamp(58px, 4.8vw, 78px);
     font-weight: 700;
-    line-height: .88;
     text-shadow: 0 1px 0 rgba(255,255,255,.15);
 }
 
@@ -2480,20 +2434,13 @@ body.about-page {
     line-height: 1.3;
 }
 
-.about-hero .back-link {
-    background: #0b2a5d;
-}
-
 .site-footer.about-footer {
     background: #111927;
 }
 
 /* TABLET RESPONSIVE: Stacks content and reduces large elements */
 @media (max-width: 900px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
+    .about-grid,
     .mission-vision {
         grid-template-columns: 1fr;
     }
@@ -2515,7 +2462,6 @@ body.about-page {
     .profile-card p, .director-card p {
         font-size: 17px;
     }
-
 }
 
 /* MOBILE RESPONSIVE: Compact layout for smaller screens */
@@ -2539,14 +2485,9 @@ body.about-page {
         width: 160px;
         height: 160px;
     }
-
 }
 
-
-/* ==========================================================
-   SHARED VISUAL REFINEMENTS — Consolidated in style.css.
-   ========================================================== */
-
+/* SHARED VISUAL REFINEMENTS — Consolidated in style.css. */
 .home .price-chip {
     background: #102f59;
     color: #ffffff;
@@ -2602,7 +2543,6 @@ body.about-page {
 }
 
 /* Featured Stops use the destination rules in this stylesheet. */
-
 /* NATION DETAILS: Let long subtitles wrap with comfortable line spacing. */
 .region-page .region-subtitle {
     line-height: 1.2;
@@ -2672,7 +2612,7 @@ body.about-page {
 }
 
 .about-hero {
-    background-image: linear-gradient(rgb(5 22 44 / 62%), rgb(5 22 44 / 62%)), url('../assets/images/about-us.jpg');
+    background-image: linear-gradient(rgb(5 22 44 / 62%), rgb(5 22 44 / 62%)), url("../assets/images/about-us.jpg");
 }
 
 .about-hero-copy {
@@ -2778,15 +2718,12 @@ body.about-page {
 
 @media (prefers-reduced-motion: reduce) {
     .site-footer a,
-    .footer-columns a {
+        .footer-columns a {
         transition: none;
     }
 }
 
-/* ==========================================================
-   HOMEPAGE PACKAGE PREVIEWS — Staggered photos and vertical glow.
-   These rules only affect .home; nation-page stop cards are unchanged.
-   ========================================================== */
+/* HOMEPAGE PACKAGE PREVIEWS — Staggered photos and vertical glow. These rules only affect .home; nation-page stop cards are unchanged. */
 .home .package-card {
     min-height: 520px;
     border: 1px solid rgb(255 255 255 / 72%);
@@ -2855,8 +2792,7 @@ body.about-page {
     transform: translateX(-50%);
 }
 
-/* GRADIENT STRIP: A defined colored trail behind the label.
-   Keep this layer sharp; the second layer softens only its lower end. */
+/* GRADIENT STRIP: A defined colored trail behind the label. Keep this layer sharp; the second layer softens only its lower end. */
 .home .package-circles .circle-stop::before {
     content: "";
     position: absolute;
@@ -2865,13 +2801,7 @@ body.about-page {
     width: var(--strip-width);
     height: 250px;
     transform: translateX(-50%);
-    background: linear-gradient(
-        to bottom,
-        transparent 0%,
-        var(--preview-glow, var(--chip, #e8be43)) 20%,
-        var(--preview-glow, var(--chip, #e8be43)) 64%,
-        transparent 100%
-    );
+    background: linear-gradient( to bottom, transparent 0%, var(--preview-glow, var(--chip, #e8be43)) 20%, var(--preview-glow, var(--chip, #e8be43)) 64%, transparent 100% );
     opacity: 0.85;
     border-radius: 0;
     filter: none;
@@ -2888,11 +2818,7 @@ body.about-page {
     width: var(--strip-width);
     height: 68px;
     transform: translateX(-50%);
-    background: linear-gradient(
-        to bottom,
-        var(--preview-glow, var(--chip, #e8be43)),
-        transparent 100%
-    );
+    background: linear-gradient( to bottom, var(--preview-glow, var(--chip, #e8be43)), transparent 100% );
     filter: blur(10px);
     opacity: 0.7;
     border-radius: 0;
@@ -3008,19 +2934,11 @@ body.about-page {
         top: calc(var(--photo-size) + 72px);
         height: 68px;
     }
-
 }
 
-
-/* ==========================================================
-   DESTINATION SECTION HEIGHTS — Desktop only.
-   Hero, Signature Package, and Featured Stops share equal rows.
-   The tallest section (normally Featured Stops) sets the height.
-   Images and cards keep their existing sizes.
-   ========================================================== */
+/* DESTINATION SECTION HEIGHTS — Desktop only. Hero, Signature Package, and Featured Stops share equal rows. The tallest section (normally Featured Stops) sets the height. Images and cards keep their existing sizes. */
 /* Enlarge Hero and Signature content on desktop */
 @media (min-width: 901px) {
-
     /* HERO: Give the text more space */
     .region-page .region-copy {
         max-width: 650px;
@@ -3051,8 +2969,8 @@ body.about-page {
 
     /* Match the heading, description, and image widths */
     .region-page .signature-label,
-    .region-page .signature-lead,
-    .region-page .signature-card {
+        .region-page .signature-lead,
+        .region-page .signature-card {
         width: 100%;
         max-width: 1440px;
         margin-left: auto;
@@ -3063,5 +2981,762 @@ body.about-page {
     .region-page .signature-card {
         height: clamp(440px, 38vw, 580px);
         flex-shrink: 0;
+    }
+}
+
+/* BOOKING AND INQUIRY — Scoped defaults keep main-site colors unchanged. */
+/* SHARED BOOKING AND INQUIRY INTERFACE — independent from the existing site styles. */
+/* COLORS AND GLOBAL DEFAULTS */
+body:where(:has(.form-shell, .terms-page)) {
+    color-scheme: light;
+    --navy: #061a38;
+    --paper: #e0e1e4;
+    --gold: #d8bc82;
+}
+
+body:where(:has(.form-shell, .terms-page)) {
+    margin: 0;
+    background: var(--navy);
+    color: #faf7ef;
+    font-family: "DM Sans Local", Arial, sans-serif;
+}
+
+/* Full-width canvas uses the available screen instead of a narrow panel. */
+/* PAGE CONTAINER */
+.form-shell {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 24px clamp(20px, 6vw, 120px) 28px;
+    background: var(--navy);
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+/* BACK BUTTON */
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 24px;
+    color: #ffffff;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0;
+}
+
+.back-home img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* HEADINGS AND INTRODUCTION */
+:where(body:where(:has(.form-shell, .terms-page))) h1, :where(body:where(:has(.form-shell, .terms-page))) h2, :where(body:where(:has(.form-shell, .terms-page))) legend, :where(body:where(:has(.form-shell, .terms-page))) .eyebrow {
+    font-family: "Crimson Text Local", Georgia, serif;
+    font-weight: 400;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) h1 {
+    font-size: clamp(27px, 4vw, 38px);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.form-heading {
+    margin-bottom: 32px;
+}
+
+.form-heading p {
+    margin: 0;
+    color: #c8d0df;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-heading .eyebrow, .eyebrow {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .1em;
+    margin-bottom: 5px;
+}
+
+/* FORM SECTIONS AND FIELD LAYOUT */
+:where(body:where(:has(.form-shell, .terms-page))) fieldset {
+    margin: 0 0 32px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) legend {
+    margin-bottom: 18px;
+    padding: 0;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px 55px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field > label, .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+/* INPUTS, DROPDOWNS, AND TEXT AREAS */
+:where(body:where(:has(.form-shell, .terms-page))) input, :where(body:where(:has(.form-shell, .terms-page))) select, :where(body:where(:has(.form-shell, .terms-page))) textarea {
+    font: inherit;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) input:not([type="checkbox"]):not([type="radio"]), :where(body:where(:has(.form-shell, .terms-page))) select, :where(body:where(:has(.form-shell, .terms-page))) textarea {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    background: var(--paper);
+    border: 1px solid #b4bdce;
+    border-radius: 4px;
+    color: #152642;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) input[type="checkbox"], :where(body:where(:has(.form-shell, .terms-page))) input[type="radio"] {
+    accent-color: #173b67;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) a:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) button:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) input:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) select:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) textarea:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) summary:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* DESTINATION SELECTOR AND PACKAGE PREVIEW */
+.destination-section > .field, .inquiry-topic {
+    max-width: 350px;
+    margin-bottom: 16px;
+}
+
+.destination-placeholder {
+    display: none;
+    align-items: center;
+    min-height: 140px;
+    margin: 0;
+    padding: 24px;
+    background: var(--paper);
+    color: #526077;
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.destination-preview {
+    display: none;
+    grid-template-columns: 38% 1fr;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--paper);
+    color: #152642;
+}
+
+.destination-preview img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+}
+
+.destination-preview > div {
+    padding: 22px;
+}
+
+.destination-preview h2 {
+    margin: 0 0 7px;
+    font-size: 29px;
+}
+
+.destination-preview p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.destination-preview .package-meta {
+    font-weight: bold;
+}
+
+.destination-preview a {
+    color: #153963;
+    font-size: 12px;
+}
+
+/* TRAVELER COUNTS */
+.traveler-counts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.traveler-counts label {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* PAYMENT OPTIONS */
+.payment-options {
+    display: grid;
+    gap: 12px;
+    max-width: 350px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 4px;
+    background: var(--paper);
+    color: #152642;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* SUBMIT BUTTON AND BOOKING TERMS */
+.submit-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.agreement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.terms {
+    max-width: 540px;
+    margin: 12px auto 22px;
+    color: #c8d0df;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.terms summary {
+    cursor: pointer;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 190px;
+    padding: 10px 25px;
+    border: 1px solid #b4bdce;
+    border-radius: 4px;
+    background: var(--paper);
+    color: #152642;
+    font: 12px "DM Sans Local", Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    filter: brightness(.93);
+}
+
+.demo-note {
+    color: #b8c6d9;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* INQUIRY TOPIC */
+.inquiry-topic > label {
+    text-transform: none;
+    font-family: "Crimson Text Local", Georgia, serif;
+    font-size: 21px;
+}
+
+.inquiry-topic {
+    margin-bottom: 32px;
+}
+
+.inquiry-topic small {
+    display: block;
+    margin-top: 8px;
+    color: #bac6d9;
+    font-size: 11px;
+}
+
+/* Fragment navigation shows the confirmation screens without JavaScript. */
+.status-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: 24px;
+    background: #101a2bf5;
+    overflow-y: auto;
+}
+
+.status-screen:target {
+    display: grid;
+    place-items: center;
+}
+
+body:has(.status-screen:target) .form-shell > :not(.status-screen) {
+    display: none;
+}
+
+.status-card {
+    width: min(100%, 570px);
+    padding: 44px 32px;
+    text-align: center;
+    background: #f7f7f5;
+    color: #142139;
+    box-shadow: 0 16px 48px #0004;
+}
+
+.status-card h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin: 12px 0 20px;
+}
+
+.status-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.status-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.action-button.dark {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+}
+
+.action-button.outline {
+    background: transparent;
+    border-color: var(--navy);
+}
+
+.preview-notice {
+    color: #526077;
+}
+
+/* ACCESSIBLE HIDDEN LABELS */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 620px) {
+    .form-shell {
+        margin: 0;
+        padding: 28px 20px;
+        min-height: 100vh;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .destination-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-preview img {
+        height: 190px;
+        min-height: 0;
+    }
+
+    .status-card {
+        padding: 30px 20px;
+    }
+
+    .status-actions {
+        flex-direction: column;
+    }
+}
+
+/* Match the seven destination options to their preview cards. */
+.destination-section:has(#destination option[value="mondstadt"]:checked) [data-region="mondstadt"],
+.destination-section:has(#destination option[value="liyue"]:checked) [data-region="liyue"],
+.destination-section:has(#destination option[value="inazuma"]:checked) [data-region="inazuma"],
+.destination-section:has(#destination option[value="sumeru"]:checked) [data-region="sumeru"],
+.destination-section:has(#destination option[value="fontaine"]:checked) [data-region="fontaine"],
+.destination-section:has(#destination option[value="natlan"]:checked) [data-region="natlan"],
+.destination-section:has(#destination option[value="snezhnaya"]:checked) [data-region="snezhnaya"] {
+    display: grid;
+}
+
+/* INQUIRY SPACING: Keep all fields and the submit area closer together. Content remains scrollable on short screens and at larger browser zoom. */
+.form-shell:has(form[action^="inquiry.html"]) .back-home {
+    margin-bottom: 12px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .form-heading {
+    margin-bottom: 18px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .inquiry-topic {
+    max-width: none;
+    width: calc((100% - 55px) / 2);
+    margin-bottom: 20px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) fieldset {
+    margin-bottom: 20px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) legend {
+    margin-bottom: 12px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .field-grid {
+    row-gap: 16px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) textarea {
+    height: 96px;
+    min-height: 96px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .submit-area {
+    margin-top: 18px;
+}
+
+@media (max-width: 620px) {
+    .form-shell:has(form[action^="inquiry.html"]) .inquiry-topic {
+        width: 100%;
+    }
+}
+
+/* TERMS AND CONDITIONS — Standalone page and booking overlay. */
+/* BOOKING CONSENT: Checkbox and an underlined link to the separate terms page. */
+.booking-agreement {
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.booking-agreement > span {
+    text-align: left;
+}
+
+.booking-agreement label {
+    cursor: pointer;
+}
+
+.booking-agreement a,
+.terms-page a:not(.back-home) {
+    color: #e2c58a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.booking-agreement a:hover,
+.terms-page a:not(.back-home):hover {
+    color: #fff3d5;
+}
+
+/* TERMS PAGE: Full-width layout with responsive side padding. */
+.terms-page {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 32px clamp(20px, 5vw, 96px) 60px;
+}
+
+.terms-heading {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #42516a;
+}
+
+.terms-heading h1 {
+    margin-bottom: 16px;
+}
+
+.terms-heading > p:last-child,
+.terms-section p,
+.terms-contact p {
+    color: #d2dbe8;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.terms-section {
+    margin-bottom: 28px;
+}
+
+.terms-section h2,
+.terms-contact h2 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    color: #3542b6;
+}
+
+.terms-section p {
+    margin: 0;
+}
+
+.terms-contact {
+    margin-top: 38px;
+    padding-top: 24px;
+    border-top: 1px solid #3542b6;
+}
+
+/* MOBILE: Keep the consent row aligned when its text wraps. */
+@media (max-width: 620px) {
+    .booking-agreement {
+        align-items: flex-start;
+    }
+
+    .booking-agreement input {
+        margin-top: 4px;
+    }
+}
+
+/* UNDERLINED TERMS CONTROL: Styled as a link, opens the native HTML popover. */
+.terms-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #e2c58a;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.terms-link:hover {
+    color: #fff3d5;
+}
+
+/* OVERLAY PANEL: Centered with the booking page visible around its edges. */
+.terms-overlay {
+    width: min(760px, calc(100vw - 40px));
+    height: min(820px, calc(100dvh - 64px));
+    max-height: calc(100dvh - 64px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #c0c8d5;
+    border-radius: 12px;
+    background: #e0e1e4;
+    color: #142139;
+    box-shadow: 0 24px 90px #0007;
+    overflow: hidden;
+}
+
+/* Keep the panel hidden until its popover is open. */
+.terms-overlay:popover-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-overlay::backdrop {
+    background: rgb(3 12 27 / 55%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+body:has(.terms-overlay:popover-open) {
+    overflow: hidden;
+}
+
+.terms-overlay-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    padding: 18px 24px;
+    border-bottom: 1px solid #b8c1d0;
+}
+
+.terms-overlay-header h2 {
+    margin: 0;
+    color: #b8860b;
+    font-size: 26px;
+}
+
+.terms-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #142139;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.terms-back img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Only the terms content scrolls; the back button and footer stay visible. */
+.terms-frame {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: #e0e1e4;
+}
+
+.terms-overlay-actions,
+.terms-standalone-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px 24px;
+}
+
+.terms-overlay-actions {
+    flex-shrink: 0;
+    border-top: 1px solid #b8c1d0;
+}
+
+.terms-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    min-width: 150px;
+    padding: 10px 22px;
+    border: 1px solid #142139;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.terms-action-primary,
+.terms-page a.terms-action-primary {
+    background: #061a38;
+    color: #fff;
+    text-decoration: none;
+}
+
+.terms-action-secondary,
+.terms-page a.terms-action-secondary {
+    background: #f7f7f5;
+    color: #142139;
+    text-decoration: none;
+}
+
+/* EMBEDDED TERMS: Reuse the same document with a light panel theme. Its own navigation is hidden because the parent overlay supplies close controls. */
+body:has(.terms-page:target) {
+    background: #e0e1e4;
+    color: #142139;
+}
+
+.terms-page:target {
+    padding: 24px 30px;
+}
+
+.terms-page:target > .back-home,
+.terms-page:target > .terms-standalone-actions,
+.terms-page:target .terms-heading h1 {
+    display: none;
+}
+
+.terms-page:target .terms-heading > p:last-child,
+.terms-page:target .terms-section p,
+.terms-page:target .terms-contact p {
+    color: #344259;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.terms-page:target .terms-section h2,
+.terms-page:target .terms-contact h2 {
+    color: #b8860b;
+    font-size: 23px;
+}
+
+.terms-page:target a:not(.back-home) {
+    color: #184b83;
+}
+
+/* MOBILE: Retain a visible margin around the overlay. */
+@media (max-width: 620px) {
+    .terms-overlay {
+        width: calc(100vw - 24px);
+        height: calc(100dvh - 32px);
+        max-height: calc(100dvh - 32px);
+    }
+
+    .terms-overlay-header {
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .terms-overlay-header h2 {
+        font-size: 21px;
+    }
+
+    .terms-overlay-actions {
+        gap: 10px;
+        padding: 14px 12px;
+    }
+
+    .terms-overlay-actions .terms-action {
+        flex: 1;
+        min-width: 0;
+        padding-inline: 12px;
+    }
+
+    .terms-page:target {
+        padding: 20px;
     }
 }
