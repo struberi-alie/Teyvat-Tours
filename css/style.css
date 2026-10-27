@@ -1811,65 +1811,66 @@ body:where(:not(:has(.form-shell, .terms-page))) {
 
 .package-theme-mondstadt {
     background-image: url("../assets/images/mondstadt hero page.webp");
-    --overlay: rgba(40,130,154,.76);
+    --overlay: rgba(7, 49, 61, 0.76);
     --overlay-mid: rgba(45,140,157,.48);
     --chip: #16a7d2;
     --ribbon: #1685a1;
-    --title: #08213d;
+    --title: #FFFFFF;
 }
 
 .package-theme-liyue {
     background-image: url("../assets/images/liyue.webp");
-    --overlay: rgba(123,21,18,.76);
+    --overlay: rgba(65, 10, 8, 0.76);
     --overlay-mid: rgba(123,21,18,.52);
     --chip: #b31518;
-    --ribbon: #a4080b;
-    --title: #fff3dc;
+    --ribbon: #b9751d;
+    --title: #FFFFFF;
 }
 
 .package-theme-inazuma {
     background-image: url("../assets/images/inazuma.jpg");
-    --overlay: rgba(112,64,157,.70);
+    --overlay: rgba(42, 7, 75, 0.7);
     --overlay-mid: rgba(112,64,157,.46);
     --chip: #8659b4;
     --ribbon: #8050be;
-    --title: #52215e;
+    --title: #FFFFFF;
 }
 
 .package-theme-sumeru {
     background-image: url("../assets/images/sumeru.jpg");
-    --overlay: rgba(91,145,69,.73);
+    --overlay: rgba(26, 71, 7, 0.73);
     --overlay-mid: rgba(90,145,69,.48);
     --chip: #d0ad18;
     --ribbon: #b79a16;
-    --title: #43530e;
+    --title: #FFFFFF;
 }
 
 .package-theme-fontaine {
     background-image: url("../assets/images/fontaine_heropage.jpg");
-    --overlay: rgba(40,142,180,.72);
+    --overlay: rgba(6, 33, 121, 0.72);
     --overlay-mid: rgba(40,142,180,.46);
     --chip: #49b0c8;
     --ribbon: #287c92;
-    --title: #0a3150;
+    --title: #FFFFFF;
 }
 
 .package-theme-natlan {
     background-image: url("../assets/images/natlan_heropage.png");
-    --overlay: rgba(170,72,29,.72);
+    --overlay: rgba(87, 37, 16, 0.72);
     --overlay-mid: rgba(170,72,29,.45);
     --chip: #d29025;
     --ribbon: #ad4218;
-    --title: #7a1d0a;
+    --title: #FFFFFF;
 }
+
 
 .package-theme-snezhnaya {
     background-image: url("../assets/images/snezhnaya.jpg");
-    --overlay: rgba(89,181,212,.72);
-    --overlay-mid: rgba(89,181,212,.48);
+    --overlay: rgba(31, 113, 138, 0.72);
+    --overlay-mid: rgba(24, 100, 121, 0.48);
     --chip: #0b4161;
-    --ribbon: #dff0f3;
-    --title: #0b4161;
+    --ribbon: #31bcd4;
+    --title: #FFFFFF;
 }
 
 /* MONDSTADT — destination page colors and backgrounds. */
@@ -3097,7 +3098,7 @@ body:where(:has(.form-shell, .terms-page)) {
 .field > label, .field-label {
     display: block;
     margin-bottom: 8px;
-    font-size: 11px;
+    font-size: 20px;
     letter-spacing: .04em;
     text-transform: uppercase;
 }
@@ -3175,11 +3176,11 @@ body:where(:has(.form-shell, .terms-page)) {
 
 .destination-preview h2 {
     margin: 0 0 7px;
-    font-size: 29px;
+    font-size: 75px;
 }
 
 .destination-preview p {
-    font-size: 13px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
@@ -3189,7 +3190,7 @@ body:where(:has(.form-shell, .terms-page)) {
 
 .destination-preview a {
     color: #153963;
-    font-size: 12px;
+    font-size: 20px;
 }
 
 /* TRAVELER COUNTS */
