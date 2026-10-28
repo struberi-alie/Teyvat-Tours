@@ -3497,29 +3497,39 @@ body:has(.status-screen:target) .form-shell > :not(.status-screen) {
 
 .terms-heading h1 {
     margin-bottom: 16px;
+    font-size: 58px;
+    line-height: 1.2;
 }
 
 .terms-heading > p:last-child,
 .terms-section p,
 .terms-contact p {
     color: #d2dbe8;
-    font-size: 16px;
-    line-height: 1.8;
+    font-size: 20px;
+    line-height: 1.0;
 }
 
 .terms-section {
-    margin-bottom: 28px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .terms-section h2,
 .terms-contact h2 {
-    margin: 0 0 10px;
-    font-size: 26px;
-    color: #3542b6;
+    margin: 0 0 6px;
+    font-size: 30px;
+    color: #eff0f1;
+    line-height: 2.0;
+    font-weight: 700;
 }
 
 .terms-section p {
     margin: 0;
+    line-height: 1.6;
+}
+
+.terms-section p + p {
+    margin-top: 10px;
 }
 
 .terms-contact {
@@ -3697,7 +3707,7 @@ body:has(.terms-page:target) {
 .terms-page:target .terms-section p,
 .terms-page:target .terms-contact p {
     color: #344259;
-    font-size: 15px;
+    font-size: 25px;
     line-height: 1.7;
 }
 
