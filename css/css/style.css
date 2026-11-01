@@ -1,0 +1,3791 @@
+/* TEYVAT TOURS — Unified stylesheet. Keep this file in css/style.css. */
+@import url("https://fonts.googleapis.com/css2?family=Birthstone+Bounce:wght@400;500&family=Crimson+Text:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&display=swap");
+
+@font-face {
+    font-family: "DM Sans Local";
+    src: url("../assets/fonts/DMSans-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Crimson Text Local";
+    src: url("../assets/fonts/CrimsonText-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Birthstone Bounce Local";
+    src: url("../assets/fonts/BirthstoneBounce-Regular.ttf") format("truetype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Scintilla Local";
+    src: url("../assets/fonts/Scintilla-3z7rG.otf") format("opentype");
+    font-display: swap;
+}
+
+:root {
+    --navy: #0f1828;
+    --navy-2: #102036;
+    --ink: #0c1e35;
+    --gold: #e8b735;
+    --cream: #f6f2e9;
+    --white: #fff;
+    --muted: #dce7ef;
+    --shadow: 0 18px 45px rgba(0, 0, 0, .22);
+    --sans: "DM Sans Local", "DM Sans", Arial, sans-serif;
+    --serif: "Crimson Text Local", "Crimson Text", Georgia, serif;
+    --script: "Birthstone Bounce Local", "Birthstone Bounce", cursive;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body:where(:not(:has(.form-shell, .terms-page))) {
+    margin: 0;
+    font-family: var(--sans);
+    background: #5eb7df;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+:where(body:not(:has(.form-shell, .terms-page))) a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:where(body:not(:has(.form-shell, .terms-page))) button, :where(body:not(:has(.form-shell, .terms-page))) input, :where(body:not(:has(.form-shell, .terms-page))) select, :where(body:not(:has(.form-shell, .terms-page))) textarea {
+    font: inherit;
+}
+
+:where(body:not(:has(.form-shell, .terms-page))) img {
+    display: block;
+    max-width: 100%;
+}
+
+/* SITE HEADER - Controls the sticky top navigation, logo, and desktop links. */
+.site-header {
+    height: 66px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid rgba(255, 255, 255, .04);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-weight: 700;
+    letter-spacing: .03em;
+    font-size: 18px;
+}
+
+.brand-mark {
+    width: 22px;
+    height: 22px;
+    border: 3px solid var(--gold);
+    border-radius: 50%;
+    display: inline-grid;
+    place-items: center;
+    color: var(--gold);
+    font-size: 10px;
+    transform: rotate(-16deg);
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #e8edf4;
+}
+
+.desktop-nav a {
+    padding: 24px 0 17px;
+    position: relative;
+    opacity: .88;
+}
+
+.desktop-nav a:hover, .desktop-nav a.active {
+    opacity: 1;
+}
+
+.desktop-nav a.active:after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: var(--gold);
+    left: 0;
+    right: 0;
+    bottom: 11px;
+    border-radius: 3px;
+}
+
+.menu-btn {
+    display: none;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    background: transparent;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 2px;
+    background: white;
+    margin: 6px 0;
+    border-radius: 4px;
+}
+
+/* MOBILE DRAWER NAVIGATION: Styles the slide-out menu and its dark page backdrop. */
+.drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .48);
+    z-index: 79;
+    opacity: 0;
+    pointer-events: none;
+    transition: .25s;
+}
+
+.drawer {
+    position: fixed;
+    z-index: 80;
+    inset: 0 auto 0 0;
+    width: min(315px, 87vw);
+    background: var(--navy);
+    padding: 36px 20px 26px;
+    transform: translateX(-105%);
+    transition: .28s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer.open {
+    transform: none;
+}
+
+.drawer-backdrop.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.drawer-close {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    background: transparent;
+    border: 0;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.drawer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 52px;
+}
+
+.drawer .big-link {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1;
+    color: #fff;
+}
+
+.drawer .nation-list {
+    margin-top: -12px;
+    margin-left: 18px;
+    display: grid;
+    gap: 12px;
+}
+
+.drawer .nation-list a {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.drawer .nation-list img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.drawer-settings {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.drawer-settings img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* SHARED BUTTONS: Reusable primary, outline, and gold button styles. */
+.btn {
+    border: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 42px;
+    padding: 0 22px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    cursor: pointer;
+    transition: .18s ease;
+    border-radius: 15px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.04);
+}
+
+.btn-primary {
+    background: #062a57;
+    color: #ffffff;
+}
+
+.btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 3px solid #1f5ca6;
+}
+
+.btn-gold {
+    background: #ffcf34;
+    color: #111;
+    border: 1px solid #a57800;
+    box-shadow: 0 3px 0 rgba(70, 50, 0, .3);
+}
+
+/* HOMEPAGE HERO : Main landing banner, title, CTA buttons, and search. */
+.home {
+    color: #fff;
+    background-color: #102f59;
+    background-image: linear-gradient( rgba(18, 56, 150, 0.65), rgba(24, 134, 220, 0.45) ), url("/assets/images/index-bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.home-hero {
+    min-height: 510px;
+    position: relative;
+    background: url("../assets/images/mainpage.jpg") center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 76px 7vw 55px;
+    overflow: hidden;
+}
+
+.home-hero:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, rgba(6, 43, 94, .58) 0%, rgba(20, 72, 142, .25) 42%, rgba(12, 32, 75, .08) 100% );
+}
+
+.hero-kicker {
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .16em;
+    margin-bottom: 4px;
+}
+
+.home-title {
+    font-family: var(--serif);
+    font-size: 46px;
+    line-height: .9;
+    margin: 0;
+    text-transform: uppercase;
+    max-width: 600px;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, .28);
+}
+
+.home-title .script {
+    display: block;
+    font-family: var(--script);
+    font-weight: 400;
+    text-transform: none;
+    font-size: 72px;
+    line-height: .8;
+    margin-top: 3px;
+    color: #081934;
+    transform: rotate(-3deg);
+    text-shadow: none;
+}
+
+.home-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 80px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 14px;
+    margin-top: 0;
+    margin-left: auto;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 160px;
+}
+
+/* HOMEPAGE TOUR PACKAGES : Layout and styling for the seven regional package cards. */
+.packages {
+    padding: 34px 3.4vw 24px;
+    max-width: none;
+    margin: 0 auto;
+}
+
+.section-label {
+    font-size: 35px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.package-stack {
+    display: grid;
+    gap: 18px;
+}
+
+.package-card {
+    position: relative;
+    min-height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, .15);
+    isolation: isolate;
+}
+
+.package-card:before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient( 90deg, var(--overlay, rgba(17, 87, 110, .8)) 0%, var(--overlay-mid, rgba(17, 87, 110, .52)) 52%, rgba(0, 0, 0, .10) 100% );
+    z-index: -1;
+}
+
+.package-info {
+    padding: 40px 36px;
+    max-width: 48%;
+}
+
+.package-info h2 {
+    font-family: var(--serif);
+    font-size: clamp(48px, 4vw, 72px);
+    line-height: 1.05;
+    margin: 0;
+    color: var(--title, #0d213d);
+}
+
+.package-info h3 {
+    font-size: clamp(18px, 1.4vw, 24px);
+    text-transform: uppercase;
+    margin: 9px 0 20px;
+    max-width: 560px;
+}
+
+.package-info p {
+    font-family: var(--serif);
+    font-size: clamp(18px, 1.25vw, 22px);
+    line-height: 1.5;
+    max-width: 560px;
+    margin: 0 0 24px;
+}
+
+.price-chip {
+    display: inline-block;
+    background: var(--chip, #14a6d6);
+    padding: 14px 24px;
+    border-radius: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    min-width: 190px;
+}
+
+.package-card .view-btn {
+    position: absolute;
+    right: 16px;
+    bottom: 15px;
+    z-index: 3;
+}
+
+/* PACKAGE FEATURED-STOP CIRCLES: Positions the circular attraction previews on package cards. */
+.package-circles {
+    position: absolute;
+    right: 17%;
+    top: 25px;
+    width: 38%;
+    height: 240px;
+}
+
+.circle-stop {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .22);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .28);
+    background: #ddd;
+}
+
+.circle-stop img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* featured stos circle #1 */
+.circle-stop:nth-child(1) {
+    width: 120px;
+    height: 120px;
+    left: 0;
+    top: 75px;
+}
+
+/* featured stos circle #3 */
+.circle-stop:nth-child(2) {
+    width: 120px;
+    height: 120px;
+    right: 0;
+    top: 75px;
+}
+
+/* featured stos circle #2 */
+.circle-stop:nth-child(3) {
+    width: 140px;
+    height: 140px;
+    left: 32%;
+    bottom: -20px;
+}
+
+/* featured stop text label */
+.circle-stop span {
+    position: absolute;
+    left: 50%;
+    bottom: 8px;
+    transform: translateX(-50%);
+    font-family: var(--serif);
+    font-size: 10px;
+    text-transform: uppercase;
+    text-shadow: 0 1px 5px #000;
+    text-align: center;
+    width: 90%;
+}
+
+/* ribbon in right side */
+.nation-ribbon {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    width: 75px;
+    height: 230px;
+    background: var(--ribbon, #13788e);
+    clip-path: polygon( 0 0, 100% 0, 100% 78%, 50% 100%, 0 78% );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nation-ribbon img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, .15));
+}
+
+/* HOMEPAGE QUICK LINKS: Explore, travel services, and company links above the footer. */
+.home-footer-top {
+    max-width: 1200px;
+    margin: 8px auto 0;
+    padding: 18px 3.4vw 30px;
+    border-top: 3px solid rgba(255, 255, 255, .86);
+}
+
+.social-mini {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+    font-weight: 700;
+}
+
+.footer-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 28px;
+}
+
+.footer-columns h4 {
+    font-family: var(--serif);
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: #102036;
+}
+
+.footer-columns a {
+    display: block;
+    font-family: var(--serif);
+    font-size: 14px;
+    margin: 4px 0;
+    color: white;
+}
+
+/* GLOBAL FOOTER: Shared tagline, legal links, and social media shortcuts. */
+.site-footer {
+    background: var(--navy);
+    color: white;
+    padding: 26px 28px 22px;
+}
+
+.footer-tagline {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: .02em;
+    margin: 0 0 34px;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+}
+
+.legal {
+    display: flex;
+    gap: 34px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.socials {
+    display: flex;
+    gap: 16px;
+    font-size: 25px;
+    align-items: center;
+}
+
+.socials a {
+    opacity: .95;
+}
+
+/* REGION PAGES: Shared layout for all seven destination pages. */
+.region-page {
+    background: var(--region-bg, #63c3dd);
+    color: #fff;
+}
+
+/* REGION HERO: Displays the region title, trip details, CTA, background, and main image. */
+.region-hero {
+    position: relative;
+    width: 100%;
+    min-height: 465px;
+    display: grid;
+    grid-template-columns: minmax(0, 43fr) minmax(0, 57fr);
+    align-items: center;
+    gap: 18px;
+    padding: 26px 38px 34px;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--region-bg, #63c3dd);
+    box-sizing: border-box;
+}
+
+/* REGION HERO BACKGROUND: Reuses the region image as a 50%-opacity full-section background. */
+.region-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--hero-bg);
+    background-size: var(--hero-bg-size, cover);
+    background-position: var(--hero-bg-position, center center);
+    background-repeat: no-repeat;
+    opacity: 0.50;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.region-hero::after {
+    content: none;
+}
+
+/* REGION HERO TEXT: Controls the catalog label, region title, subtitle, price, and duration. */
+.region-copy {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 500px;
+    padding: 34px 0 0 6px;
+}
+
+.region-name {
+    margin: 6px 0 0;
+    color: var(--name-color, #071d3b);
+    font-family: var(--serif);
+    font-size: clamp(58px, 4.8vw, 78px);
+    font-weight: 700;
+    line-height: .88;
+}
+
+.region-subtitle {
+    max-width: 470px;
+    margin: 5px 0 0;
+    color: #fff;
+    font-family: var(--serif);
+    font-size: clamp(30px, 2.35vw, 42px);
+    font-weight: 600;
+    line-height: .96;
+}
+
+/* BACK BUTTON: Circular arrow that returns the visitor to the homepage. */
+.back-link {
+    position: absolute;
+    top: 18px;
+    left: 24px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 0;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    z-index: 3;
+    padding: 0;
+}
+
+.back-link img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* PRICE AND DURATION: Groups the starting price and trip length shown in the hero. */
+.hero-meta {
+    display: flex;
+    gap: 55px;
+    margin: 42px 0 0;
+    color: #fff;
+}
+
+.meta-label {
+    margin-bottom: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.meta-value {
+    font-family: var(--serif);
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.meta-note {
+    margin-top: 4px;
+    font-size: 11px;
+}
+
+/* HERO CTA BUTTON: Sends the visitor toward the Featured Stops section. */
+.region-copy .btn-primary {
+    width: 78%;
+    min-height: 44px;
+    margin-top: 24px;
+    border: 0;
+    border-radius: 2px;
+    background: #082d61;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* HERO FOREGROUND IMAGE: Sharp destination image displayed above the faded background. */
+.region-hero-image {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 355px;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, .95);
+    border-radius: 0 48px 0 0;
+}
+
+/* HERO IMAGE CROPPING: Keeps different source images inside a consistent frame. */
+.region-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--hero-image-position, center center);
+    border-radius: inherit;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .16);
+}
+
+/* SIGNATURE PACKAGE: Main itinerary image, description, duration, and price panel. */
+.signature {
+    position: relative;
+    width: 100%;
+    padding: 48px 44px 52px;
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--region-bg, #63c3dd);
+    box-sizing: border-box;
+}
+
+/* SIGNATURE BACKGROUND: Reuses the signature image as a 50%-opacity section background. */
+.signature-label {
+    margin: 0;
+    color: #f6f6f6;
+    font-size: 18px;
+    font-weight: 700;
+    opacity: 100%;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+.signature::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--signature-bg);
+    background-size: var(--signature-bg-size, cover);
+    background-position: var(--signature-bg-position, center center);
+    background-repeat: no-repeat;
+    opacity: 0.50;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.signature::after {
+    content: none;
+}
+
+.signature > .catalog-label, .signature-lead, .signature-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1180px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.signature-lead {
+    max-width: 1120px;
+    margin-top: 24px;
+    margin-left: 21px;
+    margin-bottom: 16px;
+    color: #fff;
+    opacity: 100%;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* SIGNATURE FOREGROUND IMAGE: Sharp signature-package image shown over the faded background. */
+.signature-card {
+    height: 360px;
+    overflow: hidden;
+    border-radius: 0 24px 24px 24px;
+    border: 4px solid rgba(255, 255, 255, .95);
+    box-shadow: var(--shadow);
+}
+
+.signature-card > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--signature-image-position, center center);
+}
+
+/* SIGNATURE PRICE PANEL: Duration and starting-price badge attached to the signature image. */
+.signature-price {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 166px;
+    min-height: 122px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 16px;
+    background: var(--price-color, #143c95);
+    color: #fff;
+}
+
+.signature-price small {
+    margin-bottom: 8px;
+    font-size: 8px;
+    font-weight: 700;
+}
+
+.signature-price strong {
+    display: block;
+    font-family: var(--serif);
+    font-size: 25px;
+    line-height: 1;
+}
+
+.signature-price span {
+    margin-top: 8px;
+    font-size: 9px;
+}
+
+/* FEATURED STOPS: Three attraction cards included in the selected region tour. */
+.featured {
+    padding: 48px 12px 62px;
+    background: var(--featured-bg, #1ca8d0);
+    color: var(--featured-text, #fff);
+}
+
+.featured-head {
+    text-align: center;
+}
+
+.featured-head .catalog-label {
+    margin: 0;
+}
+
+.featured-head h2 {
+    margin: 8px 0 42px;
+    font-family: var(--serif);
+    font-size: 52px;
+    font-weight: 400;
+}
+
+.stop-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.stop-card {
+    min-height: 290px;
+    padding: 10px 10px 20px;
+    overflow: hidden;
+    background: #f7f4ec;
+    color: #202836;
+    border-radius: 14px;
+}
+
+.stop-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 11px;
+}
+
+.stop-card h3 {
+    display: inline-block;
+    margin: 12px 3px 0;
+    padding-bottom: 7px;
+    border-bottom: 2px solid var(--underline, #0da0c8);
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 400;
+    line-height: .95;
+}
+
+/* REGION ACTION BUTTONS: Booking CTA and link back to the full package list. */
+.region-actions {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 64px;
+}
+
+.region-actions .btn {
+    min-height: 60px;
+    padding: 0 28px;
+    border-radius: 7px;
+    font-family: var(--serif);
+    font-size: 19px;
+}
+
+.region-actions .btn-outline {
+    border-color: #062a57;
+    background: #f7f4ec;
+    color: #062a57;
+}
+
+.region-actions .btn-outline:hover, .region-actions .btn-outline:focus-visible {
+    background: #062a57;
+    color: #fff;
+}
+
+/* BOOKING / INQUIRY MODAL- Popup form used to collect traveler and trip information. */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(4, 12, 23, .72);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 120;
+    padding: 20px;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-card {
+    width: min(520px, 100%);
+    max-height: calc(100vh - 40px);
+    max-height: calc(100dvh - 40px);
+    overflow-y: auto;
+    background: #fff;
+    color: #132138;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .4);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    right: 16px;
+    top: 10px;
+    border: 0;
+    background: transparent;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modal-card h2 {
+    font-family: var(--serif);
+    font-size: 36px;
+    margin: 0 0 6px;
+}
+
+.modal-card p {
+    margin: 0 0 18px;
+    color: #536072;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.form-grid .full {
+    grid-column: 1 / -1;
+}
+
+.form-grid input, .form-grid select, .form-grid textarea {
+    width: 100%;
+    border: 1px solid #ccd3dd;
+    border-radius: 8px;
+    padding: 12px;
+    background: white;
+    color: #19283d;
+}
+
+.form-grid textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.success-note {
+    display: none;
+    margin-top: 14px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #e8f8ef;
+    color: #1d7040;
+    font-weight: 600;
+}
+
+/* TABLET RESPONSIVE RULES: Layout adjustments for screens 900px wide and below. */
+@media (max-width: 900px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .site-header {
+        height: 58px;
+        padding: 0 16px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    /* HOME */
+    .home-hero {
+        min-height: 480px;
+        padding: 58px 22px 36px;
+    }
+
+    .home-hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .home-title {
+        font-size: 39px;
+    }
+
+    .home-title .script {
+        font-size: 58px;
+    }
+
+    /* HOME PACKAGE CARDS */
+    .package-card {
+        min-height: 410px;
+    }
+
+    .package-info {
+        max-width: 62%;
+    }
+
+    .package-circles {
+        right: 12%;
+        top: 115px;
+        width: 48%;
+    }
+
+    .nation-ribbon {
+        width: 60px;
+        height: 210px;
+    }
+
+    .package-info h2 {
+        font-size: 43px;
+    }
+
+    /* REGION PAGE */
+    .region-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 72px 24px 34px;
+    }
+
+    .region-copy {
+        max-width: 620px;
+        padding: 0;
+    }
+
+    .region-name {
+        font-size: 62px;
+    }
+
+    .region-subtitle {
+        max-width: 580px;
+        font-size: 35px;
+    }
+
+    .hero-meta {
+        margin-top: 30px;
+    }
+
+    .region-copy .btn-primary {
+        width: min(100%, 520px);
+    }
+
+    .region-hero-image {
+        width: 100%;
+    }
+
+    .region-hero-image {
+        height: 330px;
+        border-radius: 0 38px 0 0;
+    }
+
+    .signature {
+        padding: 36px 24px 46px;
+    }
+
+    .signature-card {
+        height: 330px;
+    }
+
+    .stop-grid {
+        gap: 14px;
+    }
+
+    .stop-card img {
+        height: 150px;
+    }
+
+    .stop-card h3 {
+        font-size: 25px;
+    }
+}
+
+/* MOBILE RESPONSIVE RULES-Compact layout adjustments for screens 620px wide and below. */
+@media (max-width: 620px) {
+    /* HOME */
+    .home-hero {
+        min-height: 430px;
+        background-position: center;
+    }
+
+    .home-title {
+        max-width: 340px;
+        font-size: 31px;
+    }
+
+    .home-title .script {
+        font-size: 52px;
+    }
+
+    .hero-actions {
+        flex-wrap: wrap;
+        margin-top: 24px;
+    }
+
+    /* HOME PACKAGE CARDS */
+    .packages {
+        padding: 28px 13px;
+    }
+
+    .section-label {
+        font-size: 20px;
+    }
+
+    .package-card {
+        min-height: 455px;
+    }
+
+    .package-info {
+        max-width: 76%;
+        padding: 22px 18px;
+    }
+
+    .package-info h2 {
+        font-size: 36px;
+    }
+
+    .package-info h3 {
+        font-size: 12px;
+    }
+
+    .package-info p {
+        font-size: 14px;
+    }
+
+    .price-chip {
+        min-width: 160px;
+        font-size: 11px;
+    }
+
+    .package-circles {
+        right: 9%;
+        top: 185px;
+        width: 56%;
+        height: 190px;
+    }
+
+    .circle-stop:nth-child(1) {
+        width: 92px;
+        height: 92px;
+    }
+
+    .circle-stop:nth-child(2) {
+        width: 85px;
+        height: 85px;
+    }
+
+    .circle-stop:nth-child(3) {
+        width: 82px;
+        height: 82px;
+    }
+
+    .nation-ribbon {
+        width: 52px;
+        height: 190px;
+    }
+
+    .nation-ribbon img {
+        width: 42px;
+        height: 42px;
+    }
+
+    .package-card .view-btn {
+        right: 9px;
+        bottom: 10px;
+        min-height: 38px;
+        padding: 0 14px;
+    }
+
+    /* FOOTER */
+    .footer-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .footer-columns > div:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .footer-tagline {
+        font-size: 25px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .legal {
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    .socials {
+        align-self: flex-end;
+    }
+
+    /* REGION PAGE */
+    .region-hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 64px 18px 28px;
+    }
+
+    .back-link {
+        top: 14px;
+        left: 16px;
+        width: 38px;
+        height: 38px;
+        font-size: 22px;
+    }
+
+    .region-copy {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .catalog-label {
+        font-size: 8px;
+        letter-spacing: .18em;
+    }
+
+    .region-name {
+        font-size: 50px;
+        line-height: .92;
+    }
+
+    .region-subtitle {
+        max-width: 100%;
+        font-size: 29px;
+        line-height: 1;
+    }
+
+    .hero-meta {
+        gap: 28px;
+        margin-top: 28px;
+    }
+
+    .meta-value {
+        font-size: 21px;
+    }
+
+    .region-copy .btn-primary {
+        width: 100%;
+        min-height: 44px;
+        margin-top: 22px;
+    }
+
+    .region-hero-image {
+        height: 270px;
+        border-radius: 0 30px 0 0;
+    }
+
+    .signature {
+        padding: 32px 18px 38px;
+    }
+
+    .signature-lead {
+        margin-top: 14px;
+        font-size: 16px;
+    }
+
+    .signature-card {
+        height: 275px;
+        border-radius: 0 18px 18px 18px;
+    }
+
+    .signature-price {
+        width: 136px;
+        min-height: 105px;
+        padding: 12px;
+    }
+
+    .signature-price strong {
+        font-size: 21px;
+    }
+
+    .featured {
+        padding: 40px 10px 48px;
+    }
+
+    .featured-head h2 {
+        margin-bottom: 28px;
+        font-size: 44px;
+    }
+
+    .stop-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stop-card {
+        min-height: 0;
+    }
+
+    .stop-card img {
+        height: 210px;
+    }
+
+    .region-actions {
+        margin-top: 40px;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0 18px;
+    }
+
+    .region-actions .btn {
+        width: 100%;
+    }
+
+    /* FORM */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid .full {
+        grid-column: auto;
+    }
+}
+
+/* ZOOM AND NARROW-SCREEN SUPPORT: Allow content to wrap without clipping. */
+.region-copy, .region-hero-image, .stop-card {
+    min-width: 0;
+}
+
+.region-name, .package-info h2 {
+    overflow-wrap: anywhere;
+}
+
+.hero-meta, .hero-actions, .region-actions {
+    flex-wrap: wrap;
+}
+
+/* Keep package previews below their descriptions when the layout narrows. Normal flow lets each card grow with its text instead of overlapping it. */
+@media (max-width: 900px) {
+    .package-card {
+        min-height: 0;
+        padding-bottom: 18px;
+    }
+
+    .package-info {
+        max-width: calc(100% - 64px);
+    }
+
+    .package-circles {
+        position: relative;
+        top: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 12px;
+        margin: 0 20px 20px;
+    }
+
+    .package-circles .circle-stop {
+        position: relative;
+        top: auto;
+        right: auto;
+        bottom: auto;
+        left: auto;
+        flex: 0 0 auto;
+    }
+
+    .package-card .view-btn {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        margin: 0 20px;
+        max-width: calc(100% - 40px);
+    }
+
+    .price-chip {
+        min-width: 0;
+        max-width: 100%;
+        overflow-wrap: anywhere;
+    }
+}
+
+/* UPGRADED NAVBAR — shared desktop and mobile navigation. */
+.tt-header, .tt-header * {
+    box-sizing: border-box;
+}
+
+.tt-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    width: 100%;
+    min-height: 84px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 16px clamp(20px,5vw,80px);
+    background: linear-gradient(110deg,#111a29,#192439);
+    border-bottom: 1px solid #bfa16a80;
+    box-shadow: 0 5px 24px #06102133;
+    color: #f5eddc;
+    font-family: Arial,sans-serif;
+}
+
+.tt-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.tt-header button {
+    font: inherit;
+    cursor: pointer;
+}
+
+.tt-header a:focus-visible, .tt-header button:focus-visible {
+    outline: 2px solid #f2d28d;
+    outline-offset: 4px;
+}
+
+.tt-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    flex-shrink: 0;
+    font-family: Georgia,serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    transform: translateX(-25px);
+}
+
+/* Agency logo: retain its proportions inside the navbar. */
+.tt-brand-mark {
+    display: block;
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+.tt-brand small {
+    display: block;
+    margin-top: 6px;
+    font: 8px Arial,sans-serif;
+    letter-spacing: 2.3px;
+    color: #c3b89f;
+}
+
+.tt-navigation {
+    display: flex;
+    align-items: center;
+    gap: 26px;
+}
+
+.tt-header .tt-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 10px 4px;
+    border: 0;
+    background: transparent;
+    color: #eee6d7;
+    font-size: 14px;
+    letter-spacing: .4px;
+    transition: color .18s,background .18s;
+}
+
+.tt-header .tt-nav-link:hover, .tt-header .tt-nav-link[aria-expanded="true"] {
+    color: #f2d28d;
+}
+
+.tt-header .tt-contact {
+    padding: 10px 20px;
+    border: 1px solid #bfa16a90;
+    border-radius: 4px;
+    background: #c9ab6e0d;
+}
+
+.tt-header .tt-contact:hover {
+    background: #c9ab6e1f;
+}
+
+.tt-contact span {
+    color: #dfc087;
+}
+
+.tt-destinations {
+    position: relative;
+}
+
+.tt-chevron {
+    width: 7px;
+    height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .18s;
+}
+
+[aria-expanded="true"] .tt-chevron {
+    transform: rotate(225deg);
+}
+
+.tt-panel {
+    position: absolute;
+    top: calc(100% + 20px);
+    right: -90px;
+    width: 390px;
+    max-width: calc(100vw - 32px);
+    padding: 22px;
+    border: 1px solid #bfa16a80;
+    border-radius: 6px;
+    background: linear-gradient(145deg,#1c2a40,#111b2b);
+    box-shadow: 0 18px 48px #030a1466;
+    max-height: calc(100dvh - 112px);
+    overflow-y: auto;
+}
+
+.tt-panel[hidden] {
+    display: none;
+}
+
+.tt-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    color: #e3c58e;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.tt-panel-intro {
+    margin: 8px 0 16px;
+    color: #c3cbd7;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.tt-region-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 3px;
+}
+
+.tt-region {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 9px 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: background .18s,border-color .18s;
+}
+
+.tt-region:hover, .tt-region:focus-visible {
+    background: #ffffff09;
+    border-color: #c9ab6e55;
+}
+
+.tt-emblem {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--nation-color);
+    border-radius: 50%;
+    color: var(--nation-color);
+    background: #ffffff06;
+}
+
+.tt-emblem img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.tt-region strong {
+    display: block;
+    font: 16px Georgia,serif;
+    color: #f5eddc;
+}
+
+.tt-region small {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: .5px;
+    color: #b6c1d1;
+}
+
+.tt-arrow {
+    margin-left: auto;
+    color: var(--nation-color);
+    font-size: 15px;
+}
+
+.tt-all-tours {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #bfa16a40;
+    margin-top: 15px;
+    padding: 16px 3px 0;
+    font-size: 12px;
+    color: #e3c58e !important;
+}
+
+.tt-menu-toggle {
+    display: none;
+    border: 1px solid #bfa16a80;
+    border-radius: 4px;
+    background: transparent;
+    color: #e3c58e;
+    width: 44px;
+    height: 44px;
+    font-size: 23px !important;
+}
+
+@media (max-width:720px) {
+    .tt-header {
+        min-height: 76px;
+        padding: 14px 20px;
+        flex-wrap: wrap;
+        gap: 0;
+    }
+
+    .tt-brand {
+        font-size: 16px;
+        letter-spacing: 1px;
+    }
+
+    .tt-brand small {
+        font-size: 7px;
+        letter-spacing: 1.4px;
+    }
+
+    .tt-menu-toggle {
+        display: block;
+    }
+
+    .tt-navigation {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+        padding-top: 18px;
+        margin-top: 14px;
+        border-top: 1px solid #bfa16a40;
+        max-height: calc(100dvh - 105px);
+        overflow-y: auto;
+    }
+
+    .tt-navigation.is-open {
+        display: flex;
+    }
+
+    .tt-header .tt-nav-link {
+        width: 100%;
+        justify-content: space-between;
+        padding: 12px;
+    }
+
+    .tt-panel {
+        position: static;
+        width: 100%;
+        max-width: none;
+        max-height: none;
+        margin: 6px 0;
+        padding: 16px;
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion:reduce) {
+    .tt-header * {
+        transition: none !important;
+    }
+}
+
+/* HOMEPAGE VISUALS — nation colors and package backgrounds. */
+.nav-nation-mondstadt {
+    --nation-color: #7bd9bc;
+}
+
+.nav-nation-liyue {
+    --nation-color: #e8ba63;
+}
+
+.nav-nation-inazuma {
+    --nation-color: #bd9cf0;
+}
+
+.nav-nation-sumeru {
+    --nation-color: #acd475;
+}
+
+.nav-nation-fontaine {
+    --nation-color: #78c3f2;
+}
+
+.nav-nation-natlan {
+    --nation-color: #ed977b;
+}
+
+.nav-nation-snezhnaya {
+    --nation-color: #b5dce8;
+}
+
+.package-theme-mondstadt {
+    background-image: url("../assets/images/mondstadt hero page.webp");
+    --overlay: rgba(7, 49, 61, 0.76);
+    --overlay-mid: rgba(45,140,157,.48);
+    --chip: #16a7d2;
+    --ribbon: #1685a1;
+    --title: #FFFFFF;
+}
+
+.package-theme-liyue {
+    background-image: url("../assets/images/liyue.webp");
+    --overlay: rgba(65, 10, 8, 0.76);
+    --overlay-mid: rgba(123,21,18,.52);
+    --chip: #b31518;
+    --ribbon: #b9751d;
+    --title: #FFFFFF;
+}
+
+.package-theme-inazuma {
+    background-image: url("../assets/images/inazuma.jpg");
+    --overlay: rgba(42, 7, 75, 0.7);
+    --overlay-mid: rgba(112,64,157,.46);
+    --chip: #8659b4;
+    --ribbon: #8050be;
+    --title: #FFFFFF;
+}
+
+.package-theme-sumeru {
+    background-image: url("../assets/images/sumeru.jpg");
+    --overlay: rgba(26, 71, 7, 0.73);
+    --overlay-mid: rgba(90,145,69,.48);
+    --chip: #d0ad18;
+    --ribbon: #b79a16;
+    --title: #FFFFFF;
+}
+
+.package-theme-fontaine {
+    background-image: url("../assets/images/fontaine_heropage.jpg");
+    --overlay: rgba(6, 33, 121, 0.72);
+    --overlay-mid: rgba(40,142,180,.46);
+    --chip: #49b0c8;
+    --ribbon: #287c92;
+    --title: #FFFFFF;
+}
+
+.package-theme-natlan {
+    background-image: url("../assets/images/natlan_heropage.png");
+    --overlay: rgba(87, 37, 16, 0.72);
+    --overlay-mid: rgba(170,72,29,.45);
+    --chip: #d29025;
+    --ribbon: #ad4218;
+    --title: #FFFFFF;
+}
+
+
+.package-theme-snezhnaya {
+    background-image: url("../assets/images/snezhnaya.jpg");
+    --overlay: rgba(31, 113, 138, 0.72);
+    --overlay-mid: rgba(24, 100, 121, 0.48);
+    --chip: #0b4161;
+    --ribbon: #31bcd4;
+    --title: #FFFFFF;
+}
+
+/* MONDSTADT — destination page colors and backgrounds. */
+body.page-mondstadt {
+    --region-bg: #094051;
+    --hero-bg: url("../assets/images/mondstadt.jpg");
+    --signature-bg: url("../assets/images/mondstadt hero page.jpg");
+    --hero-tint: rgba(40,162,204,.53);
+    --sig-tint: rgba(39,140,176,.42);
+    --name-color: #18d2d5;
+    --featured-bg: #18a5d0;
+    --price-color: #102f59;
+    --underline: #159bc4;
+    --featured-image: url("../assets/images/mondstadt-bg.jpg");
+}
+
+/* LIYUE — destination page colors and backgrounds. */
+body.page-liyue {
+    --region-bg: #a74a0d;
+    --hero-bg: url("../assets/images/liyue.webp");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --hero-bg-position: center center;
+    --signature-bg-position: center center;
+    --signature-bg: url("../assets/images/liyue_heropage.jpg");
+    --hero-tint: rgba(108,84,34,.48);
+    --sig-tint: rgba(76,52,17,.42);
+    --name-color: #e9cc8e;
+    --featured-bg: #ef8437;
+    --price-color: #6c5422;
+    --underline: #8e6e2c;
+    --featured-image: url("../assets/images/liyue-bg.jpg");
+}
+
+/* INAZUMA — destination page colors and backgrounds. */
+body.page-inazuma {
+    --region-bg: #52154a;
+    --hero-bg: url("../assets/images/inazuma.jpg");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --hero-bg-position: center center;
+    --signature-bg-position: center center;
+    --signature-bg: url("../assets/images/inazuma_heropage.jpg");
+    --hero-tint: rgba(112, 71, 136, 0.48);
+    --sig-tint: rgba(110,80,160,.40);
+    --name-color: #e4b4f0;
+    --featured-bg: #c48ac0;
+    --price-color: #610a5e;
+    --underline: #9c317f;
+    --featured-image: url("../assets/images/inazuma-bg.jpg");
+}
+
+/* SUMERU — destination page colors and backgrounds. */
+body.page-sumeru {
+    --region-bg: #007d13;
+    --hero-bg: url("../assets/images/sumeru.jpg");
+    --signature-bg: url("../assets/images/sumeru_heropage.jpg");
+    --hero-tint: rgba(83,161,121,.48);
+    --sig-tint: rgba(74,163,125,.42);
+    --name-color: #abf98c;
+    --featured-bg: #24790f;
+    --price-color: #3f5310;
+    --underline: #64751d;
+    --featured-image: url("../assets/images/sumeru-bg.jpg");
+}
+
+/* FONTAINE — destination page colors and backgrounds. */
+body.page-fontaine {
+    --region-bg: #032a33;
+    --hero-bg: url("../assets/images/fontaine(1).jpg");
+    --signature-bg: url("../assets/images/fontaine_heropage.jpg");
+    --hero-tint: rgba(59, 129, 155, 0.12);
+    --sig-tint: rgba(35,155,189,.12);
+    --name-color: #bbdef7;
+    --featured-bg: #3895dd;
+    --price-color: #21439b;
+    --underline: #3cacc5;
+    --featured-image: url("../assets/images/fontaine-bg.jpg");
+}
+
+/* NATLAN — destination page colors and backgrounds. */
+body.page-natlan {
+    --region-bg: #422c07;
+    --hero-bg: url("../assets/images/natlan.png");
+    --hero-bg-size: cover;
+    --signature-bg-size: cover;
+    --signature-bg: url("../assets/images/natlan_heropage.png");
+    --hero-bg-position: center center;
+    --hero-image-position: center center;
+    --signature-bg-position: center center;
+    --signature-image-position: center center;
+    --name-color: #dfb855;
+    --featured-bg: #b17c27;
+    --price-color: #884b16;
+    --underline: #b65a1f;
+    --featured-image: url("../assets/images/natlan-bg.jpg");
+}
+
+/* SNEZHNAYA — destination page colors and backgrounds. */
+body.page-snezhnaya {
+    --region-bg: #1c7f9a;
+    --hero-bg: url("../assets/images/snezhnaya.jpg");
+    --signature-bg: url("../assets/images/snezhnaya_heropage.jpg");
+    --hero-tint: rgba(73,183,221,.45);
+    --sig-tint: rgba(66,177,215,.40);
+    --name-color: #97d3f6;
+    --featured-bg: #b9dce5;
+    --featured-text: #0b4161;
+    --price-color: #33bad2;
+    --underline: #259fc3;
+    --featured-image: url("../assets/images/snezhnaya-bg.jpg");
+}
+
+/* ACTIVE NAVIGATION — visible current-page state for mouse and keyboard users. */
+.tt-header .tt-region[aria-current="page"] {
+    background: #e3c58e1a;
+    border-color: #e3c58e;
+    box-shadow: inset 3px 0 0 #e3c58e;
+}
+
+.tt-header .tt-region[aria-current="page"] strong {
+    color: #f2d28d;
+}
+
+.tt-current-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .5px;
+    color: #f2d28d;
+}
+
+.tt-header .tt-nav-link.is-active, .tt-header .tt-nav-link[aria-current="page"] {
+    color: #f2d28d;
+    box-shadow: inset 0 -2px 0 #e3c58e;
+}
+
+/* SHARED TOUR STYLES */
+/* Shared tour refinements: load after style.css on every page. */
+/* Hover a nation in the top navigation to choose a featured stop. Focus-within also exposes the links to keyboard users. */
+.desktop-nav {
+    height: 100%;
+    gap: clamp(10px, 1.5vw, 24px);
+}
+
+.nation-menu {
+    position: relative;
+    height: 100%;
+}
+
+.nation-menu > a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+    white-space: nowrap;
+}
+
+.nav-caret {
+    color: #e8b735;
+    font-size: 10px;
+}
+
+.nation-stops {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1;
+    width: 250px;
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    border-top: 3px solid #e8b735;
+    border-radius: 0 0 10px 10px;
+    background: #102036;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, .3);
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Align the final two nation dropdowns to the right edge of their labels. */
+.nation-menu:nth-last-child(-n + 3) .nation-stops {
+    left: auto;
+    right: 0;
+}
+
+.nation-menu:hover .nation-stops,
+.nation-menu:focus-within .nation-stops {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.desktop-nav .nation-stops a {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.4;
+    opacity: 1;
+}
+
+.desktop-nav .nation-stops a:hover,
+.desktop-nav .nation-stops a:focus-visible {
+    background: #244362;
+    color: #fff;
+    outline: 2px solid #e8b735;
+    outline-offset: -2px;
+}
+
+.region-page .stop-card[id] {
+    scroll-margin-top: 90px;
+}
+
+/* Larger, readable price badge anchored inside the signature photograph. */
+.region-page .signature-card {
+    position: relative;
+}
+
+.region-page .signature-price {
+    width: clamp(210px, 24vw, 290px);
+    min-height: 164px;
+    max-width: 100%;
+    padding: 22px 26px;
+    border-radius: 18px 0 0 0;
+    box-shadow: -5px -5px 24px rgba(0, 0, 0, .2);
+}
+
+.region-page .signature-price small {
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.region-page .signature-price strong {
+    font-size: clamp(36px, 4vw, 48px);
+    line-height: 1.1;
+}
+
+.region-page .signature-price span {
+    font-size: 14px;
+}
+
+/* FEATURED STOPS: */
+.region-page .featured {
+    background-color: #102f59;
+    background-image: linear-gradient( rgba(6, 26, 56, 0.55), rgba(6, 26, 56, 0.35) ), var(--featured-image, none), var(--hero-bg, none);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    color: #fff;
+}
+
+.region-page .stop-grid {
+    max-width: 1440px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.region-page .stop-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 560px;
+    min-height: 0;
+    padding: 12px 12px 22px;
+    box-sizing: border-box;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* Flex allows the photograph to make room without resizing the card. */
+.region-page .stop-card img {
+    display: block;
+    width: 100%;
+    height: 0;
+    min-height: 180px;
+    flex: 1 1 0;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.region-page .stop-card h3 {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin: 18px 4px 0;
+    font-size: clamp(26px, 2.2vw, 34px);
+    line-height: 1.12;
+}
+
+/* Also hides the old label if a cached page still contains it. */
+.region-page .stop-kicker {
+    display: none;
+}
+
+.region-page .stop-description {
+    flex: 0 1 auto;
+    min-height: 0;
+    max-height: 0;
+    margin: 0 4px;
+    overflow: hidden;
+    opacity: 0;
+    color: #344052;
+    font-size: 16px;
+    line-height: 1.6;
+    transition: max-height .3s ease, opacity .2s ease, margin .3s ease;
+}
+
+/* Hover, keyboard focus, and tapping a focusable card reveal the copy. */
+.region-page .stop-card:is(:hover, :focus-within) .stop-description {
+    max-height: 260px;
+    margin-top: 16px;
+    overflow-y: auto;
+    opacity: 1;
+}
+
+.region-page .stop-card:focus-visible {
+    outline: 3px solid #e8b735;
+    outline-offset: 5px;
+}
+
+@media (max-width: 1000px) {
+    .region-page .stop-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 680px) {
+    .region-page .stop-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 520px;
+    }
+
+    .region-page .stop-card {
+        height: 540px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .region-page .stop-description {
+        transition: none;
+    }
+}
+
+@media (max-width: 620px) {
+    .region-page .signature-price {
+        width: 210px;
+        min-height: 140px;
+        padding: 16px 20px;
+    }
+}
+
+/* ABOUT PAGE STYLES */
+/* ABOUT PAGE BASE: Overall colors and default page styling */
+body.about-page {
+    margin: 0;
+    background: #0d1930;
+    color: #071b3d;
+}
+
+/* ABOUT HERO: Intro banner and background image */
+.about-hero {
+    position: relative;
+    min-height: 420px;
+    background: linear-gradient(rgba(255,255,255,.06), rgba(255,255,255,.06)), url("../assets/images/about-us.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 70px 5%;
+    overflow: hidden;
+}
+
+
+.about-hero-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+.about-icon-wrap {
+    width: 280px;
+    height: 280px;
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+}
+
+.about-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.about-hero-copy .eyebrow {
+    margin: 0 0 5px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.about-hero-copy h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255,255,255,.15);
+}
+
+/* ABOUT CONTENT: Main profile, mission, vision, and director area */
+.about-content {
+    position: relative;
+    padding: 55px 3% 70px;
+    background: linear-gradient(rgba(18,56,150,.76), rgba(24,134,220,.56)), url("../assets/images/about-us.jpg") center 58%/cover fixed no-repeat;
+}
+
+.about-grid {
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.about-section-title {
+    margin: 0 0 14px;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: .02em;
+}
+
+.profile-card, .director-card, .mini-card {
+    background: #fff;
+    border-radius: 18px;
+}
+
+.profile-card {
+    padding: 30px 24px 28px;
+}
+
+.company-heading {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.company-mark {
+    width: 100px;
+    height: 100px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+}
+
+.company-mark img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+.company-heading h2 {
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    letter-spacing: .05em;
+}
+
+.company-heading span {
+    display: block;
+    margin-top: 2px;
+    font-size: 12px;
+}
+
+.profile-card p, .director-card p {
+    margin: 0;
+    font-size: 21px;
+    line-height: 1.25;
+}
+
+.mission-vision {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 6px;
+}
+
+.mini-block h3 {
+    margin: 12px 0 10px 4px;
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 26px;
+}
+
+.mini-card {
+    min-height: 265px;
+    padding: 20px 22px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mini-card p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.55;
+}
+
+.director-card {
+    padding: 28px 26px 34px;
+}
+
+.director-photo {
+    width: 205px;
+    height: 205px;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+    margin-bottom: 34px;
+}
+
+.director-intro {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 28px;
+}
+
+.director-intro .director-photo {
+    flex: 0 0 auto;
+    margin-bottom: 0;
+}
+
+.director-identity {
+    flex: 1 1 160px;
+}
+
+.director-identity h3 {
+    margin: 0 0 8px;
+    font-family: var(--serif);
+    font-size: clamp(32px, 3vw, 44px);
+    line-height: 1.1;
+}
+
+.director-identity p {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.site-footer.about-footer {
+    background: #111927;
+}
+
+/* TABLET RESPONSIVE: Stacks content and reduces large elements */
+@media (max-width: 900px) {
+    .about-grid,
+    .mission-vision {
+        grid-template-columns: 1fr;
+    }
+
+    .about-hero-inner {
+        align-items: flex-start;
+    }
+
+    .about-icon-wrap {
+        width: 90px;
+        height: 90px;
+    }
+
+    .about-icon-wrap img {
+        width: 58px;
+        height: 58px;
+    }
+
+    .profile-card p, .director-card p {
+        font-size: 17px;
+    }
+}
+
+/* MOBILE RESPONSIVE: Compact layout for smaller screens */
+@media (max-width: 600px) {
+    .about-hero {
+        min-height: 330px;
+        padding: 45px 20px;
+    }
+
+    .about-hero-inner {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .about-content {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .director-photo {
+        width: 160px;
+        height: 160px;
+    }
+}
+
+/* SHARED VISUAL REFINEMENTS — Consolidated in style.css. */
+.home .price-chip {
+    background: #102f59;
+    color: #ffffff;
+    border: 1px solid rgb(255 255 255 / 45%);
+}
+
+.home .hero-actions .btn-outline {
+    background: #fff8e8;
+    border: 2px solid #c49a42;
+    color: #102f59;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 20%);
+}
+
+.home .hero-actions .btn-outline:hover,
+.home .hero-actions .btn-outline:focus-visible {
+    background: #f1dfb8;
+    color: #102f59;
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+}
+
+/* SIGNATURE PACKAGE: Consistent hierarchy and spacing in all seven nations. */
+.region-page .signature {
+    background-color: #102f45;
+}
+
+.region-page .signature::before {
+    opacity: 0.28;
+}
+
+.region-page .signature-label {
+    position: relative;
+    z-index: 2;
+    max-width: 1180px;
+    margin: 0 auto 18px;
+    font-size: clamp(24px, 2.3vw, 32px);
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+}
+
+.region-page .signature-lead {
+    max-width: 1180px;
+    margin: 0 auto 28px;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #ffffff;
+}
+
+.region-page .signature-price {
+    background: #102f59;
+    color: #ffffff;
+}
+
+/* Featured Stops use the destination rules in this stylesheet. */
+/* NATION DETAILS: Let long subtitles wrap with comfortable line spacing. */
+.region-page .region-subtitle {
+    line-height: 1.2;
+    margin-top: 12px;
+    text-wrap: balance;
+}
+
+.page-sumeru .region-hero {
+    background-color: #163c2e;
+}
+
+.page-sumeru .region-hero::before {
+    opacity: 0.25;
+}
+
+.page-sumeru .region-name {
+    color: #fff6de;
+    text-shadow: 0 2px 8px rgb(0 0 0 / 35%);
+}
+
+/* SECONDARY ACTION: Retain a light appearance, even when hovered or focused. */
+.region-actions .btn-outline:hover,
+.region-actions .btn-outline:focus-visible {
+    background: #f2dfb7;
+    color: #062a57;
+    border-color: #82611e;
+    outline: 3px solid #062a57;
+    outline-offset: 4px;
+}
+
+/* FOOTER: One consistent interaction style for links and keyboard focus. */
+.site-footer a,
+.footer-columns a {
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 5px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible,
+.footer-columns a:hover,
+.footer-columns a:focus-visible {
+    color: #f4d695;
+    text-decoration-color: currentColor;
+}
+
+.site-footer a:focus-visible,
+.footer-columns a:focus-visible {
+    outline: 2px solid #f4d695;
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.social-placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    color: #d7dfeb;
+}
+
+/* ABOUT US: Brand visibility and calmer hero typography. */
+.tt-header .tt-brand {
+    color: #fff4df;
+}
+
+.about-hero {
+    background-image: linear-gradient(rgb(5 22 44 / 62%), rgb(5 22 44 / 62%)), url("../assets/images/about-us.jpg");
+}
+
+.about-hero-copy {
+    min-width: 0;
+}
+
+.about-hero-copy h1 {
+    max-width: 100%;
+    color: #fff7e6;
+    font-size: clamp(75px, 8vw, 75px);
+    line-height: 1.12;
+    text-wrap: balance;
+}
+
+.profile-card p,
+.director-card > p {
+    font-size: 18px;
+    line-height: 1.65;
+}
+
+.profile-card > p + p {
+    margin-top: 18px;
+}
+
+.mission-vision {
+    align-items: stretch;
+}
+
+.mission-vision .mini-block {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.mission-vision .mini-card {
+    flex: 1;
+    padding: 24px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.mission-vision .mini-card p {
+    font-size: 17px;
+    line-height: 1.65;
+}
+
+#company-profile,
+#mission-vision,
+#travel-faq {
+    scroll-margin-top: 120px;
+}
+
+/* TRAVEL GUIDE: Functional footer destination using native HTML disclosures. */
+.travel-faq {
+    padding: 48px clamp(20px, 5vw, 80px);
+    background: #14243a;
+    color: #ffffff;
+}
+
+.travel-faq h2 {
+    margin: 0 0 24px;
+    font-family: var(--serif);
+    font-size: 36px;
+}
+
+.travel-faq details {
+    padding: 18px 0;
+    border-bottom: 1px solid #526078;
+}
+
+.travel-faq summary {
+    font-weight: 700;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.travel-faq p {
+    max-width: 80ch;
+    line-height: 1.7;
+}
+
+.travel-faq a {
+    color: #f4d695;
+    text-decoration: underline;
+}
+
+.travel-faq summary:focus-visible,
+.travel-faq a:focus-visible {
+    outline: 2px solid #f4d695;
+    outline-offset: 4px;
+}
+
+/* MOBILE: Retain the unrelated navigation and company-heading fixes. */
+@media (max-width: 680px) {
+    .tt-header .tt-brand {
+        transform: none;
+    }
+
+    .company-heading {
+        flex-wrap: wrap;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer a,
+        .footer-columns a {
+        transition: none;
+    }
+}
+
+/* HOMEPAGE PACKAGE PREVIEWS — Staggered photos and vertical glow. These rules only affect .home; nation-page stop cards are unchanged. */
+.home .package-card {
+    min-height: 520px;
+    border: 1px solid rgb(255 255 255 / 72%);
+    box-shadow: 0 12px 28px rgb(6 26 56 / 30%);
+}
+
+.home .package-info {
+    max-width: 46%;
+}
+
+/* Reserve a preview area between the description and nation ribbon. */
+.home .package-circles {
+    position: absolute;
+    top: 36px;
+    right: 112px;
+    display: block;
+    width: 39%;
+    max-width: 580px;
+    height: 410px;
+    margin: 0;
+    opacity: 1;
+    transform: none;
+    pointer-events: none;
+    --strip-width: 150px;
+    --label-font: 14px;
+    --side-photo: clamp(140px, 11vw, 210px);
+    --center-photo: clamp(170px, 14vw, 260px);
+}
+
+/* Photo sizes live on the preview container; tablet/mobile change only the variables. */
+.home .package-circles .circle-stop {
+    position: absolute;
+    inset: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    --photo-size: var(--side-photo);
+    width: var(--photo-size);
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    overflow: visible;
+    background: transparent;
+    box-shadow: none;
+    isolation: isolate;
+    grid-column: auto;
+}
+
+/* Left low, right middle, and center high — matching the prototype. */
+.home .package-circles .circle-stop:nth-child(1) {
+    top: 86px;
+    left: 0;
+}
+
+.home .package-circles .circle-stop:nth-child(2) {
+    top: 86px;
+    right: 0;
+}
+
+.home .package-circles .circle-stop:nth-child(3) {
+    --photo-size: var(--center-photo);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* GRADIENT STRIP: A defined colored trail behind the label. Keep this layer sharp; the second layer softens only its lower end. */
+.home .package-circles .circle-stop::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--photo-size) - 70px);
+    left: 50%;
+    width: var(--strip-width);
+    height: 250px;
+    transform: translateX(-50%);
+    background: linear-gradient( to bottom, transparent 0%, var(--preview-glow, var(--chip, #e8be43)) 20%, var(--preview-glow, var(--chip, #e8be43)) 64%, transparent 100% );
+    opacity: 0.85;
+    border-radius: 0;
+    filter: none;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* BOTTOM BLUR: A short soft layer fades out at the end of the strip. */
+.home .package-circles .circle-stop::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--photo-size) + 76px);
+    left: 50%;
+    width: var(--strip-width);
+    height: 68px;
+    transform: translateX(-50%);
+    background: linear-gradient( to bottom, var(--preview-glow, var(--chip, #e8be43)), transparent 100% );
+    filter: blur(10px);
+    opacity: 0.7;
+    border-radius: 0;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.home .package-circles .circle-stop img {
+    display: block;
+    flex: 0 0 auto;
+    width: var(--photo-size);
+    height: var(--photo-size);
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid rgb(255 255 255 / 45%);
+    box-shadow: 0 5px 14px rgb(0 0 0 / 25%);
+}
+
+/* Labels sit below photos instead of covering the scenery. */
+.home .package-circles .circle-stop span {
+    position: relative;
+    inset: auto;
+    width: var(--strip-width);
+    max-width: var(--strip-width);
+    box-sizing: border-box;
+    margin: 10px 0 0;
+    padding: 0 6px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    text-wrap: balance;
+    transform: none;
+    background: transparent;
+    color: #ffffff;
+    font-family: var(--serif);
+    font-size: var(--label-font);
+    font-weight: 700;
+    line-height: 1.35;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px #000, 0 0 6px rgb(0 0 0 / 55%);
+}
+
+/* Nation-colored trails, including the icy white Snezhnaya glow. */
+.home .package-theme-mondstadt {
+    --preview-glow: #5edbd1;
+}
+
+.home .package-theme-liyue {
+    --preview-glow: #f2b44d;
+}
+
+.home .package-theme-inazuma {
+    --preview-glow: #cb92d2;
+}
+
+.home .package-theme-sumeru {
+    --preview-glow: #e1c845;
+}
+
+.home .package-theme-fontaine {
+    --preview-glow: #7fd9ec;
+}
+
+.home .package-theme-natlan {
+    --preview-glow: #e8a33e;
+}
+
+.home .package-theme-snezhnaya {
+    --preview-glow: #e5faff;
+}
+
+/* Tablet: put the previews below the description so nothing overlaps. */
+@media (max-width: 1050px) {
+    .home .package-info {
+        max-width: calc(100% - 100px);
+    }
+
+    .home .package-card {
+        min-height: 0;
+        padding-bottom: 76px;
+    }
+
+    .home .package-circles {
+        --strip-width: 84px;
+        --label-font: 11px;
+        --side-photo: 112px;
+        --center-photo: 140px;
+        position: relative;
+        inset: auto;
+        width: min(390px, calc(100% - 48px));
+        height: 350px;
+        margin: 8px auto 0;
+    }
+}
+
+/* Mobile: scale photos and glow while keeping the staggered arrangement. */
+@media (max-width: 480px) {
+    .home .package-circles {
+        --strip-width: 68px;
+        --label-font: 10px;
+        --side-photo: 88px;
+        --center-photo: 112px;
+        width: calc(100% - 32px);
+        height: 325px;
+    }
+
+    .home .package-circles .circle-stop::before {
+        top: calc(var(--photo-size) - 20px);
+        height: 148px;
+    }
+
+    .home .package-circles .circle-stop::after {
+        top: calc(var(--photo-size) + 72px);
+        height: 68px;
+    }
+}
+
+/* DESTINATION SECTION HEIGHTS — Desktop only. Hero, Signature Package, and Featured Stops share equal rows. The tallest section (normally Featured Stops) sets the height. Images and cards keep their existing sizes. */
+/* Enlarge Hero and Signature content on desktop */
+@media (min-width: 901px) {
+    /* HERO: Give the text more space */
+    .region-page .region-copy {
+        max-width: 650px;
+    }
+
+    .region-page .region-name {
+        font-size: clamp(72px, 6vw, 100px);
+        line-height: 1;
+    }
+
+    .region-page .region-subtitle {
+        max-width: 600px;
+        font-size: clamp(34px, 3vw, 48px);
+        line-height: 1.2;
+    }
+
+    /* HERO: Make the photograph taller */
+    .region-page .region-hero-image {
+        height: clamp(440px, 38vw, 600px);
+    }
+
+    /* SIGNATURE: Center the content vertically */
+    .region-page .signature {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    /* Match the heading, description, and image widths */
+    .region-page .signature-label,
+        .region-page .signature-lead,
+        .region-page .signature-card {
+        width: 100%;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* SIGNATURE: Make the photograph larger */
+    .region-page .signature-card {
+        height: clamp(440px, 38vw, 580px);
+        flex-shrink: 0;
+    }
+}
+
+/* BOOKING AND INQUIRY — Scoped defaults keep main-site colors unchanged. */
+/* SHARED BOOKING AND INQUIRY INTERFACE — independent from the existing site styles. */
+/* COLORS AND GLOBAL DEFAULTS */
+body:where(:has(.form-shell, .terms-page)) {
+    color-scheme: light;
+    --navy: #061a38;
+    --paper: #e0e1e4;
+    --gold: #d8bc82;
+}
+
+body:where(:has(.form-shell, .terms-page)) {
+    margin: 0;
+    background: var(--navy);
+    color: #faf7ef;
+    font-family: "DM Sans Local", Arial, sans-serif;
+}
+
+/* Full-width canvas uses the available screen instead of a narrow panel. */
+/* PAGE CONTAINER */
+.form-shell {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    padding: 24px clamp(20px, 6vw, 120px) 28px;
+    background: var(--navy);
+    min-height: 100vh;
+    min-height: 100svh;
+}
+
+/* BACK BUTTON */
+.back-home {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 24px;
+    color: #ffffff;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+    font-size: 25px;
+    padding: 0;
+}
+
+.back-home img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* HEADINGS AND INTRODUCTION */
+:where(body:where(:has(.form-shell, .terms-page))) h1, :where(body:where(:has(.form-shell, .terms-page))) h2, :where(body:where(:has(.form-shell, .terms-page))) legend, :where(body:where(:has(.form-shell, .terms-page))) .eyebrow {
+    font-family: "Crimson Text Local", Georgia, serif;
+    font-weight: 400;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) h1 {
+    font-size: clamp(27px, 4vw, 38px);
+    text-transform: uppercase;
+    margin: 0 0 4px;
+}
+
+.form-heading {
+    margin-bottom: 32px;
+}
+
+.form-heading p {
+    margin: 0;
+    color: #c8d0df;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.form-heading .eyebrow, .eyebrow {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .1em;
+    margin-bottom: 5px;
+}
+
+/* FORM SECTIONS AND FIELD LAYOUT */
+:where(body:where(:has(.form-shell, .terms-page))) fieldset {
+    margin: 0 0 32px;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) legend {
+    margin-bottom: 18px;
+    padding: 0;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+
+.field-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px 55px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.form-shell .field-help {
+    display: block;
+    margin-top: 8px;
+    color: #c6d3e5;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.field > label, .field-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+/* INPUTS, DROPDOWNS, AND TEXT AREAS */
+:where(body:where(:has(.form-shell, .terms-page))) input, :where(body:where(:has(.form-shell, .terms-page))) select, :where(body:where(:has(.form-shell, .terms-page))) textarea {
+    font: inherit;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) input:not([type="checkbox"]):not([type="radio"]), :where(body:where(:has(.form-shell, .terms-page))) select, :where(body:where(:has(.form-shell, .terms-page))) textarea {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 10px 12px;
+    background: var(--paper);
+    border: 1px solid #b4bdce;
+    border-radius: 4px;
+    color: #152642;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) textarea {
+    resize: vertical;
+    line-height: 1.5;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) input[type="checkbox"], :where(body:where(:has(.form-shell, .terms-page))) input[type="radio"] {
+    accent-color: #173b67;
+    width: 17px;
+    height: 17px;
+    flex-shrink: 0;
+}
+
+:where(body:where(:has(.form-shell, .terms-page))) a:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) button:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) input:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) select:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) textarea:focus-visible, :where(body:where(:has(.form-shell, .terms-page))) summary:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* DESTINATION SELECTOR AND PACKAGE PREVIEW */
+.destination-section > .field, .inquiry-topic {
+    max-width: 350px;
+    margin-bottom: 16px;
+}
+
+.destination-placeholder {
+    display: none;
+    align-items: center;
+    min-height: 140px;
+    margin: 0;
+    padding: 24px;
+    background: var(--paper);
+    color: #526077;
+    border-radius: 4px;
+    line-height: 1.6;
+}
+
+.destination-preview {
+    display: none;
+    grid-template-columns: 38% 1fr;
+    border-radius: 5px;
+    overflow: hidden;
+    background: var(--paper);
+    color: #152642;
+}
+
+.destination-preview img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+}
+
+.destination-preview > div {
+    padding: 22px;
+}
+
+.destination-preview h2 {
+    margin: 0 0 7px;
+    font-size: 75px;
+}
+
+.destination-preview p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.destination-preview .package-meta {
+    font-weight: bold;
+}
+
+.destination-preview a {
+    color: #153963;
+    font-size: 20px;
+}
+
+/* TRAVELER COUNTS */
+.traveler-counts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.traveler-counts label {
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+/* PAYMENT OPTIONS */
+.payment-options {
+    display: grid;
+    gap: 12px;
+    max-width: 350px;
+}
+
+.payment-options label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    border-radius: 4px;
+    background: var(--paper);
+    color: #152642;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+/* SUBMIT BUTTON AND BOOKING TERMS */
+.submit-area {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.agreement {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+}
+
+.terms {
+    max-width: 540px;
+    margin: 12px auto 22px;
+    color: #c8d0df;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.terms summary {
+    cursor: pointer;
+}
+
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    min-width: 190px;
+    padding: 10px 25px;
+    border: 1px solid #b4bdce;
+    border-radius: 4px;
+    background: var(--paper);
+    color: #152642;
+    font: 12px "DM Sans Local", Arial, sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    filter: brightness(.93);
+}
+
+.action-button.return-home {
+    min-height: 44px;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    text-transform: none;
+}
+
+.demo-note {
+    color: #b8c6d9;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* INQUIRY TOPIC */
+.inquiry-topic > label {
+    text-transform: none;
+    font-family: "Crimson Text Local", Georgia, serif;
+    font-size: 21px;
+}
+
+.inquiry-topic {
+    margin-bottom: 32px;
+}
+
+.inquiry-topic small {
+    display: block;
+    margin-top: 8px;
+    color: #bac6d9;
+    font-size: 11px;
+}
+
+/* Fragment navigation shows the confirmation screens without JavaScript. */
+.status-screen {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: 24px;
+    background: #101a2bf5;
+    overflow-y: auto;
+}
+
+.status-screen:target {
+    display: grid;
+    place-items: center;
+}
+
+body:has(.status-screen:target) .form-shell > :not(.status-screen) {
+    display: none;
+}
+
+.status-card {
+    width: min(100%, 570px);
+    padding: 44px 32px;
+    text-align: center;
+    background: #f7f7f5;
+    color: #142139;
+    box-shadow: 0 16px 48px #0004;
+}
+
+.status-card h2 {
+    font-size: 25px;
+    text-transform: uppercase;
+    line-height: 1.4;
+    margin: 12px 0 20px;
+}
+
+.status-card p {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.status-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.action-button.dark {
+    background: var(--navy);
+    color: white;
+    border-color: var(--navy);
+}
+
+.action-button.outline {
+    background: transparent;
+    border-color: var(--navy);
+}
+
+.preview-notice {
+    color: #526077;
+}
+
+/* ACCESSIBLE HIDDEN LABELS */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+/* MOBILE LAYOUT */
+@media (max-width: 620px) {
+    .form-shell {
+        margin: 0;
+        padding: 28px 20px;
+        min-height: 100vh;
+    }
+
+    .field-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .destination-preview {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-preview img {
+        height: 190px;
+        min-height: 0;
+    }
+
+    .status-card {
+        padding: 30px 20px;
+    }
+
+    .status-actions {
+        flex-direction: column;
+    }
+}
+
+/* Match the seven destination options to their preview cards. */
+.destination-section:has(#destination option[value="mondstadt"]:checked) [data-region="mondstadt"],
+.destination-section:has(#destination option[value="liyue"]:checked) [data-region="liyue"],
+.destination-section:has(#destination option[value="inazuma"]:checked) [data-region="inazuma"],
+.destination-section:has(#destination option[value="sumeru"]:checked) [data-region="sumeru"],
+.destination-section:has(#destination option[value="fontaine"]:checked) [data-region="fontaine"],
+.destination-section:has(#destination option[value="natlan"]:checked) [data-region="natlan"],
+.destination-section:has(#destination option[value="snezhnaya"]:checked) [data-region="snezhnaya"] {
+    display: grid;
+}
+
+/* INQUIRY SPACING: Keep all fields and the submit area closer together. Content remains scrollable on short screens and at larger browser zoom. */
+.form-shell:has(form[action^="inquiry.html"]) .back-home {
+    margin-bottom: 12px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .form-heading {
+    margin-bottom: 18px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .inquiry-topic {
+    max-width: none;
+    width: calc((100% - 55px) / 2);
+    margin-bottom: 20px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) fieldset {
+    margin-bottom: 20px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) legend {
+    margin-bottom: 12px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .field-grid {
+    row-gap: 16px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) textarea {
+    height: 96px;
+    min-height: 96px;
+}
+
+.form-shell:has(form[action^="inquiry.html"]) .submit-area {
+    margin-top: 18px;
+}
+
+@media (max-width: 620px) {
+    .form-shell:has(form[action^="inquiry.html"]) .inquiry-topic {
+        width: 100%;
+    }
+}
+
+/* TERMS AND CONDITIONS — Standalone page and booking overlay. */
+/* BOOKING CONSENT: Checkbox and an underlined link to the separate terms page. */
+.booking-agreement {
+    margin-bottom: 24px;
+    line-height: 1.7;
+}
+
+.booking-agreement > span {
+    text-align: left;
+}
+
+.booking-agreement label {
+    cursor: pointer;
+}
+
+.booking-agreement a,
+.terms-page a:not(.back-home):not(.terms-action) {
+    color: #e2c58a;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.booking-agreement a:hover,
+.terms-page a:not(.back-home):not(.terms-action):hover {
+    color: #fff3d5;
+}
+
+/* TERMS PAGE: Full-width layout with responsive side padding. */
+.terms-page {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 32px clamp(20px, 5vw, 96px) 60px;
+}
+
+.terms-heading {
+    margin-bottom: 36px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #42516a;
+}
+
+.terms-heading h1 {
+    margin-bottom: 16px;
+    font-size: 58px;
+    line-height: 1.2;
+}
+
+.terms-heading > p:last-child,
+.terms-section p,
+.terms-contact p {
+    color: #d2dbe8;
+    font-size: 20px;
+    line-height: 1.0;
+}
+
+.terms-section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.terms-section h2,
+.terms-contact h2 {
+    margin: 0 0 6px;
+    font-size: 30px;
+    color: #eff0f1;
+    line-height: 2.0;
+    font-weight: 700;
+}
+
+.terms-section p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.terms-section p + p {
+    margin-top: 10px;
+}
+
+.terms-contact {
+    margin-top: 38px;
+    padding-top: 24px;
+    border-top: 1px solid #3542b6;
+}
+
+/* MOBILE: Keep the consent row aligned when its text wraps. */
+@media (max-width: 620px) {
+    .booking-agreement {
+        align-items: flex-start;
+    }
+
+    .booking-agreement input {
+        margin-top: 4px;
+    }
+}
+
+/* UNDERLINED TERMS CONTROL: Styled as a link, opens the native HTML popover. */
+.terms-link {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #e2c58a;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.terms-link:hover {
+    color: #fff3d5;
+}
+
+/* OVERLAY PANEL: Centered with the booking page visible around its edges. */
+.terms-overlay {
+    width: min(760px, calc(100vw - 40px));
+    height: min(820px, calc(100dvh - 64px));
+    max-height: calc(100dvh - 64px);
+    margin: auto;
+    padding: 0;
+    border: 1px solid #c0c8d5;
+    border-radius: 12px;
+    background: #e0e1e4;
+    color: #142139;
+    box-shadow: 0 24px 90px #0007;
+    overflow: hidden;
+}
+
+/* Keep the panel hidden until its popover is open. */
+.terms-overlay:popover-open {
+    display: flex;
+    flex-direction: column;
+}
+
+.terms-overlay::backdrop {
+    background: rgb(3 12 27 / 55%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+body:has(.terms-overlay:popover-open) {
+    overflow: hidden;
+}
+
+.terms-overlay-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-shrink: 0;
+    padding: 18px 24px;
+    border-bottom: 1px solid #b8c1d0;
+}
+
+.terms-overlay-header h2 {
+    margin: 0;
+    color: #b8860b;
+    font-size: 26px;
+}
+
+.terms-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: #142139;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.terms-back img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Only the terms content scrolls; the back button and footer stay visible. */
+.terms-frame {
+    display: block;
+    width: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: 0;
+    background: #e0e1e4;
+}
+
+.terms-overlay-actions,
+.terms-standalone-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 18px 24px;
+}
+
+.terms-overlay-actions {
+    flex-shrink: 0;
+    border-top: 1px solid #b8c1d0;
+}
+
+.terms-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    min-width: 150px;
+    padding: 10px 22px;
+    border: 1px solid #142139;
+    border-radius: 4px;
+    font: inherit;
+    font-size: 13px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.terms-action-primary,
+.terms-page a.terms-action-primary {
+    background: #061a38;
+    color: #fff;
+    text-decoration: none;
+}
+
+.terms-action-secondary,
+.terms-page a.terms-action-secondary {
+    background: #f7f7f5;
+    color: #142139;
+    text-decoration: none;
+}
+
+/* Keep button labels readable instead of inheriting the pale text-link hover. */
+.terms-action-primary:hover,
+.terms-page a.terms-action-primary:hover {
+    background: #17365b;
+    color: #fff;
+}
+
+.terms-action-secondary:hover,
+.terms-page a.terms-action-secondary:hover {
+    background: #e3e9f0;
+    color: #142139;
+}
+
+/* Two-tone focus ring stays visible on both the navy page and light overlay. */
+.terms-action:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #142139;
+}
+
+/* EMBEDDED TERMS: Reuse the same document with a light panel theme. Its own navigation is hidden because the parent overlay supplies close controls. */
+body:has(.terms-page:target) {
+    background: #e0e1e4;
+    color: #142139;
+}
+
+.terms-page:target {
+    padding: 24px 30px;
+}
+
+.terms-page:target > .back-home,
+.terms-page:target > .terms-standalone-actions,
+.terms-page:target .terms-heading h1 {
+    display: none;
+}
+
+.terms-page:target .terms-heading > p:last-child,
+.terms-page:target .terms-section p,
+.terms-page:target .terms-contact p {
+    color: #344259;
+    font-size: 25px;
+    line-height: 1.7;
+}
+
+.terms-page:target .terms-section h2,
+.terms-page:target .terms-contact h2 {
+    color: #76520a;
+    font-size: 23px;
+}
+
+.terms-page:target a:not(.back-home) {
+    color: #184b83;
+}
+
+/* MOBILE: Retain a visible margin around the overlay. */
+@media (max-width: 620px) {
+    .terms-overlay {
+        width: calc(100vw - 24px);
+        height: calc(100dvh - 32px);
+        max-height: calc(100dvh - 32px);
+    }
+
+    .terms-overlay-header {
+        gap: 12px;
+        padding: 14px 16px;
+    }
+
+    .terms-overlay-header h2 {
+        font-size: 21px;
+    }
+
+    .terms-overlay-actions {
+        gap: 10px;
+        padding: 14px 12px;
+    }
+
+    .terms-overlay-actions .terms-action {
+        flex: 1;
+        min-width: 0;
+        padding-inline: 12px;
+    }
+
+    .terms-page:target {
+        padding: 20px;
+    }
+}
