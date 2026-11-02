@@ -2741,8 +2741,8 @@ body.about-page {
     top: 36px;
     right: 112px;
     display: block;
-    width: 100%;
-    max-width: 670px;
+    width: 40%;
+    max-width: 680px;
     height: 410px;
     margin: 0;
     opacity: 1;
