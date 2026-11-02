@@ -318,19 +318,19 @@ body:where(:not(:has(.form-shell, .terms-page))) {
 }
 
 .hero-kicker {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: .16em;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 
 .home-title {
     font-family: var(--serif);
-    font-size: 46px;
-    line-height: .9;
+    font-size: clamp(48px, 4vw, 75px);
+    line-height: 1;
     margin: 0;
     text-transform: uppercase;
-    max-width: 600px;
+    max-width: 1000px;
     text-shadow: 0 2px 18px rgba(0, 0, 0, .28);
 }
 
@@ -354,7 +354,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
 }
 
 .hero-actions {
@@ -364,7 +364,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     margin-left: auto;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 160px;
+    padding-right: 100px;
 }
 
 /* HOMEPAGE TOUR PACKAGES : Layout and styling for the seven regional package cards. */
