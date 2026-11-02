@@ -8,7 +8,7 @@
     </head>
     <body>
         <main class="form-shell">
-            <a class="back-home" href="index.html" aria-label="Back to homepage"><img src="assets/images/back-icon.svg" alt=""></a>
+            <a class="action-button return-home" href="index.html"><span aria-hidden="true">←</span> Return to Homepage</a>
 
             <header class="form-heading">
                 <h1>How can we help you?</h1>
@@ -42,7 +42,12 @@
                         </div>
                         <div class="field">
                             <label for="phone">Contact number</label>
-                            <input id="phone" type="tel" autocomplete="tel" required>
+                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                                pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
+                                placeholder="e.g. 09171234567" aria-describedby="phone-help"
+                                title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
+                                required>
+                            <small id="phone-help" class="field-help">7–15 digits; optional + at the start. No spaces or dashes.</small>
                         </div>
                         <div class="field">
                             <label for="inquiry-destination">Preferred destination</label>
@@ -73,7 +78,7 @@
             <section class="status-screen" id="received" aria-labelledby="inquiry-received">
                 <div class="status-card">
                     <h2 id="inquiry-received">Thank you for your inquiry</h2>
-                    <a class="action-button dark" href="index.html">Done</a>
+                    <a class="action-button dark" href="index.html">Return to Homepage</a>
                 </div>
             </section>
         </main>

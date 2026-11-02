@@ -234,3 +234,65 @@ function initializeNavigation() {
 }
 
 initializeNavigation();
+
+/* ==========================================================
+   PRIVACY AND TERMS RETURN LINKS
+   Carry the source page in the link so Back also works when
+   HTML files are opened directly, without a server referrer.
+   ========================================================== */
+(function initializeLegalNavigation() {
+    // Booking owns the close buttons when Terms is inside its overlay.
+    if (window.self !== window.top) return;
+
+    const siteDirectory = new URL('.', window.location.href);
+    const returnPages = new Set([
+        'index.html', 'about.html', 'booking.html', 'inquiry.html',
+        ...destinations.map(destination => `${destination.slug}.html`)
+    ]);
+    const legalPages = new Set(['privacy.html', 'terms.html']);
+
+    // Accept only known pages in this project, never another site or folder.
+    function getLocalPage(value, allowedPages) {
+        if (!value) return null;
+        try {
+            const url = new URL(value, siteDirectory);
+            if (url.protocol !== siteDirectory.protocol ||
+                url.origin !== siteDirectory.origin ||
+                !url.pathname.startsWith(siteDirectory.pathname)) return null;
+
+            const filename = url.pathname.slice(siteDirectory.pathname.length) || 'index.html';
+            return allowedPages.has(filename) ? url : null;
+        } catch {
+            return null;
+        }
+    }
+
+    function relativePath(url) {
+        const filename = url.pathname.slice(siteDirectory.pathname.length) || 'index.html';
+        return filename + url.search + url.hash;
+    }
+
+    function updateLegalLinks() {
+        const source = getLocalPage(window.location.href, returnPages);
+        if (!source) return;
+
+        document.querySelectorAll('a[href]').forEach(link => {
+            const target = getLocalPage(link.getAttribute('href'), legalPages);
+            if (!target) return;
+            target.searchParams.set('returnTo', relativePath(source));
+            link.setAttribute('href', relativePath(target));
+        });
+    }
+
+    const returnPage = getLocalPage(new URLSearchParams(window.location.search).get('returnTo'), returnPages)
+        || getLocalPage(document.referrer, returnPages)
+        || new URL('index.html', siteDirectory);
+
+    document.querySelectorAll('[data-legal-return]').forEach(link => {
+        link.setAttribute('href', relativePath(returnPage));
+    });
+
+    updateLegalLinks();
+    // Keep the selected section when the visitor follows an in-page anchor.
+    window.addEventListener('hashchange', updateLegalLinks);
+})();
