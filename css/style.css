@@ -546,7 +546,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     display: flex;
     gap: 14px;
     margin-bottom: 16px;
-    font-weight: 700;
+    align-items: center;
 }
 
 .footer-columns {
@@ -610,6 +610,17 @@ body:where(:not(:has(.form-shell, .terms-page))) {
 
 .socials a {
     opacity: .95;
+}
+
+/* SVG icons: consistent size and white appearance on dark backgrounds. */
+.socials img,
+.social-mini img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* REGION PAGES: Shared layout for all seven destination pages. */
@@ -2343,6 +2354,7 @@ body.about-page {
     width: 100px;
     height: 100px;
     object-fit: contain;
+    transform: rotate(90deg);
 }
 
 .company-heading h2 {
@@ -2598,15 +2610,6 @@ body.about-page {
     outline: 2px solid #f4d695;
     outline-offset: 4px;
     border-radius: 2px;
-}
-
-.social-placeholder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    color: #d7dfeb;
 }
 
 /* ABOUT US: Brand visibility and calmer hero typography. */
