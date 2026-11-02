@@ -2743,8 +2743,8 @@ body.about-page {
     top: 36px;
     right: 112px;
     display: block;
-    width: 39%;
-    max-width: 580px;
+    width: 100%;
+    max-width: 670px;
     height: 410px;
     margin: 0;
     opacity: 1;
@@ -2790,7 +2790,7 @@ body.about-page {
 
 .home .package-circles .circle-stop:nth-child(3) {
     --photo-size: var(--center-photo);
-    top: 0;
+    top: -20px;
     left: 50%;
     transform: translateX(-50%);
 }
