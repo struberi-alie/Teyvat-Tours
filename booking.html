@@ -120,7 +120,12 @@
                         </div>
                         <div class="field">
                             <label for="phone">Contact number</label>
-                            <input id="phone" type="tel" autocomplete="tel" required>
+                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                                pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
+                                placeholder="e.g. 09171234567" aria-describedby="phone-help"
+                                title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
+                                required>
+                            <small id="phone-help" class="field-help">7–15 digits; optional + at the start. No spaces or dashes.</small>
                         </div>
                     </div>
                 </fieldset>
