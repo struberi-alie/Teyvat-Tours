@@ -318,19 +318,19 @@ body:where(:not(:has(.form-shell, .terms-page))) {
 }
 
 .hero-kicker {
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
     letter-spacing: .16em;
-    margin-bottom: 4px;
+    margin-bottom: 12px;
 }
 
 .home-title {
     font-family: var(--serif);
-    font-size: 46px;
-    line-height: .9;
+    font-size: clamp(48px, 4vw, 75px);
+    line-height: 1;
     margin: 0;
     text-transform: uppercase;
-    max-width: 600px;
+    max-width: 1000px;
     text-shadow: 0 2px 18px rgba(0, 0, 0, .28);
 }
 
@@ -354,7 +354,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    gap: 80px;
+    gap: 40px;
 }
 
 .hero-actions {
@@ -364,7 +364,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     margin-left: auto;
     justify-content: flex-end;
     align-items: center;
-    padding-right: 160px;
+    padding-right: 100px;
 }
 
 /* HOMEPAGE TOUR PACKAGES : Layout and styling for the seven regional package cards. */
@@ -546,7 +546,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     display: flex;
     gap: 14px;
     margin-bottom: 16px;
-    font-weight: 700;
+    align-items: center;
 }
 
 .footer-columns {
@@ -610,6 +610,17 @@ body:where(:not(:has(.form-shell, .terms-page))) {
 
 .socials a {
     opacity: .95;
+}
+
+/* SVG icons: consistent size and white appearance on dark backgrounds. */
+.socials img,
+.social-mini img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex: 0 0 24px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* REGION PAGES: Shared layout for all seven destination pages. */
@@ -682,22 +693,16 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     line-height: .96;
 }
 
-/* BACK BUTTON: Circular arrow that returns the visitor to the homepage. */
+/* BACK BUTTON */
 .back-link {
     position: absolute;
     top: 18px;
     left: 24px;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     display: grid;
     place-items: center;
-    border: 0;
-    border-radius: 0;
-    color: #fff;
-    font-size: 24px;
-    line-height: 1;
-    z-index: 3;
-    padding: 0;
+
 }
 
 .back-link img {
@@ -705,6 +710,7 @@ body:where(:not(:has(.form-shell, .terms-page))) {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* PRICE AND DURATION: Groups the starting price and trip length shown in the hero. */
@@ -2343,6 +2349,7 @@ body.about-page {
     width: 100px;
     height: 100px;
     object-fit: contain;
+    transform: rotate(90deg);
 }
 
 .company-heading h2 {
@@ -2598,15 +2605,6 @@ body.about-page {
     outline: 2px solid #f4d695;
     outline-offset: 4px;
     border-radius: 2px;
-}
-
-.social-placeholder {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    color: #d7dfeb;
 }
 
 /* ABOUT US: Brand visibility and calmer hero typography. */
@@ -3038,6 +3036,7 @@ body:where(:has(.form-shell, .terms-page)) {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* HEADINGS AND INTRODUCTION */
@@ -3632,6 +3631,7 @@ body:has(.terms-overlay:popover-open) {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    filter: brightness(0) invert(1);
 }
 
 /* Only the terms content scrolls; the back button and footer stay visible. */
