@@ -2741,8 +2741,8 @@ body.about-page {
     top: 36px;
     right: 112px;
     display: block;
-    width: 100%;
-    max-width: 670px;
+    width: 40%;
+    max-width: 680px;
     height: 410px;
     margin: 0;
     opacity: 1;
@@ -3080,8 +3080,9 @@ body:where(:has(.form-shell, .terms-page)) {
 :where(body:where(:has(.form-shell, .terms-page))) legend {
     margin-bottom: 18px;
     padding: 0;
-    font-size: 21px;
+    font-size: 32px;
     text-transform: uppercase;
+    font-weight: 700;
 }
 
 .field-grid {
@@ -3344,11 +3345,13 @@ body:has(.status-screen:target) .form-shell > :not(.status-screen) {
     text-transform: uppercase;
     line-height: 1.4;
     margin: 12px 0 20px;
+    MARGIN: 12px 0 20px;
+
 }
 
 .status-card p {
     font-size: 14px;
-    line-height: 1.7;
+    line-height: 1.6;
 }
 
 .status-actions {
@@ -3540,11 +3543,11 @@ body:has(.status-screen:target) .form-shell > :not(.status-screen) {
 
 .terms-section p {
     margin: 0;
-    line-height: 1.6;
+    line-height: 1.2;
 }
 
 .terms-section p + p {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 .terms-contact {
