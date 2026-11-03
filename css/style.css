@@ -3095,6 +3095,14 @@ body:where(:has(.form-shell, .terms-page)) {
     min-width: 0;
 }
 
+.form-shell .field-help {
+    display: block;
+    margin-top: 8px;
+    color: #c6d3e5;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
 .field > label, .field-label {
     display: block;
     margin-bottom: 8px;
@@ -3269,6 +3277,14 @@ body:where(:has(.form-shell, .terms-page)) {
 
 .action-button:hover {
     filter: brightness(.93);
+}
+
+.action-button.return-home {
+    min-height: 44px;
+    gap: 8px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    text-transform: none;
 }
 
 .demo-note {
@@ -3471,14 +3487,14 @@ body:has(.status-screen:target) .form-shell > :not(.status-screen) {
 }
 
 .booking-agreement a,
-.terms-page a:not(.back-home) {
+.terms-page a:not(.back-home):not(.terms-action) {
     color: #e2c58a;
     text-decoration: underline;
     text-underline-offset: 4px;
 }
 
 .booking-agreement a:hover,
-.terms-page a:not(.back-home):hover {
+.terms-page a:not(.back-home):not(.terms-action):hover {
     color: #fff3d5;
 }
 
@@ -3690,6 +3706,26 @@ body:has(.terms-overlay:popover-open) {
     text-decoration: none;
 }
 
+/* Keep button labels readable instead of inheriting the pale text-link hover. */
+.terms-action-primary:hover,
+.terms-page a.terms-action-primary:hover {
+    background: #17365b;
+    color: #fff;
+}
+
+.terms-action-secondary:hover,
+.terms-page a.terms-action-secondary:hover {
+    background: #e3e9f0;
+    color: #142139;
+}
+
+/* Two-tone focus ring stays visible on both the navy page and light overlay. */
+.terms-action:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #142139;
+}
+
 /* EMBEDDED TERMS: Reuse the same document with a light panel theme. Its own navigation is hidden because the parent overlay supplies close controls. */
 body:has(.terms-page:target) {
     background: #e0e1e4;
@@ -3716,7 +3752,7 @@ body:has(.terms-page:target) {
 
 .terms-page:target .terms-section h2,
 .terms-page:target .terms-contact h2 {
-    color: #b8860b;
+    color: #76520a;
     font-size: 23px;
 }
 
