@@ -2670,7 +2670,7 @@ body.about-page {
 .travel-faq {
     padding: 48px clamp(20px, 5vw, 80px);
     background: #14243a;
-    color: #ffffff;
+    color: #f7f4f4;
 }
 
 .travel-faq h2 {
@@ -2680,19 +2680,30 @@ body.about-page {
 }
 
 .travel-faq details {
+    position: relative;
     padding: 18px 0;
-    border-bottom: 1px solid #526078;
+    border-bottom: none;
+}
+
+.travel-faq details::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 1px;
+    background: #526078;
 }
 
 .travel-faq summary {
-    font-weight: 700;
+    font-weight: 1000;
     line-height: 1.5;
     cursor: pointer;
 }
 
 .travel-faq p {
-    max-width: 80ch;
-    line-height: 1.7;
+    max-width: 100ch;
+    line-height: 2.0;
 }
 
 .travel-faq a {
