@@ -246,7 +246,7 @@ initializeNavigation();
 
     const siteDirectory = new URL('.', window.location.href);
     const returnPages = new Set([
-        'index.html', 'about.html', 'booking.html', 'inquiry.html',
+        'index.html', 'about.html',
         ...destinations.map(destination => `${destination.slug}.html`)
     ]);
     const legalPages = new Set(['privacy.html', 'terms.html']);
@@ -296,3 +296,68 @@ initializeNavigation();
     // Keep the selected section when the visitor follows an in-page anchor.
     window.addEventListener('hashchange', updateLegalLinks);
 })();
+
+/* INLINE FORM CONFIRMATION
+   Booking: validate -> confirmation -> acknowledgment.
+   Inquiry: validate -> acknowledgment.
+   Cancel/Escape preserves input. Done resets the form for a new request.
+   Connect a backend before using the acknowledgment as a real receipt.
+*/
+document.querySelectorAll('[data-inline-form]').forEach(form => {
+    const confirmation = document.getElementById('form-confirmation');
+    const acknowledgment = document.getElementById('form-acknowledgment');
+    const adults = form.querySelector('#adults');
+    const children = form.querySelector('#children');
+    const submitButton = form.querySelector('[type="submit"]');
+    let confirmed = false;
+
+    // Initial values remain zero; a request must include at least one traveler.
+    function validateTravelers() {
+        if (!adults || !children) return;
+        const count = Number(adults.value) + Number(children.value);
+        adults.setCustomValidity(count > 0 ? '' : 'Please add at least one traveler.');
+    }
+
+    adults?.addEventListener('input', validateTravelers);
+    children?.addEventListener('input', validateTravelers);
+    validateTravelers();
+
+    form.addEventListener('submit', event => {
+        event.preventDefault();
+        validateTravelers();
+        if (!form.reportValidity()) return;
+        confirmed = false;
+        if (confirmation) {
+            confirmation.showModal();
+        } else {
+            acknowledgment.showModal();
+        }
+    });
+
+    confirmation?.querySelector('[data-cancel-request]').addEventListener('click', () => {
+        confirmation.close();
+        submitButton.focus();
+    });
+
+    // Escape has the same effect as Cancel; it never confirms the request.
+    confirmation?.addEventListener('cancel', () => { confirmed = false; });
+
+    confirmation?.querySelector('[data-confirm-request]').addEventListener('click', () => {
+        if (confirmed) return;
+        confirmed = true;
+        confirmation.close();
+        acknowledgment.showModal();
+    });
+
+    acknowledgment.querySelector('[data-finish-request]').addEventListener('click', () => {
+        acknowledgment.close();
+    });
+
+    // Closing a completed acknowledgment begins a fresh form with 0 / 0 counts.
+    acknowledgment.addEventListener('close', () => {
+        form.reset();
+        confirmed = false;
+        validateTravelers();
+        form.querySelector('input:not([readonly]), select, textarea')?.focus();
+    });
+});

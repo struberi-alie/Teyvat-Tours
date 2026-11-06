@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
+                <a class="tt-nav-link tt-contact" href="index.html#inquiry">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
 
@@ -108,10 +108,200 @@
                         <p class="stop-description">End your city exploration with a visit to the Grand Cathedral. Take in its architecture and notice the details that give this landmark its character.</p>
                     </article>
                 </div>
-                <div class="region-actions">
-                    <a class="btn btn-primary" href="booking.html">BEGIN YOUR JOURNEY</a>
-                    <a class="btn btn-outline" href="index.html#packages">EXPLORE OTHER NATION</a>
+            </section>
+
+            <!-- PACKAGE DETAILS: Draft inclusions for this themed tour. -->
+            <section class="trip-details" id="inclusions" aria-labelledby="inclusions-title">
+                <div class="trip-inner">
+                    <header class="trip-section-heading">
+                        <p class="eyebrow">Your journey, at a glance</p>
+                        <h2 id="inclusions-title">Package Inclusions</h2>
+                        <p>A little planning, more time to explore Mondstadt.</p>
+                    </header>
+                    <div class="inclusion-grid">
+                        <figure class="inclusion-image">
+                            <img src="assets/images/mondstadt.jpg" alt="Discover the scenery of Mondstadt" loading="lazy">
+                        </figure>
+                        <article class="inclusion-panel">
+                            <h3>Your Mondstadt package includes</h3>
+                            <ul>
+                                <li><strong>Accommodation:</strong> 2-night stay in a standard twin-sharing room</li>
+                                <li><strong>Daily breakfast:</strong> Breakfast at your accommodation during your stay</li>
+                                <li><strong>Arrival and departure transfers:</strong> Pickup and drop-off at the designated local meeting point</li>
+                                <li><strong>Guided sightseeing:</strong> Visits to the three featured stops with a local tour guide</li>
+                                <li><strong>Tour transport:</strong> Shared transportation for all scheduled sightseeing stops</li>
+                                <li><strong>Entrance fees:</strong> Standard admission to attractions listed in the confirmed itinerary</li>
+                                <li><strong>Travel assistance:</strong> Pre-trip coordination and assistance throughout the scheduled tour</li>
+                                <li><strong>Leisure time:</strong> Free time for cafés, shopping, and exploring at your own pace</li>
+                            </ul>
+                        </article>
+                    </div>
                 </div>
+            </section>
+
+            <!-- OPTIONAL STOPS: Established places from Genshin Impact. -->
+            <section class="local-explore" id="explore-more" aria-labelledby="explore-title">
+                <div class="trip-inner">
+                    <header class="trip-section-heading">
+                        <p class="eyebrow">Beyond the featured stops</p>
+                        <h2 id="explore-title">Explore More in Mondstadt</h2>
+                        <p>Leave a little time for local food, shopping, and a slower look around.</p>
+                    </header>
+                    <div class="local-stop-grid">
+                        <article class="local-stop">
+                            <span class="local-stop-category">Dining</span>
+                            <h3>Good Hunter</h3>
+                            <p class="local-stop-location">Mondstadt City</p>
+                            <p>Pause for a meal at Sara’s open-air food counter in the city’s market district.</p>
+                        </article>
+                        <article class="local-stop">
+                            <span class="local-stop-category">Shopping</span>
+                            <h3>With Wind Comes Glory</h3>
+                            <p class="local-stop-location">Mondstadt City</p>
+                            <p>Look around Marjorie’s souvenir shop while exploring the streets of Mondstadt.</p>
+                        </article>
+                        <article class="local-stop">
+                            <span class="local-stop-category">Leisure</span>
+                            <h3>The Cat’s Tail</h3>
+                            <p class="local-stop-location">Mondstadt City</p>
+                            <p>Add the city’s cat-themed tavern to your free-time route for a change of pace.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <!-- INLINE BOOKING: Destination is fixed to the page being viewed. -->
+            <section class="inline-form-section" id="booking" aria-labelledby="booking-title">
+                <div class="trip-inner booking-layout">
+                    <header class="booking-intro">
+                        <p class="eyebrow">Your next chapter</p>
+                        <h2 id="booking-title">Book your Mondstadt journey</h2>
+                        <p>Choose your dates and tell us who is coming along.</p>
+                        <div class="booking-summary">
+                            <span>Selected destination</span>
+                            <strong>Mondstadt</strong>
+                            <p>3 Days / 2 Nights<br>From ₱12,500 per person</p>
+                        </div>
+                        <a href="index.html#packages">Explore another destination →</a>
+                    </header>
+                    <div class="embedded-form">
+                        <form id="booking-form" data-inline-form action="#booking" method="get">
+                            <div class="field fixed-destination">
+                                <label for="booking-destination">Destination</label>
+                                <input id="booking-destination" type="text" value="Mondstadt" readonly>
+                            </div>
+<!-- TRAVELER INFORMATION -->
+                <fieldset>
+                    <legend>Traveler information</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="full-name">Full name</label>
+                            <input id="full-name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input id="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Contact number</label>
+                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                                pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
+                                placeholder="e.g. 09171234567" aria-describedby="phone-help"
+                                title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
+                                required>
+                            <small id="phone-help" class="field-help">7–15 digits; optional + at the start. No spaces or dashes.</small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- TRIP DETAILS -->
+                <fieldset>
+                    <legend>Trip details</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="travel-date">Travel date</label>
+                            <input id="travel-date" type="date" required>
+                        </div>
+                        <div class="field">
+                                                        <div class="traveler-counts" role="group" aria-label="Number of travelers">
+                                <div class="field">
+                                    <label for="adults">Adults</label>
+                                    <input id="adults" type="number" min="0" max="99" value="0" required>
+                                </div>
+                                <div class="field">
+                                    <label for="children">Children</label>
+                                    <input id="children" type="number" min="0" max="99" value="0" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <!-- SPECIAL REQUEST -->
+                <fieldset>
+                    <legend>Special request</legend>
+                    <label class="sr-only" for="requests">Special requests (optional)</label>
+                    <textarea id="requests" rows="4" placeholder="Let us know about accessibility needs or other requests (optional)."></textarea>
+                </fieldset>
+
+                <!-- PAYMENT METHOD -->
+                <fieldset>
+                    <legend>Payment method</legend>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" value="gcash" required> GCash</label>
+                        <label><input type="radio" name="payment" value="card"> Credit card / Debit card</label>
+                        <label><input type="radio" name="payment" value="bank"> Bank transfer</label>
+                    </div>
+                </fieldset>
+                <div class="submit-area">
+                    <!-- Required consent; the terms open separately to preserve form entries. -->
+                    <div class="agreement booking-agreement">
+                        <input id="agree-terms" type="checkbox" required aria-labelledby="agreement-text">
+                        <span id="agreement-text"><label for="agree-terms">I agree to the</label> <button class="terms-link" type="button" popovertarget="terms-overlay" popovertargetaction="show" aria-haspopup="dialog">Terms and Conditions</button>.</span>
+                    </div>
+                    <button class="action-button" type="submit">Submit booking request</button>
+                </div>
+            
+                        </form>
+                    </div>
+                </div>
+<section id="terms-overlay" class="terms-overlay" popover="auto" role="dialog" aria-labelledby="terms-overlay-title">
+                <header class="terms-overlay-header">
+                    <button class="terms-back" type="button" popovertarget="terms-overlay" popovertargetaction="hide" aria-label="Back to booking">
+                        <img src="assets/images/back-icon.svg" alt="">
+                    </button>
+                    <h2 id="terms-overlay-title">Terms and Conditions</h2>
+                </header>
+
+                <!-- Reuse terms.html as the scrollable content of the overlay. -->
+                <iframe class="terms-frame" src="terms.html#embedded" title="Teyvat Tours booking terms and conditions"></iframe>
+
+                <footer class="terms-overlay-actions">
+                    <button class="terms-action terms-action-primary" type="button" popovertarget="terms-overlay" popovertargetaction="hide">I Understand</button>
+                    <button class="terms-action terms-action-secondary" type="button" popovertarget="terms-overlay" popovertargetaction="hide">Cancel</button>
+                </footer>
+            </section>
+
+            <!-- Confirmation and acknowledgment are separate UI states. -->
+            <dialog class="form-preview" id="form-confirmation" aria-labelledby="confirmation-title" aria-describedby="confirmation-description">
+                <p class="eyebrow">One last step</p>
+                <h2 id="confirmation-title">Confirm your booking?</h2>
+                <p id="confirmation-description">Please make sure your details are correct before submitting your booking request.</p>
+                <div class="message-actions">
+                    <button class="action-button" type="button" data-confirm-request>Confirm</button>
+                    <button class="action-button message-cancel" type="button" data-cancel-request autofocus>Cancel</button>
+                </div>
+            </dialog>
+
+            <!-- Prototype acknowledgment copy; no backend submission is connected. -->
+            <dialog class="form-preview" id="form-acknowledgment" aria-labelledby="acknowledgment-title" aria-describedby="acknowledgment-description">
+                <p class="eyebrow">Thank you for choosing Teyvat Tours</p>
+                <h2 id="acknowledgment-title">Booking request received!</h2>
+                <p id="acknowledgment-description">We have received your booking request. Our travel team will contact you to confirm availability and finalize your travel details.</p>
+                <div class="message-actions">
+                    <button class="action-button" type="button" data-finish-request autofocus>Done</button>
+                </div>
+            </dialog>
             </section>
         </main>
 

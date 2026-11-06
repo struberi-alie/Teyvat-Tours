@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <a class="tt-nav-link" href="about.html">About Us</a>
-                <a class="tt-nav-link tt-contact" href="inquiry.html">Contact Us <span aria-hidden="true">✦</span></a>
+                <a class="tt-nav-link tt-contact" href="#inquiry">Contact Us <span aria-hidden="true">✦</span></a>
             </nav>
         </header>
 
@@ -57,7 +57,7 @@
                     </div>
                     <div class="hero-actions">
                         <a class="btn btn-primary" href="#packages">VIEW TOUR PACKAGES</a>
-                        <a class="btn btn-outline" href="inquiry.html">INQUIRE</a>
+                        <a class="btn btn-outline" href="#inquiry">INQUIRE</a>
                     </div>
                 </div>
             </section>
@@ -285,7 +285,7 @@
                     <div>
                         <h4>TRAVEL SERVICES</h4>
                         <a href="#packages">Tour Packages</a>
-                        <a href="booking.html">Plan Your Journey</a>
+                        <a href="index.html#packages">Plan Your Journey</a>
                         <a href="#travel-faq">Travel Guide</a>
                         <a href="#packages">Destinations</a>
                         <a href="#travel-faq">FAQs</a>
@@ -294,7 +294,7 @@
                         <h4>ABOUT US</h4>
                         <a href="about.html#company-profile">Our Story</a>
                         <a href="about.html#mission-vision">Why Travel With Us</a>
-                        <a href="inquiry.html">Contact Us</a>
+                        <a href="#inquiry">Contact Us</a>
                         <a href="terms.html">Terms &amp; Conditions</a>
                         <a href="privacy.html">Privacy Policy</a>
                     </div>
@@ -310,12 +310,95 @@
                 </details>
                 <details>
                     <summary>How can I plan my journey?</summary>
-                    <p>Open the <a href="booking.html">booking page</a>, choose your destination, and enter your preferred date and traveler details. Read the terms before proceeding.</p>
+                    <p>Choose a <a href="#packages">destination package</a>, then scroll to its booking form to enter your preferred date and traveler details. Read the terms before proceeding.</p>
                 </details>
                 <details>
                     <summary>Where can I ask about inclusions or special requests?</summary>
-                    <p>Use the <a href="inquiry.html">inquiry page</a> for questions about packages, travel dates, accommodations, and inclusions.</p>
+                    <p>Use the <a href="#inquiry">inquiry form</a> for questions about packages, travel dates, accommodations, and inclusions.</p>
                 </details>
+            </section>
+
+            <!-- SHARED INQUIRY: Contact links throughout the site point here. -->
+            <section class="inline-form-section" id="inquiry" aria-labelledby="inquiry-title">
+                <div class="trip-inner booking-layout">
+                    <header class="booking-intro">
+                        <p class="eyebrow">Let’s plan together</p>
+                        <h2 id="inquiry-title">How can we help you?</h2>
+                        <p>Ask about a destination, package inclusions, or a special request before planning your journey.</p>
+                        <p>Ready to choose your trip? Open a <a href="#packages">destination package</a> and complete its booking form.</p>
+                    </header>
+                    <div class="embedded-form">
+<form data-inline-form action="#inquiry" method="get">
+                <div class="inquiry-topic field">
+                    <label for="topic">I would like to inquire about</label>
+                    <select id="topic" required>
+                        <option value="" selected disabled>Select a topic</option>
+                        <option>Tours and packages</option>
+                        <option>Travel dates</option>
+                        <option>Inclusions</option>
+                        <option>Accommodations</option>
+                        <option>Others</option>
+                    </select>
+                    <small>Choose the option that best fits your inquiry.</small>
+                </div>
+
+                <fieldset>
+                    <legend>Traveler information</legend>
+                    <div class="field-grid">
+                        <div class="field">
+                            <label for="full-name">Full name</label>
+                            <input id="full-name" type="text" autocomplete="name" required>
+                        </div>
+                        <div class="field">
+                            <label for="email">Email address</label>
+                            <input id="email" type="email" autocomplete="email" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Contact number</label>
+                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                                pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
+                                placeholder="e.g. 09171234567" aria-describedby="phone-help"
+                                title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
+                                required>
+                            <small id="phone-help" class="field-help">7–15 digits; optional + at the start. No spaces or dashes.</small>
+                        </div>
+                        <div class="field">
+                            <label for="inquiry-destination">Preferred destination</label>
+                            <select id="inquiry-destination" required>
+                                <option value="" selected disabled>Pick your preferred destination</option>
+                                <option value="mondstadt">Mondstadt</option>
+                                <option value="liyue">Liyue</option>
+                                <option value="inazuma">Inazuma</option>
+                                <option value="sumeru">Sumeru</option>
+                                <option value="fontaine">Fontaine</option>
+                                <option value="natlan">Natlan</option>
+                                <option value="snezhnaya">Snezhnaya</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>How can we help you?</legend>
+                    <label class="sr-only" for="message">Your inquiry</label>
+                    <textarea id="message" rows="5" placeholder="Please tell us about your inquiry." required></textarea>
+                </fieldset>
+                <div class="submit-area">
+                    <button class="action-button" type="submit">Submit inquiry</button>
+                </div>
+            </form>
+                    </div>
+                </div>
+
+            <!-- Prototype acknowledgment copy; no backend submission is connected. -->
+            <dialog class="form-preview" id="form-acknowledgment" aria-labelledby="acknowledgment-title" aria-describedby="acknowledgment-description">
+                <p class="eyebrow">Thank you for choosing Teyvat Tours</p>
+                <h2 id="acknowledgment-title">Inquiry request received!</h2>
+                <p id="acknowledgment-description">We have received your inquiry. Our travel team will get back to you to help with your questions and travel plans.</p>
+                <div class="message-actions">
+                    <button class="action-button" type="button" data-finish-request autofocus>Done</button>
+                </div>
+            </dialog>
             </section>
         </main>
 
