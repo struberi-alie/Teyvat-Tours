@@ -328,10 +328,10 @@
                         <p>Ready to choose your trip? Open a <a href="#packages">destination package</a> and complete its booking form.</p>
                     </header>
                     <div class="embedded-form">
-<form data-inline-form action="#inquiry" method="get">
+<form id="inquiry-form" action="submit-inquiry.php" method="POST">
                 <div class="inquiry-topic field">
                     <label for="topic">I would like to inquire about</label>
-                    <select id="topic" required>
+                    <select id="topic" name="topic"required>
                         <option value="" selected disabled>Select a topic</option>
                         <option>Tours and packages</option>
                         <option>Travel dates</option>
@@ -347,15 +347,15 @@
                     <div class="field-grid">
                         <div class="field">
                             <label for="full-name">Full name</label>
-                            <input id="full-name" type="text" autocomplete="name" required>
+                            <input id="full-name" name="client_name"type="text" autocomplete="name" required>
                         </div>
                         <div class="field">
                             <label for="email">Email address</label>
-                            <input id="email" type="email" autocomplete="email" required>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
                         </div>
                         <div class="field">
                             <label for="phone">Contact number</label>
-                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                            <input id="phone" name="contact_number" type="tel" autocomplete="tel" inputmode="tel"
                                 pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
                                 placeholder="e.g. 09171234567" aria-describedby="phone-help"
                                 title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
@@ -364,7 +364,7 @@
                         </div>
                         <div class="field">
                             <label for="inquiry-destination">Preferred destination</label>
-                            <select id="inquiry-destination" required>
+                            <select id="inquiry-destination" name="preferred_destination" required>
                                 <option value="" selected disabled>Pick your preferred destination</option>
                                 <option value="mondstadt">Mondstadt</option>
                                 <option value="liyue">Liyue</option>
@@ -381,7 +381,7 @@
                 <fieldset>
                     <legend>How can we help you?</legend>
                     <label class="sr-only" for="message">Your inquiry</label>
-                    <textarea id="message" rows="5" placeholder="Please tell us about your inquiry." required></textarea>
+                    <textarea id="message" name="message" rows="5" placeholder="Please tell us about your inquiry." required></textarea>
                 </fieldset>
                 <div class="submit-area">
                     <button class="action-button" type="submit">Submit inquiry</button>

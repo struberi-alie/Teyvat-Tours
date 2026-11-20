@@ -310,6 +310,7 @@ document.querySelectorAll('[data-inline-form]').forEach(form => {
     const children = form.querySelector('#children');
     const submitButton = form.querySelector('[type="submit"]');
     let confirmed = false;
+    let isSubmitting = false;
 
     // Initial values remain zero; a request must include at least one traveler.
     function validateTravelers() {
@@ -322,42 +323,137 @@ document.querySelectorAll('[data-inline-form]').forEach(form => {
     children?.addEventListener('input', validateTravelers);
     validateTravelers();
 
-    form.addEventListener('submit', event => {
-        event.preventDefault();
-        validateTravelers();
-        if (!form.reportValidity()) return;
-        confirmed = false;
-        if (confirmation) {
-            confirmation.showModal();
-        } else {
-            acknowledgment.showModal();
-        }
+   form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    if (isSubmitting) return;
+
+    validateTravelers();
+    if (!form.reportValidity()) return;
+
+    isSubmitting = true;
+    confirmed = false;
+
+    if (confirmation) {
+        confirmation.showModal();
+    } else {
+        acknowledgment.showModal();
+    }
     });
 
     confirmation?.querySelector('[data-cancel-request]').addEventListener('click', () => {
+        isSubmitting = false;
+        confirmed = false;
         confirmation.close();
         submitButton.focus();
     });
 
     // Escape has the same effect as Cancel; it never confirms the request.
-    confirmation?.addEventListener('cancel', () => { confirmed = false; });
-
-    confirmation?.querySelector('[data-confirm-request]').addEventListener('click', () => {
-        if (confirmed) return;
-        confirmed = true;
-        confirmation.close();
-        acknowledgment.showModal();
+    confirmation?.addEventListener('cancel', () => {
+        confirmed = false;
+        isSubmitting = false;
     });
 
-    acknowledgment.querySelector('[data-finish-request]').addEventListener('click', () => {
+    confirmation?.querySelector('[data-confirm-request]')?.addEventListener('click', async () => {
+        if (confirmed) return;
+
+        confirmed = true;
+        confirmation.close();
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || 'Unable to submit your booking.');
+            }
+
+            acknowledgment.showModal();
+
+        } catch (error) {
+            confirmed = false;
+            isSubmitting = false;
+            alert(error.message || 'Something went wrong. Please try again.');
+        }
+    });
+
+    acknowledgment?.querySelector('[data-finish-request]')?.addEventListener('click', () => {
         acknowledgment.close();
     });
 
     // Closing a completed acknowledgment begins a fresh form with 0 / 0 counts.
-    acknowledgment.addEventListener('close', () => {
+    acknowledgment?.addEventListener('close', () => {
         form.reset();
         confirmed = false;
+        isSubmitting = false;
         validateTravelers();
         form.querySelector('input:not([readonly]), select, textarea')?.focus();
     });
 });
+
+/* CLIENT INQUIRY SUBMISSION
+   Submit inquiry -> PHP backend -> success acknowledgment.
+*/
+const inquiryForm = document.getElementById('inquiry-form');
+
+if (inquiryForm) {
+    const inquiryAcknowledgment = document.getElementById('form-acknowledgment');
+    const inquiryDoneButton = inquiryAcknowledgment?.querySelector('[data-finish-request]');
+    const inquiryDescription = document.getElementById('acknowledgment-description');
+
+    let inquiryIsSubmitting = false;
+    let inquirySubmitted = false;
+
+    inquiryForm.addEventListener('submit', async event => {
+        event.preventDefault();
+
+        if (inquiryIsSubmitting) return;
+        if (!inquiryForm.reportValidity()) return;
+
+        inquiryIsSubmitting = true;
+
+        try {
+            const response = await fetch(inquiryForm.action, {
+                method: 'POST',
+                body: new FormData(inquiryForm),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            const result = await response.json();
+
+            if (!response.ok || !result.success) {
+                throw new Error(result.message || 'Unable to submit your inquiry.');
+            }
+
+            inquirySubmitted = true;
+            inquiryDescription.textContent = result.message;
+            inquiryAcknowledgment.showModal();
+
+        } catch (error) {
+            alert(error.message || 'Something went wrong. Please try again.');
+            inquiryIsSubmitting = false;
+        }
+    });
+
+    inquiryDoneButton?.addEventListener('click', () => {
+        inquiryAcknowledgment.close();
+    });
+
+    inquiryAcknowledgment?.addEventListener('close', () => {
+        if (inquirySubmitted) {
+            inquiryForm.reset();
+            inquirySubmitted = false;
+        }
+
+        inquiryIsSubmitting = false;
+    });
+}

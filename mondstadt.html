@@ -185,7 +185,8 @@
                         <a href="index.html#packages">Explore another destination →</a>
                     </header>
                     <div class="embedded-form">
-                        <form id="booking-form" data-inline-form action="#booking" method="get">
+                        <form id="booking-form" data-inline-form action="submit_booking.php" method="POST">
+                            <input type="hidden" name="package_id" value="1">
                             <div class="field fixed-destination">
                                 <label for="booking-destination">Destination</label>
                                 <input id="booking-destination" type="text" value="Mondstadt" readonly>
@@ -196,15 +197,15 @@
                     <div class="field-grid">
                         <div class="field">
                             <label for="full-name">Full name</label>
-                            <input id="full-name" type="text" autocomplete="name" required>
+                            <input id="full-name" name="client_name" type="text" autocomplete="name" required>
                         </div>
                         <div class="field">
                             <label for="email">Email address</label>
-                            <input id="email" type="email" autocomplete="email" required>
+                            <input id="email" name="email" type="email" autocomplete="email" required>
                         </div>
                         <div class="field">
                             <label for="phone">Contact number</label>
-                            <input id="phone" type="tel" autocomplete="tel" inputmode="tel"
+                            <input id="phone" name="contact_number" type="tel" autocomplete="tel" inputmode="tel"
                                 pattern="\+?[0-9]{7,15}" minlength="7" maxlength="16"
                                 placeholder="e.g. 09171234567" aria-describedby="phone-help"
                                 title="Enter 7 to 15 digits, with an optional + at the start. No spaces or dashes."
@@ -220,17 +221,17 @@
                     <div class="field-grid">
                         <div class="field">
                             <label for="travel-date">Travel date</label>
-                            <input id="travel-date" type="date" required>
+                            <input id="travel-date" name="travel_date" type="date" required>
                         </div>
                         <div class="field">
                                                         <div class="traveler-counts" role="group" aria-label="Number of travelers">
                                 <div class="field">
                                     <label for="adults">Adults</label>
-                                    <input id="adults" type="number" min="0" max="99" value="0" required>
+                                    <input id="adults" name="adults" type="number" min="0" max="99" value="0" required>
                                 </div>
                                 <div class="field">
                                     <label for="children">Children</label>
-                                    <input id="children" type="number" min="0" max="99" value="0" required>
+                                    <input id="children" name="children" type="number" min="0" max="99" value="0" required>
                                 </div>
                             </div>
                         </div>
@@ -241,16 +242,16 @@
                 <fieldset>
                     <legend>Special request</legend>
                     <label class="sr-only" for="requests">Special requests (optional)</label>
-                    <textarea id="requests" rows="4" placeholder="Let us know about accessibility needs or other requests (optional)."></textarea>
+                    <textarea id="requests" name="special_requests" rows="4" placeholder="Let us know about accessibility needs or other requests (optional)."></textarea>
                 </fieldset>
 
                 <!-- PAYMENT METHOD -->
                 <fieldset>
                     <legend>Payment method</legend>
                     <div class="payment-options">
-                        <label><input type="radio" name="payment" value="gcash" required> GCash</label>
-                        <label><input type="radio" name="payment" value="card"> Credit card / Debit card</label>
-                        <label><input type="radio" name="payment" value="bank"> Bank transfer</label>
+                        <label><input type="radio" name="payment_method" value="gcash" required> GCash</label>
+                        <label><input type="radio" name="payment_method" value="card"> Credit card / Debit card</label>
+                        <label><input type="radio" name="payment_method" value="bank"> Bank transfer</label>
                     </div>
                 </fieldset>
                 <div class="submit-area">
@@ -293,7 +294,7 @@
                 </div>
             </dialog>
 
-            <!-- Prototype acknowledgment copy; no backend submission is connected. -->
+            <!-- Booking submission acknowledgment after backend processing. -->
             <dialog class="form-preview" id="form-acknowledgment" aria-labelledby="acknowledgment-title" aria-describedby="acknowledgment-description">
                 <p class="eyebrow">Thank you for choosing Teyvat Tours</p>
                 <h2 id="acknowledgment-title">Booking request received!</h2>
