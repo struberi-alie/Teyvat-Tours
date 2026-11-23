@@ -1,4 +1,3 @@
-
 <?php
 
 header('Content-Type: application/json');
@@ -36,6 +35,18 @@ if (
     $message === ''
 ) {
     respond(false, 'Please complete all required fields.', 400);
+}
+
+// Validate client name
+if (
+    preg_match("/\A[\p{L}\p{M} ,.'’\-]+\z/u", $clientName) !== 1 ||
+    preg_match('/\p{L}/u', $clientName) !== 1
+) {
+    respond(
+        false,
+        'Please enter a valid name using letters, spaces, commas, apostrophes, hyphens, and periods only. Numbers and other special characters are not permitted.',
+        400
+    );
 }
 
 // Validate email
