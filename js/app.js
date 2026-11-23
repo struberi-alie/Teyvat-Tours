@@ -11,6 +11,31 @@ function updateScrollLock() {
 }
 
 /* ==========================================================
+   SHARED NAME VALIDATION
+   Allows Unicode letters, spaces, commas, apostrophes,
+   hyphens, and periods. Requires at least one letter.
+   ========================================================== */
+function validateClientName(input) {
+    if (!input) return true;
+
+    const name = input.value.trim();
+    const validNamePattern = /^[\p{L}\p{M} ,.'’\-]+$/u;
+    const containsLetter = /\p{L}/u.test(name);
+
+    const isValid = name !== '' &&
+        validNamePattern.test(name) &&
+        containsLetter;
+
+    input.setCustomValidity(
+        isValid
+            ? ''
+            : 'Please enter a valid name using letters, spaces, commas, apostrophes, hyphens, and periods only. Numbers and other special characters are not permitted.'
+    );
+
+    return isValid;
+}
+
+/* ==========================================================
    BOOKING / CONTACT INQUIRY
    Contact Us and existing inquiry buttons open the same form.
    ========================================================== */
@@ -308,37 +333,88 @@ document.querySelectorAll('[data-inline-form]').forEach(form => {
     const acknowledgment = document.getElementById('form-acknowledgment');
     const adults = form.querySelector('#adults');
     const children = form.querySelector('#children');
+    const clientName = form.querySelector('[name="client_name"]');
+    const travelDate = form.querySelector('[name="travel_date"]');
     const submitButton = form.querySelector('[type="submit"]');
     let confirmed = false;
     let isSubmitting = false;
 
     // Initial values remain zero; a request must include at least one traveler.
-    function validateTravelers() {
+   function validateTravelers() {
         if (!adults || !children) return;
-        const count = Number(adults.value) + Number(children.value);
-        adults.setCustomValidity(count > 0 ? '' : 'Please add at least one traveler.');
+
+        const adultCount = Number(adults.value);
+        const childCount = Number(children.value);
+        const totalTravelers = adultCount + childCount;
+
+        if (totalTravelers < 1) {
+            adults.setCustomValidity('Please add at least one traveler.');
+        } else if (adultCount < 1) {
+            adults.setCustomValidity(
+                'At least one adult is required. If a minor or minors need to travel without an adult, please submit an inquiry so our agency can review and manually handle your request.'
+            );
+        } else {
+            adults.setCustomValidity('');
+        }
     }
+
+
+    clientName?.addEventListener('input', () => validateClientName(clientName));
+
+    // Set today's date as the earliest selectable travel date.
+    function validateTravelDate() {
+        if (!travelDate) return;
+
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const day = String(now.getDate()).padStart(2, '0');
+
+        const today = `${year}-${month}-${day}`;
+
+        travelDate.min = today;
+
+        if (!travelDate.value) {
+            travelDate.setCustomValidity('');
+        } else if (travelDate.value < today) {
+            travelDate.setCustomValidity(
+                'Please select today or a future travel date.'
+            );
+        } else {
+            travelDate.setCustomValidity('');
+        }
+    }
+
+    travelDate?.addEventListener('input', validateTravelDate);
+    travelDate?.addEventListener('change', validateTravelDate);
+
+    validateTravelDate();
 
     adults?.addEventListener('input', validateTravelers);
     children?.addEventListener('input', validateTravelers);
+
     validateTravelers();
+
 
    form.addEventListener('submit', event => {
-    event.preventDefault();
+        event.preventDefault();
 
-    if (isSubmitting) return;
+        if (isSubmitting) return;
 
-    validateTravelers();
-    if (!form.reportValidity()) return;
+        validateClientName(clientName);
+        validateTravelers();
+        validateTravelDate();
 
-    isSubmitting = true;
-    confirmed = false;
+        if (!form.reportValidity()) return;
 
-    if (confirmation) {
-        confirmation.showModal();
-    } else {
-        acknowledgment.showModal();
-    }
+        isSubmitting = true;
+        confirmed = false;
+
+        if (confirmation) {
+            confirmation.showModal();
+        } else {
+            acknowledgment.showModal();
+        }
     });
 
     confirmation?.querySelector('[data-cancel-request]').addEventListener('click', () => {
@@ -389,15 +465,16 @@ document.querySelectorAll('[data-inline-form]').forEach(form => {
     });
 
     // Closing a completed acknowledgment begins a fresh form with 0 / 0 counts.
-    acknowledgment?.addEventListener('close', () => {
-        form.reset();
-        confirmed = false;
-        isSubmitting = false;
-        validateTravelers();
-        form.querySelector('input:not([readonly]), select, textarea')?.focus();
+        acknowledgment?.addEventListener('close', () => {
+            form.reset();
+            validateClientName(clientName);
+            validateTravelDate();
+            confirmed = false;
+            isSubmitting = false;
+            validateTravelers();
+            form.querySelector('input:not([readonly]), select, textarea')?.focus();
+        });
     });
-});
-
 /* CLIENT INQUIRY SUBMISSION
    Submit inquiry -> PHP backend -> success acknowledgment.
 */
@@ -407,6 +484,11 @@ if (inquiryForm) {
     const inquiryAcknowledgment = document.getElementById('form-acknowledgment');
     const inquiryDoneButton = inquiryAcknowledgment?.querySelector('[data-finish-request]');
     const inquiryDescription = document.getElementById('acknowledgment-description');
+    const inquiryClientName = inquiryForm.querySelector('[name="client_name"]');
+
+    inquiryClientName?.addEventListener('input', () => {
+        validateClientName(inquiryClientName);
+    });
 
     let inquiryIsSubmitting = false;
     let inquirySubmitted = false;
@@ -415,6 +497,9 @@ if (inquiryForm) {
         event.preventDefault();
 
         if (inquiryIsSubmitting) return;
+
+        validateClientName(inquiryClientName);
+
         if (!inquiryForm.reportValidity()) return;
 
         inquiryIsSubmitting = true;

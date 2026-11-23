@@ -1,3 +1,4 @@
+
 <?php
 
 header('Content-Type: application/json');
@@ -44,6 +45,18 @@ if (
     respond(false, 'Please complete all required fields.', 400);
 }
 
+// Validate client name
+if (
+    preg_match("/\A[\p{L}\p{M} ,.'’\-]+\z/u", $clientName) !== 1 ||
+    preg_match('/\p{L}/u', $clientName) !== 1
+) {
+    respond(
+        false,
+        'Please enter a valid name using letters, spaces, commas, apostrophes, hyphens, and periods only. Numbers and other special characters are not permitted.',
+        400
+    );
+}
+
 // Validate email
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     respond(false, 'Please enter a valid email address.', 400);
@@ -54,10 +67,20 @@ if ($adults < 0 || $children < 0 || ($adults + $children) < 1) {
     respond(false, 'Please add at least one traveler.', 400);
 }
 
+// Require at least one adult
+if ($adults < 1) {
+    respond(
+        false,
+        'Your booking cannot be processed automatically because at least one adult is required. If a minor or minors need to travel without an adult, please submit an inquiry so our agency can review and manually handle your request.',
+        400
+    );
+}
+
 // Validate travel date
 $date = DateTime::createFromFormat('!Y-m-d', $travelDate);
 
-if (!$date ||
+if (
+    !$date ||
     $date->format('Y-m-d') !== $travelDate ||
     $date < new DateTime('today')
 ) {
