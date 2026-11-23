@@ -1922,7 +1922,7 @@ body.page-inazuma {
     --signature-bg: url("../assets/images/inazuma_heropage.jpg");
     --hero-tint: rgba(112, 71, 136, 0.48);
     --sig-tint: rgba(110,80,160,.40);
-    --name-color: #e4b4f0;
+    --name-color: #dbafe6;
     --featured-bg: #c48ac0;
     --price-color: #610a5e;
     --underline: #9c317f;
@@ -1935,8 +1935,8 @@ body.page-sumeru {
     --hero-bg: url("../assets/images/sumeru.jpg");
     --signature-bg: url("../assets/images/sumeru_heropage.jpg");
     --hero-tint: rgba(83,161,121,.48);
-    --sig-tint: rgba(74,163,125,.42);
-    --name-color: #abf98c;
+    --sig-tint: rgba(36, 99, 72, 0.42);
+    --name-color: #89b976;
     --featured-bg: #24790f;
     --price-color: #3f5310;
     --underline: #64751d;
@@ -1950,7 +1950,7 @@ body.page-fontaine {
     --signature-bg: url("../assets/images/fontaine_heropage.jpg");
     --hero-tint: rgba(59, 129, 155, 0.12);
     --sig-tint: rgba(35,155,189,.12);
-    --name-color: #bbdef7;
+    --name-color: #9bcce7;
     --featured-bg: #3895dd;
     --price-color: #21439b;
     --underline: #3cacc5;
@@ -1968,7 +1968,7 @@ body.page-natlan {
     --hero-image-position: center center;
     --signature-bg-position: center center;
     --signature-image-position: center center;
-    --name-color: #dfb855;
+    --name-color: #ddb66d;
     --featured-bg: #b17c27;
     --price-color: #884b16;
     --underline: #b65a1f;
@@ -1980,11 +1980,11 @@ body.page-snezhnaya {
     --region-bg: #1c7f9a;
     --hero-bg: url("../assets/images/snezhnaya.jpg");
     --signature-bg: url("../assets/images/snezhnaya_heropage.jpg");
-    --hero-tint: rgba(73,183,221,.45);
+    --hero-tint: rgba(35, 157, 187, 0.45);
     --sig-tint: rgba(66,177,215,.40);
-    --name-color: #97d3f6;
+    --name-color: #ebeff2;
     --featured-bg: #b9dce5;
-    --featured-text: #0b4161;
+    --featured-text: #0a2f45;
     --price-color: #33bad2;
     --underline: #259fc3;
     --featured-image: url("../assets/images/snezhnaya-bg.jpg");
